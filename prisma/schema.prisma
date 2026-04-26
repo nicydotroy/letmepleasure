@@ -1,0 +1,50 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Ad {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  category    String
+  price       String?
+  city        String
+  citySlug    String
+  area        String
+  areaSlug    String
+  phone       String
+  whatsapp    String?
+  images      String   @default("[]") // JSON array of image paths
+  isActive    Boolean  @default(true)
+  status      String   @default("pending") // pending, approved, rejected
+  approvedAt  DateTime?
+  rejectionReason String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([citySlug])
+  @@index([areaSlug])
+  @@index([citySlug, areaSlug])
+  @@index([category])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Admin {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  password  String   // bcrypt hashed
+  email     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([username])
+}
