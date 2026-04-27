@@ -39,7 +39,7 @@ export default function Header() {
             </div>
             <div>
               <span className="text-lg font-black text-white leading-none">
-                List<span className="text-amber-400">Nexa</span>
+                List<span className="text-amber-400">voo</span>
               </span>
               <div className="text-[9px] font-semibold text-blue-300 tracking-widest uppercase leading-none">
                 Free Classifieds India
