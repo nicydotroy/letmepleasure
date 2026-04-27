@@ -1,6 +1,7 @@
 {
-  "/post-ad/page": "app/post-ad/page.js",
-  "/sitemap.xml/[[...__metadata_id__]]/route": "app/sitemap.xml/[[...__metadata_id__]]/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/page": "app/page.js",
-  "/[city]/[category]/page": "app/[city]/[category]/page.js"
+  "/[city]/page": "app/[city]/page.js",
+  "/[city]/[category]/page": "app/[city]/[category]/page.js",
+  "/location/[city]/page": "app/location/[city]/page.js"
 }
