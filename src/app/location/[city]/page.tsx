@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { MapPin, ChevronRight, ArrowRight, Building2 } from 'lucide-react'
+import { MapPin, ChevronRight, ArrowRight, Building2, Zap } from 'lucide-react'
 import { getCityBySlug } from '@/lib/cities'
+import { CATEGORIES } from '@/lib/categories'
 import { prisma } from '@/lib/prisma'
 import AdCard from '@/components/AdCard'
 import LocationContent from '@/components/LocationContent'
@@ -115,6 +116,32 @@ export default async function CityPage({ params }: Props) {
                 </Link>
               )
             })}
+          </div>
+        </section>
+
+        {/* Categories grid */}
+        <section>
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-xl font-black text-[#060B27] flex items-center gap-2">
+              <Zap size={18} className="text-amber-500" /> Browse by Service
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+            {CATEGORIES.map((category) => (
+              <Link
+                key={category.slug}
+                href={`/${params.city}/${category.slug}`}
+                className={`group ${category.color} rounded-2xl p-6 text-center hover:shadow-lg hover:shadow-amber-100/60 hover:-translate-y-1 transition-all duration-200 border border-transparent hover:border-amber-200`}
+              >
+                <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">
+                  {category.icon}
+                </div>
+                <div className="text-sm font-bold group-hover:underline">
+                  {category.name}
+                </div>
+                <div className="text-xs opacity-70 mt-1">in {city.name}</div>
+              </Link>
+            ))}
           </div>
         </section>
 
