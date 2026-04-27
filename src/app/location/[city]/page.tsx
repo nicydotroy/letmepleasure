@@ -13,12 +13,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = getCityBySlug(params.city)
   if (!city) return { title: 'City not found' }
   return {
-    title: `Free Classified Ads in ${city.name}, ${city.state} | ListNexa`,
-    description: `Browse ${city.areas.length}+ areas of ${city.name}. Find free classified ads for real estate, jobs, cars, electronics, furniture & more in ${city.name}.`,
-    alternates: { canonical: `https://listnexa.in/location/${params.city}` },
+    title: `Escorts Service in ${city.name} | Verified Call Girls & Companions | Listvoo`,
+    description: `Find verified escorts and companions in ${city.name}. Safe, discreet escort services with real profiles. Browse across all ${city.areas.length}+ areas of ${city.name}.`,
+    keywords: `${city.name} escorts, ${city.name} call girls, escorts service in ${city.name}, ${city.name} companions, verified escorts ${city.name}`,
+    alternates: { canonical: `https://listvoo.vercel.app/location/${params.city}` },
     openGraph: {
-      title: `Free Ads in ${city.name} | ListNexa`,
-      description: `Local classified ads in ${city.name}`,
+      title: `Escorts in ${city.name} | Verified & Discreet | Listvoo`,
+      description: `Safe & verified escort services in ${city.name}. Browse real profiles with photos.`,
     },
   }
 }
