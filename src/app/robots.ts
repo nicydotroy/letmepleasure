@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://listnexa.in/sitemap.xml',
-    host: 'https://listnexa.in',
+    sitemap: 'https://listvoo.com/sitemap.xml',
+    host: 'https://listvoo.com',
   }
 }

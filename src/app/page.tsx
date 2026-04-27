@@ -12,14 +12,14 @@ interface SearchParams { q?: string; city?: string; category?: string }
 export async function generateMetadata({ searchParams }: { searchParams: SearchParams }): Promise<Metadata> {
   if (searchParams.q) {
     return {
-      title: `"${searchParams.q}" — Classified Ads India | ListNexa`,
-      description: `Search results for "${searchParams.q}" on ListNexa.`,
+      title: `"${searchParams.q}" — Classified Ads India | Listvoo`,
+      description: `Search results for "${searchParams.q}" on Listvoo.`,
     }
   }
   return {
-    title: 'ListNexa — Free Classified Ads India | Post Ads in Your City',
+    title: 'Listvoo — Free Classified Ads India | Post Ads in Your City',
     description: 'Post free classified ads in India. Find escorts, massage services, and more in Mumbai, Delhi, Bangalore & all major cities. 100% Free.',
-    alternates: { canonical: 'https://listnexa.in' },
+    alternates: { canonical: 'https://listvoo.com' },
   }
 }
 
@@ -201,7 +201,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-400/10 rounded-full blur-3xl" />
             <div className="relative text-center mb-10">
-              <h2 className="text-3xl font-black text-white mb-2">Why Choose <span className="text-gold">ListNexa</span>?</h2>
+              <h2 className="text-3xl font-black text-white mb-2">Why Choose <span className="text-gold">Listvoo</span>?</h2>
               <p className="text-blue-300">India&apos;s safest and most discreet platform</p>
             </div>
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -225,9 +225,9 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
         {/* ── SEO BLOCK ── */}
         {!isFiltered && (
           <section className="bg-white rounded-3xl p-8 border border-indigo-50 shadow-sm">
-            <h2 className="text-xl font-black text-[#060B27] mb-4">Free Classified Ads in India — ListNexa</h2>
+            <h2 className="text-xl font-black text-[#060B27] mb-4">Free Classified Ads in India — Listvoo</h2>
             <div className="text-slate-500 text-sm leading-relaxed columns-1 md:columns-2 gap-8 space-y-3">
-              <p>ListNexa is India&apos;s premier free adult classifieds platform. Find verified escorts, massage services, call girls, and more in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, and all major cities.</p>
+              <p>Listvoo is India's premier free adult classifieds platform. Find verified escorts, massage services, call girls, and more in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, and all major cities.</p>
               <p>Browse listings in <Link href="/location/mumbai" className="text-indigo-600 font-semibold hover:underline">Mumbai</Link>, <Link href="/location/delhi" className="text-indigo-600 font-semibold hover:underline">Delhi</Link>, <Link href="/location/bangalore" className="text-indigo-600 font-semibold hover:underline">Bangalore</Link>, <Link href="/location/hyderabad" className="text-indigo-600 font-semibold hover:underline">Hyderabad</Link>, <Link href="/location/chennai" className="text-indigo-600 font-semibold hover:underline">Chennai</Link>, and <Link href="/location" className="text-indigo-600 font-semibold hover:underline">12+ more cities</Link>. Post your ad free — no registration, no fees, live instantly.</p>
             </div>
           </section>

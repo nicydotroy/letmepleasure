@@ -4,10 +4,10 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://listnexa.in'),
+  metadataBase: new URL('https://listvoo.com'),
   title: {
-    default: 'ListNexa — Free Classified Ads India | Buy Sell in Your City',
-    template: '%s | ListNexa India',
+    default: 'Listvoo — Free Classified Ads India | Buy Sell in Your City',
+    template: '%s | Listvoo India',
   },
   description:
     'Post free classified ads in India. Buy, sell & find Real Estate, Jobs, Cars, Electronics in Mumbai, Delhi, Bangalore, Hyderabad, Chennai & all metro cities. 100% Free, No Registration.',
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     'OLX alternative',
     'quikr alternative',
   ],
-  authors: [{ name: 'ListNexa', url: 'https://listnexa.in' }],
-  creator: 'ListNexa',
-  publisher: 'ListNexa',
+  authors: [{ name: 'Listvoo', url: 'https://listvoo.com' }],
+  creator: 'Listvoo',
+  publisher: 'Listvoo',
   robots: {
     index: true,
     follow: true,
@@ -33,20 +33,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://listnexa.in',
-    siteName: 'ListNexa',
-    title: 'ListNexa — Free Classified Ads India',
+    url: 'https://listvoo.com',
+    siteName: 'Listvoo',
+    title: 'Listvoo — Free Classified Ads India',
     description: 'Post free classified ads across India. Buy & Sell in your city.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'ListNexa Free Classified Ads India' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Listvoo Free Classified Ads India' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ListNexa — Free Classified Ads India',
+    title: 'Listvoo — Free Classified Ads India',
     description: 'Post free classified ads across India.',
     images: ['/og-image.png'],
   },
   alternates: {
-    canonical: 'https://listnexa.in',
+    canonical: 'https://listvoo.com',
   },
 }
 
@@ -66,12 +66,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              name: 'ListNexa',
-              url: 'https://listnexa.in',
+              name: 'Listvoo',
+              url: 'https://listvoo.com',
               description: 'Free classified ads in India',
               potentialAction: {
                 '@type': 'SearchAction',
-                target: { '@type': 'EntryPoint', urlTemplate: 'https://listnexa.in/?q={search_term_string}' },
+                target: { '@type': 'EntryPoint', urlTemplate: 'https://listvoo.com/?q={search_term_string}' },
                 'query-input': 'required name=search_term_string',
               },
             }),

@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next'
 import { CITIES } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
 
-const BASE_URL = 'https://listnexa.in'
+const BASE_URL = 'https://listvoo.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
