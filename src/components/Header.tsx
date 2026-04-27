@@ -95,6 +95,13 @@ export default function Header() {
             >
               All Locations
             </Link>
+
+            <Link
+              href="/category"
+              className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-blue-200 hover:text-white hover:bg-white/10 transition-all"
+            >
+              Categories
+            </Link>
           </nav>
 
           {/* CTAs */}
@@ -133,6 +140,13 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
           >
             <MapPin size={17} className="text-amber-400" /> All Cities
+          </Link>
+          <Link
+            href="/category"
+            className="flex items-center gap-2.5 px-3 py-3 rounded-xl text-blue-200 font-semibold hover:bg-white/10 hover:text-white transition-all"
+            onClick={() => setMenuOpen(false)}
+          >
+            🏷️ Categories
           </Link>
           <Link
             href="/"
