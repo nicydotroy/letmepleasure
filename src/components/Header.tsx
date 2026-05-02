@@ -31,22 +31,22 @@ export default function Header() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 sm:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0" aria-label="Listvoo home">
-            <div className="bg-white rounded-xl p-1.5 shadow-md group-hover:shadow-lg transition-shadow">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0" aria-label="Listvoo home">
+            <div className="bg-white rounded-lg sm:rounded-xl px-2 py-1.5 sm:px-2.5 sm:py-2 shadow-md group-hover:shadow-lg transition-shadow">
               <Image
                 src="/logos/logo.png"
                 alt="Listvoo logo"
-                width={120}
-                height={36}
+                width={1280}
+                height={540}
                 priority
-                className="h-7 w-auto"
+                className="h-8 sm:h-10 w-auto"
               />
             </div>
-            <div className="hidden sm:block">
-              <div className="text-[9px] font-semibold text-blue-300 tracking-widest uppercase leading-none mt-0.5">
+            <div className="hidden md:block">
+              <div className="text-[10px] font-semibold text-blue-300 tracking-widest uppercase leading-none">
                 Free Classifieds India
               </div>
             </div>

@@ -30,13 +30,13 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="bg-white inline-flex rounded-xl p-2 mb-5 shadow-md">
+            <div className="bg-white inline-flex rounded-xl px-3 py-2.5 mb-5 shadow-md">
               <Image
                 src="/logos/logo.png"
                 alt="Listvoo logo"
-                width={140}
-                height={42}
-                className="h-9 w-auto"
+                width={1280}
+                height={540}
+                className="h-10 sm:h-12 w-auto"
               />
             </div>
             <p className="text-sm text-blue-300 leading-relaxed mb-5">
