@@ -1,0 +1,185 @@
+/**
+ * BreadcrumbSchema Component
+ * Use this component to add breadcrumb structured data to any page
+ * 
+ * Usage:
+ * <BreadcrumbSchema items={[
+ *   { name: 'Home', url: 'https://listvoo.com' },
+ *   { name: 'Mumbai', url: 'https://listvoo.com/call-girls/mumbai' },
+ *   { name: 'Escorts', url: 'https://listvoo.com/call-girls/mumbai/escorts' }
+ * ]} />
+ */
+
+interface BreadcrumbItem {
+  name: string
+  url: string
+}
+
+interface BreadcrumbSchemaProps {
+  items: BreadcrumbItem[]
+}
+
+export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+/**
+ * LocalBusinessSchema Component
+ * Use for city-specific pages
+ */
+export function LocalBusinessSchema({
+  cityName,
+  citySlug,
+  adCount,
+}: {
+  cityName: string
+  citySlug: string
+  adCount: number
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: `Classifieds in ${cityName} - Listvoo`,
+    description: `Browse and post free classified ads in ${cityName}. ${adCount}+ active listings.`,
+    url: `https://listvoo.com/call-girls/${citySlug}`,
+    areaServed: {
+      '@type': 'City',
+      name: cityName,
+    },
+    image: 'https://listvoo.com/og-image.png',
+    priceRange: '💰', // Free
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'IN',
+      addressLocality: cityName,
+    },
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+/**
+ * CollectionPageSchema Component
+ * Use for category and collection pages
+ */
+export function CollectionPageSchema({
+  name,
+  description,
+  url,
+  itemCount,
+}: {
+  name: string
+  description: string
+  url: string
+  itemCount: number
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name,
+    description,
+    url,
+    numberOfItems: itemCount,
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+/**
+ * FAQPageSchema Component
+ * Use on FAQ pages
+ */
+export function FAQPageSchema({
+  faqs,
+}: {
+  faqs: Array<{
+    question: string
+    answer: string
+  }>
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+/**
+ * AggregateOfferSchema Component
+ * Use on category pages showing multiple listings
+ */
+export function AggregateOfferSchema({
+  itemCount,
+  description,
+}: {
+  itemCount: number
+  description: string
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'AggregateOffer',
+    priceCurrency: 'INR',
+    price: '0',
+    priceValidUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)
+      .toISOString()
+      .split('T')[0],
+    offerCount: itemCount,
+    availability: 'https://schema.org/InStock',
+    description,
+  }
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+export const SchemaComponents = {
+  BreadcrumbSchema,
+  LocalBusinessSchema,
+  CollectionPageSchema,
+  FAQPageSchema,
+  AggregateOfferSchema,
+}

@@ -43,13 +43,42 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const displayKeyword = keywordMaps[category.slug] || category.name
+  const keywords = [
+    `${displayKeyword.toLowerCase()} in ${city.name}`,
+    `${city.name} ${displayKeyword.toLowerCase()}`,
+    `${displayKeyword} services ${city.name}`,
+    `book ${displayKeyword.toLowerCase()} ${city.name}`,
+    `${displayKeyword} ${city.name} independent`,
+    `verified ${displayKeyword.toLowerCase()} ${city.name}`,
+    `discreet ${displayKeyword.toLowerCase()} ${city.name}`,
+    `safe ${displayKeyword.toLowerCase()} ${city.name}`,
+  ]
 
   return {
     title: `${displayKeyword} in ${city.name} | Verified & Discreet | Listvoo`,
-    description: `Browse verified ${displayKeyword.toLowerCase()} in ${city.name}. Safe, discreet, and authentic listings. Post or browse free on Listvoo.`,
+    description: `Browse verified ${displayKeyword.toLowerCase()} in ${city.name}. Safe, discreet, and authentic listings. 100% verified profiles. Post or browse free on Listvoo.`,
+    keywords,
+    alternates: {
+      canonical: `https://listvoo.com/${city.slug}/${category.slug}`,
+    },
     openGraph: {
       title: `${displayKeyword} in ${city.name} | Listvoo`,
       description: `Find verified ${displayKeyword.toLowerCase()} in ${city.name}. Browse, verify, and book safely on Listvoo - India's trusted classifieds platform.`,
+      type: 'website',
+      url: `https://listvoo.com/${city.slug}/${category.slug}`,
+      images: [
+        {
+          url: 'https://listvoo.com/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: `${displayKeyword} in ${city.name}`,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${displayKeyword} in ${city.name} | Listvoo`,
+      description: `Browse verified ${displayKeyword.toLowerCase()} in ${city.name}. Safe and discreet listings.`,
     },
   }
 }

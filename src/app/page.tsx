@@ -13,13 +13,50 @@ export async function generateMetadata({ searchParams }: { searchParams: SearchP
   if (searchParams.q) {
     return {
       title: `"${searchParams.q}" — Classified Ads India | Listvoo`,
-      description: `Search results for "${searchParams.q}" on Listvoo.`,
+      description: `Search results for "${searchParams.q}" on Listvoo - Free classified ads in India.`,
+      alternates: { canonical: 'https://listvoo.com' },
     }
   }
   return {
-    title: 'Listvoo — Free Classified Ads India | Post Ads in Your City',
-    description: 'Post free classified ads in India. Find escorts, massage services, and more in Mumbai, Delhi, Bangalore & all major cities. 100% Free.',
-    alternates: { canonical: 'https://listvoo.com' },
+    title: 'Listvoo — Free Classified Ads India | Buy Sell in Your City',
+    description: 'Post free classified ads in India. Find escorts, massage services, call girls & more in Mumbai, Delhi, Bangalore, Hyderabad, Chennai & all major cities. 100% Free, No Registration.',
+    keywords: [
+      'free classified ads India',
+      'post free ad',
+      'buy sell online',
+      'Mumbai classified ads',
+      'Delhi classified ads',
+      'Bangalore classified ads',
+      'free online classifieds',
+      'classified ads free',
+      'post ads for free',
+      'online marketplace India',
+    ],
+    alternates: { 
+      canonical: 'https://listvoo.com',
+      languages: {
+        'en-IN': 'https://listvoo.com',
+      },
+    },
+    openGraph: {
+      title: 'Listvoo — Free Classified Ads India | Buy Sell in Your City',
+      description: 'Post free classified ads across India. Buy & Sell in your city. Find services in 12+ metro cities.',
+      url: 'https://listvoo.com',
+      type: 'website',
+      images: [
+        {
+          url: 'https://listvoo.com/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'Listvoo Free Classified Ads India',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'Listvoo — Free Classified Ads India',
+      description: 'Post free classified ads across India. 100% Free, No Registration.',
+    },
   }
 }
 

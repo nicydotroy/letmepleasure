@@ -15,14 +15,45 @@ interface Props { params: { id: string } }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const ad = await prisma.ad.findUnique({ where: { id: params.id } })
   if (!ad) return { title: 'Ad not found' }
+  
+  const images: string[] = JSON.parse(ad.images || '[]')
+  const ogImage = images.length > 0 ? `https://listvoo.com${images[0]}` : 'https://listvoo.com/og-image.png'
+  const keywords = [
+    ad.title,
+    `${ad.area} ${ad.category}`,
+    `${ad.city} ${ad.category}`,
+    ad.area,
+    ad.city,
+  ]
+  
   return {
-    title: `${ad.title} in ${ad.area}, ${ad.city} | ListNexa`,
-    description: ad.description.slice(0, 155),
-    alternates: { canonical: `https://listnexa.in/ads/${params.id}` },
+    title: `${ad.title} in ${ad.area}, ${ad.city} | Listvoo`,
+    description: ad.description.slice(0, 160),
+    keywords,
+    authors: [{ name: ad.user || 'Listvoo User' }],
+    creator: ad.user || 'Listvoo',
+    alternates: { canonical: `https://listvoo.com/ads/${params.id}` },
     openGraph: {
       title: ad.title,
-      description: ad.description.slice(0, 155),
+      description: ad.description.slice(0, 160),
       type: 'article',
+      url: `https://listvoo.com/ads/${params.id}`,
+      images: images.map((img, i) => ({
+        url: `https://listvoo.com${img}`,
+        width: 1200,
+        height: 900,
+        alt: `${ad.title} - Photo ${i + 1}`,
+        type: 'image/jpeg',
+      })),
+      publishedTime: new Date(ad.createdAt).toISOString(),
+      modifiedTime: new Date(ad.updatedAt || ad.createdAt).toISOString(),
+      section: 'Classifieds',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: ad.title,
+      description: ad.description.slice(0, 160),
+      images: images.length > 0 ? [`https://listvoo.com${images[0]}`] : ['https://listvoo.com/og-image.png'],
     },
   }
 }

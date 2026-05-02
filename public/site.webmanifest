@@ -1,0 +1,60 @@
+{
+  "name": "Listvoo - Free Classified Ads India",
+  "short_name": "Listvoo",
+  "description": "Post free classified ads in India. Find escorts, massage services, and more in your city. 100% Free, No Registration.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#060B27",
+  "categories": ["business", "shopping"],
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/og-image-square.png",
+      "sizes": "800x800",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/og-image-square.png",
+      "sizes": "800x800",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Post an Ad",
+      "short_name": "Post Ad",
+      "description": "Quickly post a new ad on Listvoo",
+      "url": "/post-ad",
+      "icons": [{ "src": "/og-image-square.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Browse Ads",
+      "short_name": "Browse",
+      "description": "Browse all available listings",
+      "url": "/call-girls",
+      "icons": [{ "src": "/og-image-square.png", "sizes": "192x192" }]
+    }
+  ]
+}
