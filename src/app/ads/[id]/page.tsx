@@ -30,8 +30,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${ad.title} in ${ad.area}, ${ad.city} | Listvoo`,
     description: ad.description.slice(0, 160),
     keywords,
-    authors: [{ name: ad.user || 'Listvoo User' }],
-    creator: ad.user || 'Listvoo',
+    authors: [{ name: 'Listvoo User' }],
+    creator: 'Listvoo',
     alternates: { canonical: `https://listvoo.com/ads/${params.id}` },
     openGraph: {
       title: ad.title,
