@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
 import { CITIES } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
@@ -9,7 +10,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#060B27] text-blue-200 mt-16">
       {/* CTA Banner */}
-      <div className="bg-amber-400">
+      <div className="bg-blue-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-5">
           <div>
             <h3 className="text-[#060B27] font-black text-2xl mb-1">Ready to post your ad?</h3>
@@ -17,7 +18,7 @@ export default function Footer() {
           </div>
           <Link
             href="/post-ad"
-            className="shrink-0 flex items-center gap-2 bg-[#060B27] text-amber-400 px-6 py-3 rounded-2xl font-black text-sm hover:bg-[#0B1354] transition-colors shadow-xl"
+            className="shrink-0 flex items-center gap-2 bg-[#060B27] text-blue-500 px-6 py-3 rounded-2xl font-black text-sm hover:bg-[#0B1354] transition-colors shadow-xl"
           >
             Post Free Ad <ArrowRight size={16} />
           </Link>
@@ -29,18 +30,21 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-5">
-              <div className="bg-amber-400 text-[#060B27] rounded-xl w-9 h-9 flex items-center justify-center font-black text-xl">L</div>
-              <span className="text-xl font-black text-white">
-                List<span className="text-amber-400">Nexa</span>
-              </span>
+            <div className="bg-white inline-flex rounded-xl p-2 mb-5 shadow-md">
+              <Image
+                src="/logos/logo.png"
+                alt="Listvoo logo"
+                width={140}
+                height={42}
+                className="h-9 w-auto"
+              />
             </div>
             <p className="text-sm text-blue-300 leading-relaxed mb-5">
-              India&apos;s premier free adult classifieds platform. Post ads in every Indian metro city — completely free, forever.
+              India&apos;s premier free classifieds platform. Post ads in every Indian metro city — completely free, forever.
             </p>
             <div className="flex gap-3">
               {['📘', '📸', '🐦', '▶️'].map((icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-xl bg-white/10 hover:bg-amber-400 hover:text-[#060B27] flex items-center justify-center text-base transition-colors">
+                <a key={i} href="#" className="w-9 h-9 rounded-xl bg-white/10 hover:bg-blue-500 hover:text-[#060B27] flex items-center justify-center text-base transition-colors">
                   {icon}
                 </a>
               ))}
@@ -53,15 +57,15 @@ export default function Footer() {
             <ul className="space-y-2">
               {topCities.map((city) => (
                 <li key={city.slug}>
-                  <Link href={`/call-girls/${city.slug}`} className="flex items-center gap-2 text-sm text-blue-300 hover:text-amber-400 transition-colors group">
-                    <MapPin size={11} className="text-blue-400/50 group-hover:text-amber-400 transition-colors" />
+                  <Link href={`/call-girls/${city.slug}`} className="flex items-center gap-2 text-sm text-blue-300 hover:text-blue-500 transition-colors group">
+                    <MapPin size={11} className="text-blue-400/50 group-hover:text-blue-500 transition-colors" />
                     {city.name}
                     <span className="text-blue-400/30 text-xs ml-auto">{city.state}</span>
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/call-girls" className="text-sm text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1">
+                <Link href="/call-girls" className="text-sm text-blue-500 hover:text-blue-400 font-semibold flex items-center gap-1">
                   View all cities <ArrowRight size={12} />
                 </Link>
               </li>
@@ -74,7 +78,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {CATEGORIES.map((cat) => (
                 <li key={cat.slug}>
-                  <Link href={`/?category=${cat.slug}`} className="text-sm text-blue-300 hover:text-amber-400 transition-colors flex items-center gap-2">
+                  <Link href={`/?category=${cat.slug}`} className="text-sm text-blue-300 hover:text-blue-500 transition-colors flex items-center gap-2">
                     <span>{cat.icon}</span> {cat.name}
                   </Link>
                 </li>
@@ -87,11 +91,11 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-4 text-sm uppercase tracking-widest">Contact Us</h3>
             <ul className="space-y-3 mb-6">
               <li className="flex items-center gap-2.5 text-sm text-blue-300">
-                <Mail size={14} className="text-amber-400 shrink-0" />
+                <Mail size={14} className="text-blue-500 shrink-0" />
                 support@listnexa.in
               </li>
               <li className="flex items-center gap-2.5 text-sm text-blue-300">
-                <Phone size={14} className="text-amber-400 shrink-0" />
+                <Phone size={14} className="text-blue-500 shrink-0" />
                 +91 98765 43210
               </li>
             </ul>
@@ -105,7 +109,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-blue-400/60">
-          <p>© {new Date().getFullYear()} ListNexa Technologies Pvt. Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Listvoo. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="#" className="hover:text-blue-200 transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-blue-200 transition-colors">Terms of Service</Link>

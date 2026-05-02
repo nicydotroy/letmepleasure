@@ -111,15 +111,15 @@ export default function PostAdPage() {
   if (success) {
     return (
       <div className="min-h-screen bg-[#EEF2FF] flex items-center justify-center px-4">
-        <div className="text-center bg-white rounded-3xl p-12 shadow-xl border border-amber-100 max-w-sm mx-auto">
-          <div className="w-20 h-20 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-5">
-            <AlertCircle className="text-amber-600" size={40} />
+        <div className="text-center bg-white rounded-3xl p-12 shadow-xl border border-blue-100 max-w-sm mx-auto">
+          <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-5">
+            <AlertCircle className="text-blue-700" size={40} />
           </div>
           <h2 className="text-2xl font-black text-[#060B27] mb-2">Ad Submitted!</h2>
           <p className="text-slate-600 font-semibold mb-1">✓ Your ad has been submitted successfully</p>
           <p className="text-slate-500 text-sm">⏳ Awaiting admin approval before going live...</p>
           <div className="mt-4 h-1.5 bg-slate-100 rounded-full overflow-hidden">
-            <div className="h-full bg-amber-400 rounded-full animate-pulse w-3/4" />
+            <div className="h-full bg-blue-500 rounded-full animate-pulse w-3/4" />
           </div>
         </div>
       </div>
@@ -131,7 +131,7 @@ export default function PostAdPage() {
       {/* Hero bar */}
       <div className="bg-[#060B27] py-12 px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-400/10 text-amber-300 border border-amber-400/20 px-4 py-1.5 rounded-full text-xs font-bold mb-4">
+          <div className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 px-4 py-1.5 rounded-full text-xs font-bold mb-4">
             ✨ 100% Free · No Registration Required
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-white mb-2">Post Your Free Ad</h1>
@@ -152,7 +152,7 @@ export default function PostAdPage() {
           {/* Category */}
           <div>
             <label className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-              <Tag size={15} className="text-amber-500" /> Category *
+              <Tag size={15} className="text-blue-600" /> Category *
             </label>
             <select
               name="category"
@@ -220,7 +220,7 @@ export default function PostAdPage() {
           {/* Location */}
           <div>
             <label className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-              <MapPin size={15} className="text-amber-500" /> Location *
+              <MapPin size={15} className="text-blue-600" /> Location *
             </label>
             <div className="grid grid-cols-2 gap-3">
               <select
@@ -264,7 +264,7 @@ export default function PostAdPage() {
                 </div>
               ))}
               {images.length < 5 && (
-                <label className="w-20 h-20 rounded-xl border-2 border-dashed border-indigo-200 flex flex-col items-center justify-center cursor-pointer hover:border-amber-400 hover:bg-amber-50 transition-colors text-slate-400 hover:text-amber-500">
+                <label className="w-20 h-20 rounded-xl border-2 border-dashed border-indigo-200 flex flex-col items-center justify-center cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors text-slate-400 hover:text-blue-600">
                   <Upload size={18} />
                   <span className="text-xs mt-1">Add</span>
                   <input type="file" accept="image/*" multiple onChange={handleImages} className="hidden" />
@@ -277,7 +277,7 @@ export default function PostAdPage() {
           {/* Contact */}
           <div>
             <label className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-3">
-              <Phone size={15} className="text-amber-500" /> Contact Details *
+              <Phone size={15} className="text-blue-600" /> Contact Details *
             </label>
             <div className="space-y-3">
               <div className="relative">
@@ -322,7 +322,7 @@ export default function PostAdPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-amber-400 text-[#060B27] py-4 rounded-xl font-black text-base hover:bg-amber-300 transition-all shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full bg-blue-500 text-[#060B27] py-4 rounded-xl font-black text-base hover:bg-blue-400 transition-all shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {submitting ? 'Posting your ad...' : '🚀 Post Ad for FREE'}
           </button>

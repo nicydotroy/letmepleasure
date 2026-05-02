@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { Menu, X, MapPin, PlusCircle, ChevronDown, Phone } from 'lucide-react'
 import { CITIES } from '@/lib/cities'
@@ -25,7 +26,7 @@ export default function Header() {
       }`}
     >
       {/* Top announcement bar */}
-      <div className="bg-amber-400 text-[#060B27] text-xs py-1.5 text-center font-bold tracking-wide">
+      <div className="bg-blue-500 text-[#060B27] text-xs py-1.5 text-center font-bold tracking-wide">
         🌟 Post FREE Ads — No Registration · No Hidden Charges · Live in 60 Seconds
       </div>
 
@@ -33,15 +34,19 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group shrink-0">
-            <div className="w-9 h-9 bg-amber-400 rounded-xl flex items-center justify-center font-black text-xl text-[#060B27] shadow-lg group-hover:bg-amber-300 transition-colors">
-              L
+          <Link href="/" className="flex items-center gap-3 group shrink-0" aria-label="Listvoo home">
+            <div className="bg-white rounded-xl p-1.5 shadow-md group-hover:shadow-lg transition-shadow">
+              <Image
+                src="/logos/logo.png"
+                alt="Listvoo logo"
+                width={120}
+                height={36}
+                priority
+                className="h-7 w-auto"
+              />
             </div>
-            <div>
-              <span className="text-lg font-black text-white leading-none">
-                List<span className="text-amber-400">voo</span>
-              </span>
-              <div className="text-[9px] font-semibold text-blue-300 tracking-widest uppercase leading-none">
+            <div className="hidden sm:block">
+              <div className="text-[9px] font-semibold text-blue-300 tracking-widest uppercase leading-none mt-0.5">
                 Free Classifieds India
               </div>
             </div>
@@ -56,7 +61,7 @@ export default function Header() {
               onMouseLeave={() => setCitiesOpen(false)}
             >
               <button className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-blue-200 hover:text-white hover:bg-white/10 transition-all">
-                <MapPin size={14} className="text-amber-400" />
+                <MapPin size={14} className="text-blue-500" />
                 Cities
                 <ChevronDown size={13} className={`transition-transform text-blue-300 ${citiesOpen ? 'rotate-180' : ''}`} />
               </button>
@@ -66,15 +71,15 @@ export default function Header() {
                     <Link
                       key={c.slug}
                       href={`/call-girls/${c.slug}`}
-                      className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-amber-400/10 text-blue-200 hover:text-amber-400 transition-all text-sm"
+                      className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-blue-500/10 text-blue-200 hover:text-blue-500 transition-all text-sm"
                     >
-                      <MapPin size={11} className="text-amber-400/60" />
+                      <MapPin size={11} className="text-blue-500/60" />
                       {c.name}
                     </Link>
                   ))}
                   <Link
                     href="/call-girls"
-                    className="col-span-2 text-center text-xs text-amber-400 hover:text-amber-300 font-bold mt-1 py-1.5 border-t border-white/10"
+                    className="col-span-2 text-center text-xs text-blue-500 hover:text-blue-400 font-bold mt-1 py-1.5 border-t border-white/10"
                   >
                     View All Cities →
                   </Link>
@@ -103,12 +108,12 @@ export default function Header() {
               href="tel:+919229604907"
               className="hidden lg:flex items-center gap-1.5 px-3 py-2 rounded-xl text-blue-200 hover:text-white border border-white/10 hover:border-white/30 text-sm transition-all"
             >
-              <Phone size={14} className="text-amber-400" />
+              <Phone size={14} className="text-blue-500" />
               Help
             </a>
             <Link
               href="/post-ad"
-              className="hidden sm:flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-[#060B27] px-5 py-2.5 rounded-xl font-black text-sm transition-all shadow-lg shadow-amber-400/25 hover:shadow-amber-400/40"
+              className="hidden sm:flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-[#060B27] px-5 py-2.5 rounded-xl font-black text-sm transition-all shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40"
             >
               <PlusCircle size={15} />
               Post Free Ad
@@ -132,7 +137,7 @@ export default function Header() {
             className="flex items-center gap-2.5 px-3 py-3 rounded-xl text-blue-200 font-semibold hover:bg-white/10 hover:text-white transition-all"
             onClick={() => setMenuOpen(false)}
           >
-            <MapPin size={17} className="text-amber-400" /> All Cities
+            <MapPin size={17} className="text-blue-500" /> All Cities
           </Link>
           <Link
             href="/"
@@ -144,7 +149,7 @@ export default function Header() {
           <div className="pt-2">
             <Link
               href="/post-ad"
-              className="flex items-center justify-center gap-2 bg-amber-400 text-[#060B27] py-3.5 rounded-xl font-black text-sm shadow-lg"
+              className="flex items-center justify-center gap-2 bg-blue-500 text-[#060B27] py-3.5 rounded-xl font-black text-sm shadow-lg"
               onClick={() => setMenuOpen(false)}
             >
               <PlusCircle size={16} /> Post FREE Ad Now

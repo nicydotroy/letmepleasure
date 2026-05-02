@@ -170,7 +170,7 @@ export default function AdminDashboard() {
                             📍 {ad.area}, {ad.city}
                           </span>
                           {ad.price && (
-                            <span className="px-3 py-1 bg-amber-100 text-amber-700 rounded-full font-semibold">
+                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">
                               ₹ {ad.price}
                             </span>
                           )}

@@ -124,7 +124,7 @@ export default async function AdDetailPage({ params }: Props) {
                   {images.length > 1 && (
                     <div className="flex gap-2 overflow-x-auto pb-1">
                       {images.map((img, i) => (
-                        <div key={i} className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 ring-2 ring-indigo-100 hover:ring-amber-400 transition-all">
+                        <div key={i} className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 ring-2 ring-indigo-100 hover:ring-blue-500 transition-all">
                           <Image src={img} alt={`Photo ${i + 1}`} fill className="object-cover" sizes="80px" />
                         </div>
                       ))}
@@ -152,7 +152,7 @@ export default async function AdDetailPage({ params }: Props) {
               <h1 className="text-2xl sm:text-3xl font-black text-[#060B27] mb-4 leading-tight">{ad.title}</h1>
 
               {ad.price ? (
-                <div className="text-3xl font-black text-amber-500 mb-5">
+                <div className="text-3xl font-black text-blue-600 mb-5">
                   ₹{Number(ad.price).toLocaleString('en-IN')}
                 </div>
               ) : (
@@ -169,7 +169,7 @@ export default async function AdDetailPage({ params }: Props) {
               {/* Description */}
               <div className="border-t border-indigo-50 pt-5">
                 <h2 className="font-bold text-slate-700 mb-3 flex items-center gap-2 text-sm">
-                  <Tag size={14} className="text-amber-400" /> Description
+                  <Tag size={14} className="text-blue-500" /> Description
                 </h2>
                 <p className="text-slate-600 text-sm leading-relaxed whitespace-pre-wrap">{ad.description}</p>
               </div>
@@ -201,8 +201,8 @@ export default async function AdDetailPage({ params }: Props) {
                 </a>
               )}
 
-              <div className="bg-amber-50 border border-amber-100 rounded-xl p-3.5 text-center mt-4">
-                <p className="text-xs text-amber-700 leading-relaxed">⚠️ Never pay in advance. Meet in a safe place. ListNexa is not responsible for any transactions.</p>
+              <div className="bg-blue-50 border border-blue-100 rounded-xl p-3.5 text-center mt-4">
+                <p className="text-xs text-blue-800 leading-relaxed">⚠️ Never pay in advance. Meet in a safe place. ListNexa is not responsible for any transactions.</p>
               </div>
             </div>
 

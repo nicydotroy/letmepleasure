@@ -58,7 +58,7 @@ export default function AdCard({ ad }: { ad: Ad }) {
           {/* Category badge */}
           {category && (
             <div className="absolute top-3 left-3">
-              <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full font-bold bg-amber-400 text-[#060B27] shadow-sm">
+              <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full font-bold bg-blue-500 text-[#060B27] shadow-sm">
                 {category.icon} {category.name}
               </span>
             </div>

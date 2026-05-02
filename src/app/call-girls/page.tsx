@@ -28,11 +28,11 @@ export default function LocationsPage() {
       {/* Hero */}
       <div className="bg-[#060B27] py-14 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-amber-400/10 text-amber-300 border border-amber-400/20 px-4 py-1.5 rounded-full text-xs font-bold mb-5">
+          <div className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 px-4 py-1.5 rounded-full text-xs font-bold mb-5">
             <MapPin size={12} /> 38 Metro Cities · 300+ Areas
           </div>
           <h1 className="text-3xl sm:text-5xl font-black text-white mb-4">
-            Call Girls & Escorts in <span className="text-amber-400">India</span>
+            Call Girls & Escorts in <span className="text-blue-500">India</span>
           </h1>
           <p className="text-blue-300 text-base max-w-xl mx-auto">
             Find verified call girls and escorts across 38+ Indian metro cities. Professional companions, discreet services, real profiles. Browse by location instantly.

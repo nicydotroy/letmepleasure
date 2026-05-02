@@ -157,8 +157,8 @@ export default async function CityCategory({ params }: Props) {
 
           {/* Stats badges */}
           <div className="flex flex-wrap gap-3 mt-6">
-            <div className="bg-white/10 backdrop-blur-sm border border-amber-400/30 rounded-xl px-4 py-2 flex items-center gap-2">
-              <span className="text-amber-400 font-bold">{ads.length}+</span>
+            <div className="bg-white/10 backdrop-blur-sm border border-blue-500/30 rounded-xl px-4 py-2 flex items-center gap-2">
+              <span className="text-blue-500 font-bold">{ads.length}+</span>
               <span className="text-blue-200 text-sm">{displayKeyword}</span>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-green-400/30 rounded-xl px-4 py-2 flex items-center gap-2">
@@ -193,7 +193,7 @@ export default async function CityCategory({ params }: Props) {
             </p>
             <Link
               href="/post-ad"
-              className="inline-block bg-amber-400 hover:bg-amber-300 text-[#060B27] px-8 py-3 rounded-xl font-bold transition-all"
+              className="inline-block bg-blue-500 hover:bg-blue-400 text-[#060B27] px-8 py-3 rounded-xl font-bold transition-all"
             >
               Be the First to Post
             </Link>
@@ -231,7 +231,7 @@ export default async function CityCategory({ params }: Props) {
           </div>
           <Link
             href="/post-ad"
-            className="inline-block mt-6 bg-amber-400 hover:bg-amber-300 text-[#060B27] px-8 py-3 rounded-xl font-bold transition-all"
+            className="inline-block mt-6 bg-blue-500 hover:bg-blue-400 text-[#060B27] px-8 py-3 rounded-xl font-bold transition-all"
           >
             Post Free Listing Now
           </Link>

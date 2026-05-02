@@ -43,7 +43,7 @@ export default function SearchBar({ large = false }: { large?: boolean }) {
 
         {/* City picker */}
         <div className="relative sm:w-44">
-          <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-amber-500 pointer-events-none" size={15} />
+          <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-600 pointer-events-none" size={15} />
           <select
             value={city}
             onChange={(e) => setCity(e.target.value)}
@@ -74,7 +74,7 @@ export default function SearchBar({ large = false }: { large?: boolean }) {
               key={cat.slug}
               type="button"
               onClick={() => router.push(`/?category=${cat.slug}`)}
-              className="text-xs px-3.5 py-1.5 bg-white/15 backdrop-blur text-white/90 rounded-full hover:bg-amber-400 hover:text-[#060B27] transition-all font-semibold border border-white/20"
+              className="text-xs px-3.5 py-1.5 bg-white/15 backdrop-blur text-white/90 rounded-full hover:bg-blue-500 hover:text-[#060B27] transition-all font-semibold border border-white/20"
             >
               {cat.icon} {cat.name}
             </button>

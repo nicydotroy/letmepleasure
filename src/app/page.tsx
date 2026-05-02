@@ -87,7 +87,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
       <section className="relative overflow-hidden hero-navy">
         {/* Decorative blobs */}
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-indigo-600/20 blur-3xl float pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-amber-400/10 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 md:pt-24 md:pb-32">
           <div className="text-center max-w-4xl mx-auto">
@@ -110,7 +110,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
 
             <p className="text-blue-200 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
               Browse verified escorts, massage services &amp; more across all major Indian cities.
-              <span className="text-amber-300 font-bold"> 100% Free · No Registration.</span>
+              <span className="text-blue-400 font-bold"> 100% Free · No Registration.</span>
             </p>
 
             {/* Search bar */}
@@ -125,7 +125,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
                 { value: '24/7', label: 'Always Live' },
               ].map((s) => (
                 <div key={s.label} className="text-center">
-                  <div className="text-3xl font-black text-amber-400">{s.value}</div>
+                  <div className="text-3xl font-black text-blue-500">{s.value}</div>
                   <div className="text-xs text-blue-300 font-medium mt-0.5">{s.label}</div>
                 </div>
               ))}
@@ -220,7 +220,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
               <p className="text-slate-400 text-sm mb-8 max-w-sm mx-auto">Be the first to post here. It&apos;s 100% free!</p>
               <Link
                 href="/post-ad"
-                className="inline-flex items-center gap-2 bg-amber-400 text-[#060B27] px-6 py-3 rounded-xl font-black shadow-lg hover:bg-amber-300 transition-colors"
+                className="inline-flex items-center gap-2 bg-blue-500 text-[#060B27] px-6 py-3 rounded-xl font-black shadow-lg hover:bg-blue-400 transition-colors"
               >
                 Post Free Ad
               </Link>
@@ -236,14 +236,14 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
         {!isFiltered && (
           <section className="relative overflow-hidden rounded-3xl bg-[#060B27] p-10">
             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-400/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
             <div className="relative text-center mb-10">
               <h2 className="text-3xl font-black text-white mb-2">Why Choose <span className="text-gold">Listvoo</span>?</h2>
               <p className="text-blue-300">India&apos;s safest and most discreet platform</p>
             </div>
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { emoji: '⚡', title: 'Post in 60 Seconds', desc: 'Simple form, instant publish. No sign-up or email verification required.', color: 'bg-amber-400/20 text-amber-300' },
+                { emoji: '⚡', title: 'Post in 60 Seconds', desc: 'Simple form, instant publish. No sign-up or email verification required.', color: 'bg-blue-500/20 text-blue-400' },
                 { emoji: '📍', title: 'Hyper-Local Reach', desc: 'Target clients in your specific area across 300+ neighbourhoods in India.', color: 'bg-indigo-500/20 text-indigo-300' },
                 { emoji: '🔒', title: '100% Discreet', desc: 'Your privacy is our priority. Direct WhatsApp contact, no platform middlemen.', color: 'bg-green-500/20 text-green-300' },
               ].map((f) => (
