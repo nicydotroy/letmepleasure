@@ -1,6 +1,12 @@
-# uploads directory
+# Ignore user-uploaded media at the root of /uploads, but allow seed
+# images committed under /uploads/ads/originals/.
 *.jpg
 *.jpeg
 *.png
 *.gif
 *.webp
+
+!ads/originals/*.webp
+!ads/originals/*.jpg
+!ads/originals/*.jpeg
+!ads/originals/*.png

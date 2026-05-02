@@ -6,16 +6,24 @@ node_modules
 .DS_Store
 *.log
 
-# Uploaded files - keep the directories but ignore uploaded images
-public/uploads/ads/**/*
+# Ignore everything under public/uploads (user-uploaded content) ...
+public/uploads/**/*
+
+# ... but allow the seed images that ship with the repo.
+# To re-include files under an ignored tree, we must first re-include
+# every parent directory along the path.
+!public/uploads/
+!public/uploads/.gitkeep
+!public/uploads/ads/
 !public/uploads/ads/.gitkeep
 !public/uploads/ads/README.md
 !public/uploads/ads/originals/
 !public/uploads/ads/originals/.gitkeep
+!public/uploads/ads/originals/*.webp
+!public/uploads/ads/originals/*.jpg
+!public/uploads/ads/originals/*.jpeg
+!public/uploads/ads/originals/*.png
 !public/uploads/ads/thumbnails/
 !public/uploads/ads/thumbnails/.gitkeep
 !public/uploads/ads/temp/
 !public/uploads/ads/temp/.gitkeep
-public/uploads/**/*
-!public/uploads/.gitkeep
-!public/uploads/ads/.gitkeep
