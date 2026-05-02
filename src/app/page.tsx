@@ -143,7 +143,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
                 <p className="text-slate-500 text-sm mt-1">Hyper-local listings near you</p>
               </div>
               <Link
-                href="/location"
+                href="/call-girls"
                 className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-indigo-600 hover:text-indigo-800 bg-indigo-50 hover:bg-indigo-100 px-4 py-2 rounded-xl transition-colors"
               >
                 All Cities <ArrowRight size={14} />
@@ -228,7 +228,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
             <h2 className="text-xl font-black text-[#060B27] mb-4">Free Classified Ads in India — Listvoo</h2>
             <div className="text-slate-500 text-sm leading-relaxed columns-1 md:columns-2 gap-8 space-y-3">
               <p>Listvoo is India's premier free adult classifieds platform. Find verified escorts, massage services, call girls, and more in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, and all major cities.</p>
-              <p>Browse listings in <Link href="/location/mumbai" className="text-indigo-600 font-semibold hover:underline">Mumbai</Link>, <Link href="/location/delhi" className="text-indigo-600 font-semibold hover:underline">Delhi</Link>, <Link href="/location/bangalore" className="text-indigo-600 font-semibold hover:underline">Bangalore</Link>, <Link href="/location/hyderabad" className="text-indigo-600 font-semibold hover:underline">Hyderabad</Link>, <Link href="/location/chennai" className="text-indigo-600 font-semibold hover:underline">Chennai</Link>, and <Link href="/location" className="text-indigo-600 font-semibold hover:underline">12+ more cities</Link>. Post your ad free — no registration, no fees, live instantly.</p>
+              <p>Browse listings in <Link href="/call-girls/mumbai" className="text-indigo-600 font-semibold hover:underline">Mumbai</Link>, <Link href="/call-girls/delhi" className="text-indigo-600 font-semibold hover:underline">Delhi</Link>, <Link href="/call-girls/bangalore" className="text-indigo-600 font-semibold hover:underline">Bangalore</Link>, <Link href="/call-girls/hyderabad" className="text-indigo-600 font-semibold hover:underline">Hyderabad</Link>, <Link href="/call-girls/chennai" className="text-indigo-600 font-semibold hover:underline">Chennai</Link>, and <Link href="/call-girls" className="text-indigo-600 font-semibold hover:underline">12+ more cities</Link>. Post your ad free — no registration, no fees, live instantly.</p>
             </div>
           </section>
         )}

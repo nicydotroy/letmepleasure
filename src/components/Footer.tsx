@@ -53,7 +53,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {topCities.map((city) => (
                 <li key={city.slug}>
-                  <Link href={`/location/${city.slug}`} className="flex items-center gap-2 text-sm text-blue-300 hover:text-amber-400 transition-colors group">
+                  <Link href={`/call-girls/${city.slug}`} className="flex items-center gap-2 text-sm text-blue-300 hover:text-amber-400 transition-colors group">
                     <MapPin size={11} className="text-blue-400/50 group-hover:text-amber-400 transition-colors" />
                     {city.name}
                     <span className="text-blue-400/30 text-xs ml-auto">{city.state}</span>
@@ -61,7 +61,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link href="/location" className="text-sm text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1">
+                <Link href="/call-girls" className="text-sm text-amber-400 hover:text-amber-300 font-semibold flex items-center gap-1">
                   View all cities <ArrowRight size={12} />
                 </Link>
               </li>

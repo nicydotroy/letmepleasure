@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `Escorts Service in ${city.name} | Verified Call Girls & Companions | Listvoo`,
     description: `Find verified escorts and companions in ${city.name}. Safe, discreet escort services with real profiles. Browse across all ${city.areas.length}+ areas of ${city.name}.`,
     keywords: `${city.name} escorts, ${city.name} call girls, escorts service in ${city.name}, ${city.name} companions, verified escorts ${city.name}`,
-    alternates: { canonical: `https://listvoo.vercel.app/location/${params.city}` },
+    alternates: { canonical: `https://listvoo.com/call-girls/${params.city}` },
     openGraph: {
       title: `Escorts in ${city.name} | Verified & Discreet | Listvoo`,
       description: `Safe & verified escort services in ${city.name}. Browse real profiles with photos.`,
@@ -52,7 +52,7 @@ export default async function CityPage({ params }: Props) {
           <nav className="flex items-center gap-2 text-xs text-blue-400 mb-5">
             <Link href="/" className="hover:text-amber-400 transition-colors">Home</Link>
             <ChevronRight size={12} />
-            <Link href="/location" className="hover:text-amber-400 transition-colors">Cities</Link>
+            <Link href="/call-girls" className="hover:text-amber-400 transition-colors">Cities</Link>
             <ChevronRight size={12} />
             <span className="text-white font-semibold">{city.name}</span>
           </nav>
@@ -99,7 +99,7 @@ export default async function CityPage({ params }: Props) {
               return (
                 <Link
                   key={area.slug}
-                  href={`/location/${params.city}/${area.slug}`}
+                  href={`/call-girls/${params.city}/${area.slug}`}
                   className="group bg-white border border-transparent rounded-2xl p-4 text-center hover:border-indigo-200 hover:shadow-lg hover:shadow-indigo-100/60 hover:-translate-y-1 transition-all duration-200"
                 >
                   <div className="w-9 h-9 rounded-xl bg-indigo-50 group-hover:bg-indigo-100 flex items-center justify-center mx-auto mb-2.5 transition-colors">

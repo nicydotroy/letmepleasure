@@ -6,7 +6,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Free Classified Ads by City in India | ListNexa',
   description: 'Browse free classified ads in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata and 6 more Indian metro cities. Find local buyers and sellers near you.',
-  alternates: { canonical: 'https://listnexa.in/location' },
+  alternates: { canonical: 'https://listvoo.com/call-girls' },
 }
 
 const cityEmojis: Record<string, string> = {
@@ -57,7 +57,7 @@ export default function LocationsPage() {
             return (
               <Link
                 key={city.slug}
-                href={`/location/${city.slug}`}
+                href={`/call-girls/${city.slug}`}
                 className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-transparent hover:border-indigo-200 hover:shadow-xl hover:shadow-indigo-100/60 transition-all duration-300 hover:-translate-y-1.5"
               >
                 <div className="p-6">

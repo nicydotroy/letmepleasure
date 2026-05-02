@@ -36,5 +36,5 @@ export default function CityPage({ params }: Props) {
   }
 
   // Redirect to the location page which shows all listings for this city
-  redirect(`/location/${city.slug}`)
+  redirect(`/call-girls/${city.slug}`)
 }

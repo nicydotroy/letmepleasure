@@ -14,7 +14,7 @@ export default function CityGrid() {
       {CITIES.map((city) => (
         <Link
           key={city.slug}
-          href={`/location/${city.slug}`}
+          href={`/call-girls/${city.slug}`}
           className="group relative bg-white rounded-2xl p-5 border-2 border-transparent shadow-sm hover:border-indigo-200 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-200 text-center overflow-hidden"
         >
           {/* Background glow */}

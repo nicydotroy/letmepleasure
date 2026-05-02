@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `Free Ads in ${area.name}, ${city.name} | ListNexa`,
     description: `Browse free classified ads in ${area.name}, ${city.name}. Find real estate, jobs, cars, electronics and more in your local area.`,
-    alternates: { canonical: `https://listnexa.in/location/${params.city}/${params.area}` },
+    alternates: { canonical: `https://listvoo.com/call-girls/${params.city}/${params.area}` },
   }
 }
 
@@ -49,9 +49,9 @@ export default async function AreaPage({ params, searchParams }: Props) {
           <nav className="flex items-center gap-2 text-xs text-blue-400 mb-5 flex-wrap">
             <Link href="/" className="hover:text-amber-400 transition-colors">Home</Link>
             <ChevronRight size={11} />
-            <Link href="/location" className="hover:text-amber-400 transition-colors">Cities</Link>
+            <Link href="/call-girls" className="hover:text-amber-400 transition-colors">Cities</Link>
             <ChevronRight size={11} />
-            <Link href={`/location/${params.city}`} className="hover:text-amber-400 transition-colors">{city.name}</Link>
+            <Link href={`/call-girls/${params.city}`} className="hover:text-amber-400 transition-colors">{city.name}</Link>
             <ChevronRight size={11} />
             <span className="text-white font-semibold">{area.name}</span>
           </nav>
@@ -87,7 +87,7 @@ export default async function AreaPage({ params, searchParams }: Props) {
           </div>
           <div className="flex flex-wrap gap-2">
             <Link
-              href={`/location/${params.city}/${params.area}`}
+              href={`/call-girls/${params.city}/${params.area}`}
               className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${!searchParams.category ? 'bg-[#060B27] text-white shadow-lg' : 'bg-white border border-indigo-100 text-slate-600 hover:border-indigo-300 hover:text-indigo-600'}`}
             >
               All Ads
@@ -95,7 +95,7 @@ export default async function AreaPage({ params, searchParams }: Props) {
             {CATEGORIES.map((cat) => (
               <Link
                 key={cat.slug}
-                href={`/location/${params.city}/${params.area}?category=${cat.slug}`}
+                href={`/call-girls/${params.city}/${params.area}?category=${cat.slug}`}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${searchParams.category === cat.slug ? 'bg-amber-400 text-[#060B27] shadow-lg' : 'bg-white border border-indigo-100 text-slate-600 hover:border-amber-300 hover:text-amber-600'}`}
               >
                 {cat.icon} {cat.name}

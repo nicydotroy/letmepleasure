@@ -63,9 +63,9 @@ export default async function AdDetailPage({ params }: Props) {
         <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 flex-wrap">
           <Link href="/" className="hover:text-indigo-600 transition-colors">Home</Link>
           <ChevronRight size={11} />
-          <Link href={`/location/${ad.citySlug}`} className="hover:text-indigo-600 transition-colors">{ad.city}</Link>
+          <Link href={`/call-girls/${ad.citySlug}`} className="hover:text-indigo-600 transition-colors">{ad.city}</Link>
           <ChevronRight size={11} />
-          <Link href={`/location/${ad.citySlug}/${ad.areaSlug}`} className="hover:text-indigo-600 transition-colors">{ad.area}</Link>
+          <Link href={`/call-girls/${ad.citySlug}/${ad.areaSlug}`} className="hover:text-indigo-600 transition-colors">{ad.area}</Link>
           <ChevronRight size={11} />
           <span className="text-slate-700 font-semibold truncate max-w-[160px]">{ad.title}</span>
         </nav>
@@ -130,7 +130,7 @@ export default async function AdDetailPage({ params }: Props) {
 
               <div className="flex items-center gap-2 bg-indigo-50 text-indigo-700 text-sm px-4 py-2.5 rounded-xl mb-6 w-fit">
                 <MapPin size={14} />
-                <Link href={`/location/${ad.citySlug}/${ad.areaSlug}`} className="font-semibold hover:underline">
+                <Link href={`/call-girls/${ad.citySlug}/${ad.areaSlug}`} className="font-semibold hover:underline">
                   {ad.area}, {ad.city}
                 </Link>
               </div>

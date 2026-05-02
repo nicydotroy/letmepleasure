@@ -14,7 +14,7 @@ export default function SearchBar({ large = false }: { large?: boolean }) {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
     if (city && !query) {
-      router.push(`/location/${city}`)
+      router.push(`/call-girls/${city}`)
     } else {
       const params = new URLSearchParams()
       if (query) params.set('q', query)

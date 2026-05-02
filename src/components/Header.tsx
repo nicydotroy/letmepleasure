@@ -65,7 +65,7 @@ export default function Header() {
                   {CITIES.map((c) => (
                     <Link
                       key={c.slug}
-                      href={`/location/${c.slug}`}
+                      href={`/call-girls/${c.slug}`}
                       className="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-amber-400/10 text-blue-200 hover:text-amber-400 transition-all text-sm"
                     >
                       <MapPin size={11} className="text-amber-400/60" />
@@ -73,7 +73,7 @@ export default function Header() {
                     </Link>
                   ))}
                   <Link
-                    href="/location"
+                    href="/call-girls"
                     className="col-span-2 text-center text-xs text-amber-400 hover:text-amber-300 font-bold mt-1 py-1.5 border-t border-white/10"
                   >
                     View All Cities →
@@ -90,7 +90,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/location"
+              href="/call-girls"
               className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-blue-200 hover:text-white hover:bg-white/10 transition-all"
             >
               All Locations
@@ -128,7 +128,7 @@ export default function Header() {
       {menuOpen && (
         <div className="md:hidden bg-[#0B1354] border-t border-white/10 px-4 pb-5 pt-3 space-y-1">
           <Link
-            href="/location"
+            href="/call-girls"
             className="flex items-center gap-2.5 px-3 py-3 rounded-xl text-blue-200 font-semibold hover:bg-white/10 hover:text-white transition-all"
             onClick={() => setMenuOpen(false)}
           >
