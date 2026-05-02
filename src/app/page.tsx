@@ -40,7 +40,7 @@ export async function generateMetadata({ searchParams }: { searchParams: SearchP
     },
     openGraph: {
       title: 'Listvoo — Free Classified Ads India | Buy Sell in Your City',
-      description: 'Post free classified ads across India. Buy & Sell in your city. Find services in 12+ metro cities.',
+      description: 'Post free classified ads across India. Buy & Sell in your city. Find services in 38+ metro cities.',
       url: 'https://listvoo.com',
       type: 'website',
       images: [
@@ -120,7 +120,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
             <div className="flex flex-wrap justify-center gap-8 mt-14">
               {[
                 { value: stats.totalAds > 0 ? stats.totalAds.toLocaleString('en-IN') : '500+', label: 'Active Listings' },
-                { value: `${stats.cityCount || 12}`, label: 'Cities Covered' },
+                { value: `${stats.cityCount || 38}`, label: 'Cities Covered' },
                 { value: '100%', label: 'Free to Post' },
                 { value: '24/7', label: 'Always Live' },
               ].map((s) => (
@@ -244,7 +244,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 { emoji: '⚡', title: 'Post in 60 Seconds', desc: 'Simple form, instant publish. No sign-up or email verification required.', color: 'bg-amber-400/20 text-amber-300' },
-                { emoji: '📍', title: 'Hyper-Local Reach', desc: 'Target clients in your specific area across 120+ neighbourhoods in India.', color: 'bg-indigo-500/20 text-indigo-300' },
+                { emoji: '📍', title: 'Hyper-Local Reach', desc: 'Target clients in your specific area across 300+ neighbourhoods in India.', color: 'bg-indigo-500/20 text-indigo-300' },
                 { emoji: '🔒', title: '100% Discreet', desc: 'Your privacy is our priority. Direct WhatsApp contact, no platform middlemen.', color: 'bg-green-500/20 text-green-300' },
               ].map((f) => (
                 <div key={f.title} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
@@ -265,7 +265,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
             <h2 className="text-xl font-black text-[#060B27] mb-4">Free Classified Ads in India — Listvoo</h2>
             <div className="text-slate-500 text-sm leading-relaxed columns-1 md:columns-2 gap-8 space-y-3">
               <p>Listvoo is India's premier free adult classifieds platform. Find verified escorts, massage services, call girls, and more in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, and all major cities.</p>
-              <p>Browse listings in <Link href="/call-girls/mumbai" className="text-indigo-600 font-semibold hover:underline">Mumbai</Link>, <Link href="/call-girls/delhi" className="text-indigo-600 font-semibold hover:underline">Delhi</Link>, <Link href="/call-girls/bangalore" className="text-indigo-600 font-semibold hover:underline">Bangalore</Link>, <Link href="/call-girls/hyderabad" className="text-indigo-600 font-semibold hover:underline">Hyderabad</Link>, <Link href="/call-girls/chennai" className="text-indigo-600 font-semibold hover:underline">Chennai</Link>, and <Link href="/call-girls" className="text-indigo-600 font-semibold hover:underline">12+ more cities</Link>. Post your ad free — no registration, no fees, live instantly.</p>
+              <p>Browse listings in <Link href="/call-girls/mumbai" className="text-indigo-600 font-semibold hover:underline">Mumbai</Link>, <Link href="/call-girls/delhi" className="text-indigo-600 font-semibold hover:underline">Delhi</Link>, <Link href="/call-girls/bangalore" className="text-indigo-600 font-semibold hover:underline">Bangalore</Link>, <Link href="/call-girls/hyderabad" className="text-indigo-600 font-semibold hover:underline">Hyderabad</Link>, <Link href="/call-girls/chennai" className="text-indigo-600 font-semibold hover:underline">Chennai</Link>, <Link href="/call-girls/pune" className="text-indigo-600 font-semibold hover:underline">Pune</Link>, <Link href="/call-girls/goa" className="text-indigo-600 font-semibold hover:underline">Goa</Link>, <Link href="/call-girls/chandigarh" className="text-indigo-600 font-semibold hover:underline">Chandigarh</Link>, and <Link href="/call-girls" className="text-indigo-600 font-semibold hover:underline">38+ metro cities</Link>. Post your ad free — no registration, no fees, live instantly.</p>
             </div>
           </section>
         )}

@@ -9,6 +9,13 @@ node_modules
 # Uploaded files - keep the directories but ignore uploaded images
 public/uploads/ads/**/*
 !public/uploads/ads/.gitkeep
+!public/uploads/ads/README.md
+!public/uploads/ads/originals/
+!public/uploads/ads/originals/.gitkeep
+!public/uploads/ads/thumbnails/
+!public/uploads/ads/thumbnails/.gitkeep
+!public/uploads/ads/temp/
+!public/uploads/ads/temp/.gitkeep
 public/uploads/**/*
 !public/uploads/.gitkeep
 !public/uploads/ads/.gitkeep

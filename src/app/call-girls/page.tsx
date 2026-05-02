@@ -5,7 +5,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Call Girls in India - Find Escorts in Mumbai, Delhi, Bangalore & More | Listvoo',
-  description: 'Call girls and escorts across India. Find verified escorts in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata and 12+ metro cities. Professional, discreet, verified profiles.',
+  description: 'Call girls and escorts across India. Find verified escorts in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata and 38+ metro cities. Professional, discreet, verified profiles.',
   alternates: { canonical: 'https://listvoo.com/call-girls' },
 }
 
@@ -13,6 +13,13 @@ const cityEmojis: Record<string, string> = {
   mumbai: '🌊', delhi: '🏛️', bangalore: '🌿', hyderabad: '💎',
   chennai: '🏖️', kolkata: '🎭', pune: '🎓', ahmedabad: '🦁',
   jaipur: '🏰', surat: '💍', lucknow: '🌹', kochi: '🌴',
+  nagpur: '🍊', indore: '🥘', bhopal: '🏞️', patna: '🛕',
+  vadodara: '🎨', coimbatore: '🏭', visakhapatnam: '⚓',
+  chandigarh: '🌆', goa: '🏝️', guwahati: '🦏', bhubaneswar: '🛕',
+  mysore: '👑', nashik: '🍇', mangalore: '🌊', vijayawada: '🌅',
+  kanpur: '🏙️', agra: '🕌', varanasi: '🪔', ranchi: '🌳',
+  raipur: '⛏️', dehradun: '🏔️', amritsar: '🛕', ludhiana: '🧵',
+  madurai: '🛕', trivandrum: '🥥', aurangabad: '🏯', rajkot: '🦚',
 }
 
 export default function LocationsPage() {
@@ -22,13 +29,13 @@ export default function LocationsPage() {
       <div className="bg-[#060B27] py-14 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-amber-400/10 text-amber-300 border border-amber-400/20 px-4 py-1.5 rounded-full text-xs font-bold mb-5">
-            <MapPin size={12} /> 12 Metro Cities · 120+ Areas
+            <MapPin size={12} /> 38 Metro Cities · 300+ Areas
           </div>
           <h1 className="text-3xl sm:text-5xl font-black text-white mb-4">
             Call Girls & Escorts in <span className="text-amber-400">India</span>
           </h1>
           <p className="text-blue-300 text-base max-w-xl mx-auto">
-            Find verified call girls and escorts across 12+ Indian metro cities. Professional companions, discreet services, real profiles. Browse by location instantly.
+            Find verified call girls and escorts across 38+ Indian metro cities. Professional companions, discreet services, real profiles. Browse by location instantly.
           </p>
         </div>
       </div>
@@ -37,9 +44,9 @@ export default function LocationsPage() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-4 mb-12 max-w-lg mx-auto text-center">
           {[
-            { label: 'Cities', value: '12' },
-            { label: 'Areas', value: '120+' },
-            { label: 'Daily Ads', value: '500+' },
+            { label: 'Cities', value: '38' },
+            { label: 'Areas', value: '300+' },
+            { label: 'Daily Ads', value: '1500+' },
           ].map((s) => (
             <div key={s.label} className="bg-white rounded-2xl p-5 border border-indigo-100 shadow-sm">
               <div className="text-2xl font-black text-[#060B27]">{s.value}</div>
