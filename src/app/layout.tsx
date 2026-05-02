@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     address: false,
   },
   verification: {
-    google: 'google-site-verification=YOUR_VERIFICATION_CODE',
+    google: 'scEWWW-88xfCFNW6HwyncwkHCBkBo97ZQQkaen5sj-4',
   },
   robots: {
     index: true,
