@@ -14,13 +14,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = getCityBySlug(params.city)
   if (!city) return { title: 'City not found' }
   return {
-    title: `Escorts Service in ${city.name} | Verified Call Girls & Companions | Listvoo`,
-    description: `Find verified escorts and companions in ${city.name}. Safe, discreet escort services with real profiles. Browse across all ${city.areas.length}+ areas of ${city.name}.`,
-    keywords: `${city.name} escorts, ${city.name} call girls, escorts service in ${city.name}, ${city.name} companions, verified escorts ${city.name}`,
+    title: `Call Girls in ${city.name} | Escorts Service in ${city.name} | Verified & Safe | Listvoo`,
+    description: `Call Girls in ${city.name} - Find verified escorts and companions. Discreet, safe escort services across all ${city.areas.length}+ areas. Real profiles, instant booking.`,
+    keywords: `call girls in ${city.name}, escorts in ${city.name}, ${city.name} escorts, ${city.name} call girls, escort service in ${city.name}, verified escorts ${city.name}, independent escorts ${city.name}`,
     alternates: { canonical: `https://listvoo.com/call-girls/${params.city}` },
     openGraph: {
-      title: `Escorts in ${city.name} | Verified & Discreet | Listvoo`,
-      description: `Safe & verified escort services in ${city.name}. Browse real profiles with photos.`,
+      title: `Call Girls in ${city.name} | Escorts Service | Verified & Safe`,
+      description: `Find verified call girls and escorts in ${city.name}. Safe, discreet, professional escort services.`,
     },
   }
 }
@@ -63,8 +63,11 @@ export default async function CityPage({ params }: Props) {
                 <MapPin size={13} className="text-amber-400" /> {city.state}
               </p>
               <h1 className="text-3xl sm:text-4xl font-black text-white mb-3">
-                Free Ads in <span className="text-amber-400">{city.name}</span>
+                Call Girls in <span className="text-amber-400">{city.name}</span> | Escorts Service
               </h1>
+              <p className="text-blue-200 text-sm mb-4 max-w-2xl">
+                Find verified and discreet escorts in {city.name}. Professional call girls, companions & escort services available across all areas.
+              </p>
               <div className="flex flex-wrap gap-3">
                 <span className="text-xs bg-white/10 text-blue-200 px-3 py-1 rounded-full border border-white/10">
                   {ads.length} active ads

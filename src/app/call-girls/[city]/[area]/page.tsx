@@ -17,8 +17,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const area = getAreaBySlug(params.city, params.area)
   if (!city || !area) return { title: 'Area not found' }
   return {
-    title: `Free Ads in ${area.name}, ${city.name} | ListNexa`,
-    description: `Browse free classified ads in ${area.name}, ${city.name}. Find real estate, jobs, cars, electronics and more in your local area.`,
+    title: `Call Girls in ${area.name}, ${city.name} | Escorts Service | Verified & Safe`,
+    description: `Find call girls and escorts in ${area.name}, ${city.name}. Verified profiles, professional companions, discreet services. Browse real profiles instantly.`,
+    keywords: `call girls in ${area.name}, escorts in ${area.name}, ${city.name} call girls, ${area.name} escorts, companion services ${area.name}`,
     alternates: { canonical: `https://listvoo.com/call-girls/${params.city}/${params.area}` },
   }
 }
@@ -62,8 +63,11 @@ export default async function AreaPage({ params, searchParams }: Props) {
                 <MapPin size={13} className="text-amber-400" /> {area.name}, {city.name} · {city.state}
               </p>
               <h1 className="text-3xl sm:text-4xl font-black text-white mb-3">
-                Ads in <span className="text-amber-400">{area.name}</span>
+                Call Girls in <span className="text-amber-400">{area.name}</span>, {city.name}
               </h1>
+              <p className="text-blue-200 text-sm mb-4 max-w-2xl">
+                Find verified escorts and call girls in {area.name}. Professional companion services, discreet meetings, verified profiles.
+              </p>
               <span className="inline-flex items-center gap-2 text-xs bg-white/10 text-blue-200 px-3 py-1 rounded-full border border-white/10">
                 {total} total ads
               </span>

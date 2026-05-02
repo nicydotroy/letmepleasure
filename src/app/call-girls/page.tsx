@@ -4,8 +4,8 @@ import { CITIES } from '@/lib/cities'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Free Classified Ads by City in India | ListNexa',
-  description: 'Browse free classified ads in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata and 6 more Indian metro cities. Find local buyers and sellers near you.',
+  title: 'Call Girls in India - Find Escorts in Mumbai, Delhi, Bangalore & More | Listvoo',
+  description: 'Call girls and escorts across India. Find verified escorts in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata and 12+ metro cities. Professional, discreet, verified profiles.',
   alternates: { canonical: 'https://listvoo.com/call-girls' },
 }
 
@@ -25,10 +25,10 @@ export default function LocationsPage() {
             <MapPin size={12} /> 12 Metro Cities · 120+ Areas
           </div>
           <h1 className="text-3xl sm:text-5xl font-black text-white mb-4">
-            Find Ads in <span className="text-amber-400">Your City</span>
+            Call Girls & Escorts in <span className="text-amber-400">India</span>
           </h1>
           <p className="text-blue-300 text-base max-w-xl mx-auto">
-            Hyper-local adult classifieds across every Indian metro city and locality. Browse by city to find listings near you.
+            Find verified call girls and escorts across 12+ Indian metro cities. Professional companions, discreet services, real profiles. Browse by location instantly.
           </p>
         </div>
       </div>
