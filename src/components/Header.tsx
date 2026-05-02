@@ -100,7 +100,7 @@ export default function Header() {
           {/* CTAs */}
           <div className="flex items-center gap-3">
             <a
-              href="tel:+919876543210"
+              href="tel:+919229604907"
               className="hidden lg:flex items-center gap-1.5 px-3 py-2 rounded-xl text-blue-200 hover:text-white border border-white/10 hover:border-white/30 text-sm transition-all"
             >
               <Phone size={14} className="text-amber-400" />
