@@ -4,7 +4,7 @@ import { MapPin, ChevronRight, ArrowRight, Building2, Zap } from 'lucide-react'
 import { getCityBySlug } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
 import { prisma } from '@/lib/prisma'
-import AdCard from '@/components/AdCard'
+import AdListItem from '@/components/AdListItem'
 import LocationContent from '@/components/LocationContent'
 import type { Metadata } from 'next'
 
@@ -164,8 +164,8 @@ export default async function CityPage({ params }: Props) {
               </Link>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-              {ads.map((ad) => <AdCard key={ad.id} ad={ad} />)}
+            <div className="space-y-5">
+              {ads.map((ad) => <AdListItem key={ad.id} ad={ad} />)}
             </div>
           )}
         </section>

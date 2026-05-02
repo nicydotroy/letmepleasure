@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { MapPin, ChevronRight, SlidersHorizontal } from 'lucide-react'
 import { getCityBySlug, getAreaBySlug } from '@/lib/cities'
 import { prisma } from '@/lib/prisma'
-import AdCard from '@/components/AdCard'
+import AdListItem from '@/components/AdListItem'
 import { CATEGORIES } from '@/lib/categories'
 import type { Metadata } from 'next'
 
@@ -119,8 +119,8 @@ export default async function AreaPage({ params, searchParams }: Props) {
             </Link>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-            {ads.map((ad) => <AdCard key={ad.id} ad={ad} />)}
+          <div className="space-y-5">
+            {ads.map((ad) => <AdListItem key={ad.id} ad={ad} />)}
           </div>
         )}
       </div>
