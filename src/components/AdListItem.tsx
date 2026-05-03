@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Clock, Phone, MessageCircle, BadgeCheck, ChevronRight } from 'lucide-react'
 import { getCategoryBySlug } from '@/lib/categories'
+import { formatPrice } from '@/lib/price'
 
 interface Ad {
   id: string
@@ -112,7 +113,7 @@ export default function AdListItem({ ad }: { ad: Ad }) {
             </span>
             {ad.price && (
               <span className="inline-flex items-center font-bold text-blue-600">
-                {ad.price}
+                {formatPrice(ad.price)}
               </span>
             )}
           </div>

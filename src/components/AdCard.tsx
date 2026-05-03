@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { MapPin, Clock, Phone, MessageCircle } from 'lucide-react'
 import { getCategoryBySlug } from '@/lib/categories'
+import { formatPrice } from '@/lib/price'
 
 interface Ad {
   id: string
@@ -77,7 +78,7 @@ export default function AdCard({ ad }: { ad: Ad }) {
           <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between">
             {ad.price ? (
               <span className="text-white font-black text-lg leading-none drop-shadow-md">
-                ₹{Number(ad.price).toLocaleString('en-IN')}
+                {formatPrice(ad.price)}
               </span>
             ) : (
               <span className="text-white/80 text-xs font-semibold">Price on Request</span>

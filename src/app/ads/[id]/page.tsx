@@ -5,6 +5,7 @@ import { prisma } from '@/lib/prisma'
 import { getCategoryBySlug } from '@/lib/categories'
 import AdCard from '@/components/AdCard'
 import { BreadcrumbSchema, ServiceSchema } from '@/components/SchemaMarkupComponents'
+import { formatPrice } from '@/lib/price'
 import {
   MapPin, Phone, MessageCircle, Clock, ChevronRight,
   Tag, Share2, BadgeCheck, ArrowLeft,
@@ -175,7 +176,7 @@ export default async function AdDetailPage({ params }: Props) {
 
               {ad.price ? (
                 <div className="text-3xl font-black text-blue-600 mb-5">
-                  ₹{Number(ad.price).toLocaleString('en-IN')}
+                  {formatPrice(ad.price)}
                 </div>
               ) : (
                 <div className="text-sm font-semibold text-slate-400 mb-5 uppercase tracking-wide">Price on Request</div>
