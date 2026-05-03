@@ -68,6 +68,62 @@ const ESCORT_PROFILES = [
   },
 ]
 
+// Variation snippets — combined deterministically with (city, area, profile)
+// to give every ad a unique long description and reduce duplicate-content
+// signals across the 39 cities.
+const OPENERS = [
+  'Hi, I am',
+  'Hello, this is',
+  'Welcome — I am',
+  'Looking for a real companion in',
+  'Premium independent companion in',
+  'Genuine verified profile of',
+]
+const VIBES = [
+  'discreet & well-mannered',
+  'high-class and elegant',
+  'warm, friendly and professional',
+  'classy, educated and respectful',
+  'upscale, GFE and engaging',
+  'modern, fun and easygoing',
+]
+const SERVICES = [
+  'incall and outcall',
+  'hotel visits, resorts and private apartments',
+  'short bookings, dinner dates and overnight',
+  'GFE, dinner dates and travel companionship',
+  'private apartments and 5-star hotel meets',
+  'incall, outcall and travel bookings',
+]
+const SAFETY = [
+  '100% real photos, verified profile',
+  'Real recent photos · profile manually verified',
+  'Verified ID · authentic recent pictures',
+  'Identity-checked · only the woman in the photos meets you',
+  'No agency · no fakes · only real verified profile',
+]
+
+function buildDescription(opts: {
+  profileName: string
+  age: string | number
+  city: string
+  area: string
+  category: string
+  index: number
+}): string {
+  const i = Math.abs(opts.profileName.length + opts.area.length + opts.city.length + opts.index)
+  const opener = OPENERS[i % OPENERS.length]
+  const vibe = VIBES[(i + 1) % VIBES.length]
+  const service = SERVICES[(i + 2) % SERVICES.length]
+  const safety = SAFETY[(i + 3) % SAFETY.length]
+  return [
+    `${opener} ${opts.profileName}, a ${opts.age}-year-old ${opts.category.replace(/-/g, ' ')} based in ${opts.area}, ${opts.city}.`,
+    `I am ${vibe}, available for ${service} across ${opts.area} and the wider ${opts.city} area.`,
+    `${safety}. Speak English & Hindi. Direct WhatsApp & phone, no advance payment, no middlemen.`,
+    `Bookings preferred a few hours in advance for hotels in ${opts.city}; same-day meets in ${opts.area} can usually be arranged.`,
+  ].join(' ')
+}
+
 async function seedAds() {
   try {
     console.log('🌱 Starting to seed sample ads (additive — only adds to empty city/area combos)...')
@@ -113,6 +169,51 @@ async function seedAds() {
     }
     console.log(`✅ Updated image paths on ${pathFixCount} existing ads`)
 
+    // 1b. Rewrite generic titles/descriptions on existing ads so each one is
+    //     unique per (city, area). The original seed used 15 description
+    //     templates across all 39 cities — Google sees that as duplicate
+    //     content and won't index most of them.
+    console.log('\n🔧 Rewriting generic titles & descriptions on existing ads…')
+    const adsForRewrite = await prisma.ad.findMany({
+      select: {
+        id: true,
+        title: true,
+        description: true,
+        city: true,
+        area: true,
+        category: true,
+      },
+    })
+    let rewriteCount = 0
+    for (let i = 0; i < adsForRewrite.length; i++) {
+      const ad = adsForRewrite[i]
+      // Skip ads that already include the area name in the title (a heuristic
+      // for "already rewritten or genuinely unique").
+      if (ad.title.includes(ad.area)) continue
+      // Skip ads whose description already mentions both city + area
+      if (ad.description.includes(ad.area) && ad.description.includes(ad.city)) continue
+
+      const ageMatch = ad.description.match(/(\d{2})-year-old/)
+      const age = ageMatch ? ageMatch[1] : (22 + (i % 8)).toString()
+      const newDescription = buildDescription({
+        profileName: ad.title,
+        age,
+        city: ad.city,
+        area: ad.area,
+        category: ad.category,
+        index: i,
+      })
+      const newTitle = `${ad.title} — ${ad.area}, ${ad.city}`
+      try {
+        await prisma.ad.update({
+          where: { id: ad.id },
+          data: { title: newTitle, description: newDescription },
+        })
+        rewriteCount++
+      } catch {/* skip on conflict */}
+    }
+    console.log(`✅ Rewrote ${rewriteCount} ads with unique per-location titles & descriptions`)
+
     // 2. Find which (citySlug, areaSlug) combos already have ads
     const existingCombos = await prisma.ad.groupBy({
       by: ['citySlug', 'areaSlug'],
@@ -133,14 +234,25 @@ async function seedAds() {
         for (const category of CATEGORIES) {
           for (let i = 0; i < 2; i++) {
             const profile = ESCORT_PROFILES[adCount % ESCORT_PROFILES.length]
+            const ageMatch = profile.desc.match(/(\d{2})-year-old/)
+            const age = ageMatch ? ageMatch[1] : (22 + (adCount % 8)).toString()
             const randomImages = [...imageFiles]
               .sort(() => 0.5 - Math.random())
               .slice(0, 3)
               .map((img) => `/uploads/ads/originals/${img}`)
 
+            const description = buildDescription({
+              profileName: profile.name,
+              age,
+              city: city.name,
+              area: area.name,
+              category: category.name,
+              index: adCount,
+            })
+
             adsToCreate.push({
-              title: profile.name,
-              description: profile.desc,
+              title: `${profile.name} — ${area.name}, ${city.name}`,
+              description,
               category: category.slug,
               price: `₹5000 - ₹15000/hour`,
               city: city.name,

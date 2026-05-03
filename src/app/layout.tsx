@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://listvoo.com'),
   title: {
     default: 'Listvoo — Free Classified Ads India | Buy Sell in Your City',
-    template: '%s | Listvoo India',
+    template: '%s',
   },
   description:
     'Post free classified ads in India. Buy, sell & find Real Estate, Jobs, Cars, Electronics in Mumbai, Delhi, Bangalore, Hyderabad, Chennai & all metro cities. 100% Free, No Registration.',
@@ -107,8 +107,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Listvoo" />
         
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/logos/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/logos/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/logos/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/logos/favicon-48x48.png" />
+        <link rel="apple-touch-icon" sizes="64x64" href="/logos/favicon-64x64.png" />
+        <link rel="shortcut icon" href="/logos/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

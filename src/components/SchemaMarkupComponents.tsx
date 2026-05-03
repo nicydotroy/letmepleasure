@@ -176,10 +176,98 @@ export function AggregateOfferSchema({
   )
 }
 
+/**
+ * ItemListSchema — renders a list of ads (or any item) as an ItemList
+ * so search engines can show carousels and understand the page is a
+ * collection of distinct entities.
+ */
+export function ItemListSchema({
+  items,
+  listName,
+}: {
+  items: Array<{ name: string; url: string; image?: string; description?: string }>
+  listName?: string
+}) {
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    ...(listName ? { name: listName } : {}),
+    numberOfItems: items.length,
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      url: item.url,
+      name: item.name,
+      ...(item.image ? { image: item.image } : {}),
+      ...(item.description ? { description: item.description } : {}),
+    })),
+  }
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+/**
+ * ServiceSchema — for individual ad detail pages. Models the listing as
+ * a Service offered by the poster, with location, image and contact.
+ */
+export function ServiceSchema({
+  name,
+  description,
+  image,
+  city,
+  area,
+  url,
+  phone,
+  publishedISO,
+}: {
+  name: string
+  description: string
+  image?: string
+  city: string
+  area: string
+  url: string
+  phone?: string
+  publishedISO?: string
+}) {
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name,
+    description,
+    url,
+    serviceType: 'Companion Service',
+    areaServed: {
+      '@type': 'City',
+      name: city,
+      containedInPlace: { '@type': 'AdministrativeArea', name: area },
+    },
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Listvoo',
+      url: 'https://listvoo.com',
+      ...(phone ? { telephone: phone } : {}),
+    },
+    ...(image ? { image } : {}),
+    ...(publishedISO ? { datePosted: publishedISO } : {}),
+  }
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
 export const SchemaComponents = {
   BreadcrumbSchema,
   LocalBusinessSchema,
   CollectionPageSchema,
   FAQPageSchema,
   AggregateOfferSchema,
+  ItemListSchema,
+  ServiceSchema,
 }

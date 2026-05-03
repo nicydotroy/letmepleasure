@@ -5,6 +5,12 @@ import { getCityBySlug, getAreaBySlug } from '@/lib/cities'
 import { prisma } from '@/lib/prisma'
 import AdListItem from '@/components/AdListItem'
 import { CATEGORIES } from '@/lib/categories'
+import {
+  BreadcrumbSchema,
+  AggregateOfferSchema,
+  ItemListSchema,
+  CollectionPageSchema,
+} from '@/components/SchemaMarkupComponents'
 import type { Metadata } from 'next'
 
 interface Props {
@@ -16,11 +22,36 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const city = getCityBySlug(params.city)
   const area = getAreaBySlug(params.city, params.area)
   if (!city || !area) return { title: 'Area not found' }
+
+  let adCount = 0
+  try {
+    adCount = await prisma.ad.count({
+      where: { citySlug: params.city, areaSlug: params.area, isActive: true, status: 'approved' },
+    })
+  } catch { /* fall back to a static description */ }
+
+  const adCountText = adCount > 0 ? `${adCount}+ verified` : 'verified'
+
   return {
-    title: `Call Girls in ${area.name}, ${city.name} | Escorts Service | Verified & Safe`,
-    description: `Find call girls and escorts in ${area.name}, ${city.name}. Verified profiles, professional companions, discreet services. Browse real profiles instantly.`,
-    keywords: `call girls in ${area.name}, escorts in ${area.name}, ${city.name} call girls, ${area.name} escorts, companion services ${area.name}`,
+    title: `Call Girls in ${area.name}, ${city.name} | ${adCount > 0 ? `${adCount}+ Verified ` : 'Verified '}Escorts in ${area.name}`,
+    description: `${adCountText} call girls and escorts in ${area.name}, ${city.name}. Real photos, direct WhatsApp & phone, no registration. Listvoo lists ${area.name} ${city.name} escort services with hyper-local profiles updated daily.`,
+    keywords: [
+      `call girls in ${area.name}`,
+      `escorts in ${area.name}`,
+      `${city.name} call girls`,
+      `${area.name} escorts`,
+      `companion services ${area.name}`,
+      `${area.name} ${city.name} escorts`,
+      `escort service in ${area.name}`,
+      `verified escorts ${area.name}`,
+    ].join(', '),
     alternates: { canonical: `https://listvoo.com/call-girls/${params.city}/${params.area}` },
+    openGraph: {
+      title: `Call Girls in ${area.name}, ${city.name}${adCount > 0 ? ` · ${adCount}+ Verified Escorts` : ''}`,
+      description: `Find verified call girls and escorts in ${area.name}, ${city.name}. Real photos, direct contact, no registration.`,
+      url: `https://listvoo.com/call-girls/${params.city}/${params.area}`,
+      type: 'website',
+    },
   }
 }
 
@@ -41,8 +72,44 @@ export default async function AreaPage({ params, searchParams }: Props) {
     prisma.ad.count({ where: { citySlug: params.city, areaSlug: params.area, isActive: true } }),
   ])
 
+  const areaUrl = `https://listvoo.com/call-girls/${params.city}/${params.area}`
+
   return (
     <div className="min-h-screen bg-[#EEF2FF]">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://listvoo.com' },
+          { name: 'Cities', url: 'https://listvoo.com/call-girls' },
+          { name: city.name, url: `https://listvoo.com/call-girls/${params.city}` },
+          { name: area.name, url: areaUrl },
+        ]}
+      />
+      <CollectionPageSchema
+        name={`Call Girls in ${area.name}, ${city.name}`}
+        description={`Verified call girls and escorts in ${area.name}, ${city.name}.`}
+        url={areaUrl}
+        itemCount={total}
+      />
+      <AggregateOfferSchema
+        itemCount={total}
+        description={`${total} verified escort listings in ${area.name}, ${city.name} on Listvoo.`}
+      />
+      <ItemListSchema
+        listName={`Call Girls in ${area.name}, ${city.name}`}
+        items={ads.slice(0, 40).map((ad) => {
+          let img: string | undefined
+          try {
+            const arr: string[] = JSON.parse(ad.images || '[]')
+            if (arr[0]) img = `https://listvoo.com${arr[0]}`
+          } catch {/* ignore */}
+          return {
+            name: ad.title,
+            url: `https://listvoo.com/ads/${ad.id}`,
+            image: img,
+            description: ad.description.slice(0, 160),
+          }
+        })}
+      />
       {/* Hero */}
       <div className="bg-[#060B27] py-12 px-4 relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

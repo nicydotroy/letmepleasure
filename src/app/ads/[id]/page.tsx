@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { prisma } from '@/lib/prisma'
 import { getCategoryBySlug } from '@/lib/categories'
 import AdCard from '@/components/AdCard'
+import { BreadcrumbSchema, ServiceSchema } from '@/components/SchemaMarkupComponents'
 import {
   MapPin, Phone, MessageCircle, Clock, ChevronRight,
   Tag, Share2, BadgeCheck, ArrowLeft,
@@ -87,8 +88,29 @@ export default async function AdDetailPage({ params }: Props) {
     take: 4,
   })
 
+  const adUrl = `https://listvoo.com/ads/${ad.id}`
+  const heroImage = images[0] ? `https://listvoo.com${images[0]}` : undefined
+
   return (
     <div className="min-h-screen bg-[#EEF2FF]">
+      <BreadcrumbSchema
+        items={[
+          { name: 'Home', url: 'https://listvoo.com' },
+          { name: ad.city, url: `https://listvoo.com/call-girls/${ad.citySlug}` },
+          { name: ad.area, url: `https://listvoo.com/call-girls/${ad.citySlug}/${ad.areaSlug}` },
+          { name: ad.title, url: adUrl },
+        ]}
+      />
+      <ServiceSchema
+        name={`${ad.title} — ${ad.area}, ${ad.city}`}
+        description={ad.description}
+        image={heroImage}
+        city={ad.city}
+        area={ad.area}
+        url={adUrl}
+        phone={ad.phone}
+        publishedISO={new Date(ad.createdAt).toISOString()}
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 flex-wrap">
