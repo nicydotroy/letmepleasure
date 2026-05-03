@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { cookies } from 'next/headers'
+import { pingIndexNow } from '@/lib/indexnow'
 
 export async function POST(req: NextRequest) {
   try {
@@ -25,6 +26,17 @@ export async function POST(req: NextRequest) {
       where: { id: adId },
       data: updateData,
     })
+
+    // On approval, ping IndexNow so Bing/Yandex/etc index the new ad page,
+    // its city page and area page within minutes instead of waiting for the
+    // next crawl. Fire-and-forget — failures must not block the admin action.
+    if (action === 'approve') {
+      void pingIndexNow([
+        `https://listvoo.com/ads/${ad.id}`,
+        `https://listvoo.com/call-girls/${ad.citySlug}`,
+        `https://listvoo.com/call-girls/${ad.citySlug}/${ad.areaSlug}`,
+      ])
+    }
 
     return NextResponse.json({ success: true, ad })
   } catch (error) {
