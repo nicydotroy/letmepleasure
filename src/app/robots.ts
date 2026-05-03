@@ -3,25 +3,17 @@ import { MetadataRoute } from 'next'
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // Default policy: allow everything except the API, admin panel, and
-      // user-content staging areas. Listings, images and the sitemap are open.
+      // Default policy: allow everything except the API and the admin panel.
+      // No crawl-delay (Google ignores it; Bing/Yandex slow down with it set).
+      // No /*?*sort= / /*?*page= rules — the site doesn't expose those today
+      // and the patterns can backfire by blocking legitimate parameterised URLs.
       {
         userAgent: '*',
         allow: ['/', '/uploads/ads/originals/'],
-        disallow: [
-          '/api/',
-          '/admin/',
-          '/post-ad/preview',
-          '/uploads/temp/',
-          '/uploads/ads/temp/',
-          '/*.json$',
-          '/*?*sort=',
-          '/*?*page=',
-        ],
-        crawlDelay: 1,
+        disallow: ['/api/', '/admin/'],
       },
-      // Hand-curated AI crawlers — explicitly allowed so the brand surfaces
-      // in ChatGPT, Perplexity, Claude, etc. (LLMs also read /llms.txt.)
+      // Modern AI crawlers — explicitly allowed so the brand surfaces in
+      // ChatGPT, Perplexity, Claude, Gemini, Apple Intelligence, Common Crawl.
       { userAgent: 'GPTBot', allow: '/' },
       { userAgent: 'ChatGPT-User', allow: '/' },
       { userAgent: 'OAI-SearchBot', allow: '/' },
@@ -42,6 +34,5 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'SeekportBot', disallow: '/' },
     ],
     sitemap: 'https://listvoo.com/sitemap.xml',
-    host: 'https://listvoo.com',
   }
 }
