@@ -28,8 +28,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     ad.city,
   ]
   
+  // ad.title already contains "Profile — Area, City" after the per-location
+  // rewrite, so re-suffixing "in Area, City" doubled the location and blew
+  // titles past 70 chars (540 pages flagged by Site Audit). Just brand-suffix.
   return {
-    title: `${ad.title} in ${ad.area}, ${ad.city} | Listvoo`,
+    title: `${ad.title} | Listvoo`,
     description: ad.description.slice(0, 160),
     keywords,
     authors: [{ name: 'Listvoo User' }],
@@ -204,28 +207,45 @@ export default async function AdDetailPage({ params }: Props) {
             <div className="bg-white rounded-2xl shadow-sm border border-indigo-50 p-6 lg:sticky lg:top-24">
               <h3 className="font-black text-[#060B27] text-lg mb-5">Contact Now</h3>
 
-              <a
-                href={`tel:+91${ad.phone}`}
-                className="flex items-center justify-center gap-2.5 w-full bg-[#060B27] text-white py-4 rounded-xl font-black text-sm hover:bg-[#0B1354] transition-all shadow-lg mb-3"
-              >
-                <Phone size={17} />
-                Call: +91 {ad.phone.replace(/(\d{5})(\d{5})/, '$1 $2')}
-              </a>
+              {/*
+                Normalize phone numbers stored as "+91-9229604907" or
+                "919229604907" or "9229604907" to a clean 10-digit local
+                number so tel: and wa.me URLs are valid. Without this the
+                wa.me link became /91+91-9229604907 and got 429s from
+                WhatsApp's link-cleanup endpoint (Site Audit flagged 7,497).
+              */}
+              {(() => {
+                const phoneDigits = ad.phone.replace(/\D/g, '').slice(-10)
+                const waDigits = (ad.whatsapp ?? '').replace(/\D/g, '').slice(-10)
+                const phoneDisplay = phoneDigits.replace(/(\d{5})(\d{5})/, '$1 $2')
+                const waDisplay = waDigits.replace(/(\d{5})(\d{5})/, '$1 $2')
+                return (
+                  <>
+                    <a
+                      href={`tel:+91${phoneDigits}`}
+                      className="flex items-center justify-center gap-2.5 w-full bg-[#060B27] text-white py-4 rounded-xl font-black text-sm hover:bg-[#0B1354] transition-all shadow-lg mb-3"
+                    >
+                      <Phone size={17} />
+                      Call: +91 {phoneDisplay}
+                    </a>
 
-              {ad.whatsapp && (
-                <a
-                  href={`https://wa.me/91${ad.whatsapp}?text=${encodeURIComponent(`Hi, I saw your ad "${ad.title}" on ListNexa. Is it still available?`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2.5 w-full bg-green-500 text-white py-4 rounded-xl font-black text-sm hover:bg-green-600 transition-all shadow-lg shadow-green-100 mb-3"
-                >
-                  <MessageCircle size={17} />
-                  WhatsApp: +91 {ad.whatsapp.replace(/(\d{5})(\d{5})/, '$1 $2')}
-                </a>
-              )}
+                    {waDigits && (
+                      <a
+                        href={`https://wa.me/91${waDigits}?text=${encodeURIComponent(`Hi, I saw your ad "${ad.title}" on Listvoo. Is it still available?`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2.5 w-full bg-green-500 text-white py-4 rounded-xl font-black text-sm hover:bg-green-600 transition-all shadow-lg shadow-green-100 mb-3"
+                      >
+                        <MessageCircle size={17} />
+                        WhatsApp: +91 {waDisplay}
+                      </a>
+                    )}
+                  </>
+                )
+              })()}
 
               <div className="bg-blue-50 border border-blue-100 rounded-xl p-3.5 text-center mt-4">
-                <p className="text-xs text-blue-800 leading-relaxed">⚠️ Never pay in advance. Meet in a safe place. ListNexa is not responsible for any transactions.</p>
+                <p className="text-xs text-blue-800 leading-relaxed">⚠️ Never pay in advance. Meet in a safe place. Listvoo is not responsible for any transactions.</p>
               </div>
             </div>
 
@@ -236,14 +256,14 @@ export default async function AdDetailPage({ params }: Props) {
               </div>
               <div className="flex gap-2">
                 <a
-                  href={`https://wa.me/?text=${encodeURIComponent(`Check this out: ${ad.title} - https://listnexa.in/ads/${ad.id}`)}`}
+                  href={`https://wa.me/?text=${encodeURIComponent(`Check this out: ${ad.title} - ${adUrl}`)}`}
                   target="_blank" rel="noopener noreferrer"
                   className="flex-1 text-center text-xs bg-green-100 text-green-700 py-2.5 rounded-xl font-bold hover:bg-green-200 transition-colors"
                 >
                   📱 WhatsApp
                 </a>
                 <a
-                  href={`https://www.facebook.com/sharer/sharer.php?u=https://listnexa.in/ads/${ad.id}`}
+                  href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(adUrl)}`}
                   target="_blank" rel="noopener noreferrer"
                   className="flex-1 text-center text-xs bg-blue-100 text-blue-700 py-2.5 rounded-xl font-bold hover:bg-blue-200 transition-colors"
                 >

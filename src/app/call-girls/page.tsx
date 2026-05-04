@@ -98,7 +98,7 @@ export default function LocationsPage() {
         <div className="mt-16 bg-white rounded-3xl p-8 border border-indigo-50 shadow-sm">
           <h2 className="text-lg font-black text-[#060B27] mb-3">Free Classified Ads Across India</h2>
           <p className="text-sm text-slate-500 leading-relaxed">
-            ListNexa covers all major Indian metro cities with hyper-local adult classified ads. Whether you&apos;re in South Mumbai&apos;s Colaba, Delhi&apos;s Connaught Place, Bangalore&apos;s Koramangala, or Hyderabad&apos;s Banjara Hills — find local listings right in your neighbourhood. Post your ad free, browse by city, filter by area, and connect directly via phone or WhatsApp.
+            Listvoo covers all major Indian metro cities with hyper-local adult classified ads. Whether you&apos;re in South Mumbai&apos;s Colaba, Delhi&apos;s Connaught Place, Bangalore&apos;s Koramangala, or Hyderabad&apos;s Banjara Hills — find local listings right in your neighbourhood. Post your ad free, browse by city, filter by area, and connect directly via phone or WhatsApp.
           </p>
         </div>
       </div>

@@ -63,7 +63,7 @@ export function LocalBusinessSchema({
       name: cityName,
     },
     image: 'https://listvoo.com/og-image.png',
-    priceRange: '💰', // Free
+    priceRange: 'Free',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'IN',
@@ -245,10 +245,15 @@ export function ServiceSchema({
       name: city,
       containedInPlace: { '@type': 'AdministrativeArea', name: area },
     },
+    // Listvoo is a national platform, not a brick-and-mortar business in
+    // each ad's city — modeling the provider as Organization avoids the
+    // LocalBusiness "missing address/geo" structured-data error Site Audit
+    // flagged on every ad page.
     provider: {
-      '@type': 'LocalBusiness',
+      '@type': 'Organization',
       name: 'Listvoo',
       url: 'https://listvoo.com',
+      logo: 'https://listvoo.com/og-image.png',
       ...(phone ? { telephone: phone } : {}),
     },
     ...(image ? { image } : {}),

@@ -92,7 +92,7 @@ export default function Footer() {
             <ul className="space-y-3 mb-6">
               <li className="flex items-center gap-2.5 text-sm text-blue-300">
                 <Mail size={14} className="text-blue-500 shrink-0" />
-                support@listnexa.in
+                support@listvoo.com
               </li>
               <li className="flex items-center gap-2.5 text-sm text-blue-300">
                 <Phone size={14} className="text-blue-500 shrink-0" />

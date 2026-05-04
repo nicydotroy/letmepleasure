@@ -17,7 +17,7 @@ export async function GET() {
     // Create default admin
     const admin = await createAdminUser(
       'admin',
-      'admin@listnexa.local',
+      'admin@listvoo.local',
       'admin123'
     )
 
