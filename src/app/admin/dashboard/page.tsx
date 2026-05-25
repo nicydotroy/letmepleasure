@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { LogOut, CheckCircle, XCircle, Clock, Eye } from 'lucide-react'
+import { LogOut, CheckCircle, XCircle, Clock, Eye, FileText } from 'lucide-react'
 
 interface Ad {
   id: string
@@ -80,13 +80,22 @@ export default function AdminDashboard() {
             </div>
             <h1 className="text-2xl font-black">Admin Dashboard</h1>
           </div>
-          <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-colors"
-          >
-            <LogOut size={18} />
-            Logout
-          </button>
+          <div className="flex items-center gap-3">
+            <Link
+              href="/admin/blog"
+              className="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-[#060B27] px-4 py-2 rounded-lg font-bold transition-colors"
+            >
+              <FileText size={18} />
+              Manage Blog
+            </Link>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-colors"
+            >
+              <LogOut size={18} />
+              Logout
+            </button>
+          </div>
         </div>
       </header>
 

@@ -16,6 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: BASE_URL, lastModified: now, changeFrequency: 'daily', priority: 1.0 },
     { url: `${BASE_URL}/post-ad`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/call-girls`, lastModified: now, changeFrequency: 'daily', priority: 0.9 },
+    { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
   ]
 
   // 2. /[city]/[category] — primary SEO pages ("escorts in mumbai", etc.)
@@ -74,5 +75,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // If DB is unreachable during build, fall back to the static routes only.
   }
 
-  return [...staticRoutes, ...cityCategoryRoutes, ...cityRoutes, ...adRoutes]
+  // 5. Published blog posts
+  let blogRoutes: MetadataRoute.Sitemap = []
+  try {
+    const posts = await prisma.post.findMany({
+      where: { status: 'published' },
+      select: { slug: true, updatedAt: true, publishedAt: true },
+      orderBy: { publishedAt: 'desc' },
+      take: 1000,
+    })
+    blogRoutes = posts.map((post) => ({
+      url: `${BASE_URL}/blog/${post.slug}`,
+      lastModified: post.updatedAt ?? post.publishedAt ?? now,
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  } catch {
+    // ignore if DB unreachable
+  }
+
+  return [...staticRoutes, ...cityCategoryRoutes, ...cityRoutes, ...adRoutes, ...blogRoutes]
 }
