@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { PlusCircle, Clock, CheckCircle, XCircle, FileText, Eye, MapPin } from 'lucide-react'
+import { PlusCircle, Clock, CheckCircle, XCircle, FileText, Eye, MapPin, PenLine } from 'lucide-react'
 
 interface Ad {
   id: string
@@ -41,6 +41,7 @@ export default function DashboardPage() {
   const [user, setUser] = useState<AuthUser | null>(null)
   const [ads, setAds] = useState<Ad[]>([])
   const [stats, setStats] = useState<Stats>({ total: 0, pending: 0, approved: 0, rejected: 0 })
+  const [isOwner, setIsOwner] = useState(false)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -57,6 +58,7 @@ export default function DashboardPage() {
         setUser(data.user)
         setAds(data.ads || [])
         setStats(data.stats || { total: 0, pending: 0, approved: 0, rejected: 0 })
+        setIsOwner(Boolean(data.isOwner))
       })
       .catch(() => router.replace('/login'))
       .finally(() => setLoading(false))
@@ -91,12 +93,22 @@ export default function DashboardPage() {
               {user?.name ? `Welcome, ${user.name}` : user?.email}
             </p>
           </div>
-          <Link
-            href="/post-ad"
-            className="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-[#060B27] px-5 py-2.5 rounded-xl font-black text-sm transition-all shadow-lg"
-          >
-            <PlusCircle size={16} /> Post New Ad
-          </Link>
+          <div className="flex flex-wrap items-center gap-3">
+            {isOwner && (
+              <Link
+                href="/admin/blog"
+                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2.5 rounded-xl font-black text-sm transition-all"
+              >
+                <PenLine size={16} /> Manage Blog
+              </Link>
+            )}
+            <Link
+              href="/post-ad"
+              className="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-[#060B27] px-5 py-2.5 rounded-xl font-black text-sm transition-all shadow-lg"
+            >
+              <PlusCircle size={16} /> Post New Ad
+            </Link>
+          </div>
         </div>
       </div>
 

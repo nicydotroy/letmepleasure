@@ -1,15 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
-import { cookies } from 'next/headers'
-
-async function requireAdmin() {
-  const cookieStore = await cookies()
-  return Boolean(cookieStore.get('admin_token')?.value)
-}
+import { isBlogAuthor } from '@/lib/owner'
 
 // Update a post (edit content, publish/unpublish)
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
-  if (!(await requireAdmin())) {
+  if (!(await isBlogAuthor())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
@@ -45,7 +40,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
 
 // Delete a post
 export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
-  if (!(await requireAdmin())) {
+  if (!(await isBlogAuthor())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 

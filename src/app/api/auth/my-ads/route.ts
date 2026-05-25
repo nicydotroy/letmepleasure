@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
+import { isOwnerEmail } from '@/lib/owner'
 
 export async function GET(req: NextRequest) {
   try {
@@ -41,7 +42,7 @@ export async function GET(req: NextRequest) {
       rejected: ads.filter((a) => a.status === 'rejected').length,
     }
 
-    return NextResponse.json({ user, ads, stats })
+    return NextResponse.json({ user, ads, stats, isOwner: isOwnerEmail(user.email) })
   } catch (error) {
     console.error('my-ads error:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })

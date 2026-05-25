@@ -1,16 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
-import { cookies } from 'next/headers'
 import { slugify } from '@/lib/slug'
-
-async function requireAdmin() {
-  const cookieStore = await cookies()
-  return Boolean(cookieStore.get('admin_token')?.value)
-}
+import { isBlogAuthor } from '@/lib/owner'
 
 // List all posts (drafts + published) for the admin
 export async function GET() {
-  if (!(await requireAdmin())) {
+  if (!(await isBlogAuthor())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
@@ -24,7 +19,7 @@ export async function GET() {
 
 // Create a new post (draft or published)
 export async function POST(req: NextRequest) {
-  if (!(await requireAdmin())) {
+  if (!(await isBlogAuthor())) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
