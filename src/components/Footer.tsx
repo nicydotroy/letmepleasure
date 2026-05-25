@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import Script from 'next/script'
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
 import { CITIES } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
@@ -50,6 +51,20 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+
+            {/* DMCA protection badge */}
+            <a
+              href="//www.dmca.com/Protection/Status.aspx?ID=7c367338-70c1-4853-8360-9e27fba51b77"
+              title="DMCA.com Protection Status"
+              className="dmca-badge inline-block mt-5"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://images.dmca.com/Badges/dmca_protected_sml_120l.png?ID=7c367338-70c1-4853-8360-9e27fba51b77"
+                alt="DMCA.com Protection Status"
+              />
+            </a>
+            <Script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" strategy="afterInteractive" />
           </div>
 
           {/* Cities */}
