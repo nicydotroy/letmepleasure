@@ -2,9 +2,10 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { Upload, X, CheckCircle, AlertCircle, Phone, MessageCircle, MapPin, Tag } from 'lucide-react'
+import { Upload, X, CheckCircle, AlertCircle, Phone, MessageCircle, MapPin, Tag, Mail } from 'lucide-react'
 import { CITIES } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
+import { CONTACT, CONTACT_PHONE_DISPLAY } from '@/lib/contact'
 import Image from 'next/image'
 
 interface FormData {
@@ -34,6 +35,7 @@ export default function PostAdPage() {
   const [imagePreviews, setImagePreviews] = useState<string[]>([])
   const [submitting, setSubmitting] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [adId, setAdId] = useState('')
   const [error, setError] = useState('')
 
   const selectedCity = CITIES.find((c) => c.slug === form.citySlug)
@@ -97,10 +99,8 @@ export default function PostAdPage() {
         return
       }
 
+      setAdId(data.ad.id)
       setSuccess(true)
-      setTimeout(() => {
-        router.push(`/ads/${data.ad.id}`)
-      }, 2000)
     } catch {
       setError('Network error. Please try again.')
     } finally {
@@ -109,18 +109,58 @@ export default function PostAdPage() {
   }
 
   if (success) {
+    const waMsg = encodeURIComponent(
+      `Hi, I just posted an ad on Listvoo (ID: ${adId || 'N/A'}). I'd like to activate/feature it — please share the payment details.`
+    )
     return (
-      <div className="min-h-screen bg-[#EEF2FF] flex items-center justify-center px-4">
-        <div className="text-center bg-white rounded-3xl p-12 shadow-xl border border-blue-100 max-w-sm mx-auto">
-          <div className="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-5">
-            <AlertCircle className="text-blue-700" size={40} />
+      <div className="min-h-screen bg-[#EEF2FF] flex items-center justify-center px-4 py-12">
+        <div className="text-center bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-blue-100 max-w-md mx-auto w-full">
+          <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-5">
+            <CheckCircle className="text-green-600" size={40} />
           </div>
           <h2 className="text-2xl font-black text-[#060B27] mb-2">Ad Submitted!</h2>
           <p className="text-slate-600 font-semibold mb-1">✓ Your ad has been submitted successfully</p>
-          <p className="text-slate-500 text-sm">⏳ Awaiting admin approval before going live...</p>
-          <div className="mt-4 h-1.5 bg-slate-100 rounded-full overflow-hidden">
-            <div className="h-full bg-blue-500 rounded-full animate-pulse w-3/4" />
+          <p className="text-slate-500 text-sm">⏳ Awaiting admin approval before going live</p>
+
+          {/* Payment / contact options */}
+          <div className="mt-7 bg-[#EEF2FF] rounded-2xl p-5 border border-indigo-100 text-left">
+            <p className="text-sm font-black text-[#060B27] text-center mb-1">
+              💳 Activate / Feature your ad faster
+            </p>
+            <p className="text-xs text-slate-500 text-center mb-4 leading-relaxed">
+              Contact us to complete payment and get your ad approved &amp; featured at the top.
+            </p>
+            <div className="space-y-2.5">
+              <a
+                href={`https://wa.me/${CONTACT.whatsapp}?text=${waMsg}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 w-full bg-green-500 text-white py-3 rounded-xl font-bold text-sm hover:bg-green-600 transition-colors"
+              >
+                <MessageCircle size={16} /> Chat on WhatsApp
+              </a>
+              <a
+                href={`tel:${CONTACT.phoneIntl}`}
+                className="flex items-center justify-center gap-2 w-full bg-blue-500 text-[#060B27] py-3 rounded-xl font-bold text-sm hover:bg-blue-400 transition-colors"
+              >
+                <Phone size={16} /> Call {CONTACT_PHONE_DISPLAY}
+              </a>
+              <a
+                href={`mailto:${CONTACT.email}?subject=${encodeURIComponent('Ad payment / activation — ' + (adId || ''))}`}
+                className="flex items-center justify-center gap-2 w-full bg-white border border-slate-200 text-slate-700 py-3 rounded-xl font-bold text-sm hover:border-blue-400 hover:text-blue-600 transition-colors"
+              >
+                <Mail size={16} /> {CONTACT.email}
+              </a>
+            </div>
           </div>
+
+          <button
+            type="button"
+            onClick={() => router.push(adId ? `/ads/${adId}` : '/')}
+            className="mt-5 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+          >
+            View my ad →
+          </button>
         </div>
       </div>
     )

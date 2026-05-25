@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
 import { CITIES } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
+import { CONTACT, CONTACT_PHONE_DISPLAY } from '@/lib/contact'
 
 export default function Footer() {
   const topCities = CITIES.slice(0, 8)
@@ -90,13 +91,17 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-bold mb-4 text-sm uppercase tracking-widest">Contact Us</h3>
             <ul className="space-y-3 mb-6">
-              <li className="flex items-center gap-2.5 text-sm text-blue-300">
-                <Mail size={14} className="text-blue-500 shrink-0" />
-                support@listvoo.com
+              <li>
+                <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 text-sm text-blue-300 hover:text-blue-500 transition-colors">
+                  <Mail size={14} className="text-blue-500 shrink-0" />
+                  {CONTACT.email}
+                </a>
               </li>
-              <li className="flex items-center gap-2.5 text-sm text-blue-300">
-                <Phone size={14} className="text-blue-500 shrink-0" />
-                +91 98765 43210
+              <li>
+                <a href={`tel:${CONTACT.phoneIntl}`} className="flex items-center gap-2.5 text-sm text-blue-300 hover:text-blue-500 transition-colors">
+                  <Phone size={14} className="text-blue-500 shrink-0" />
+                  {CONTACT_PHONE_DISPLAY}
+                </a>
               </li>
             </ul>
             <div className="bg-white/5 rounded-2xl p-4 border border-white/10">

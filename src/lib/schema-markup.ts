@@ -162,7 +162,8 @@ export function generateOrganizationSchema() {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      email: 'support@listvoo.com',
+      email: 'kumarisumi493@gmail.com',
+      telephone: '+917667628077',
       availableLanguage: ['en', 'hi'],
     },
     areaServed: 'IN',
