@@ -36,6 +36,24 @@
     },
     {
       "src": "/og-image-square.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/og-image-square.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/og-image-square.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/og-image-square.png",
       "sizes": "800x800",
       "type": "image/png",
       "purpose": "any"
