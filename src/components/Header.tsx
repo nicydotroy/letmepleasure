@@ -133,10 +133,13 @@ export default function Header() {
 
             {user ? (
               <div className="hidden sm:flex items-center gap-2">
-                <span className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-blue-100 text-sm font-semibold max-w-[160px] truncate">
+                <Link
+                  href="/dashboard"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-blue-100 hover:text-white hover:bg-white/10 text-sm font-semibold max-w-[160px] truncate transition-all"
+                >
                   <UserIcon size={14} className="text-blue-500 shrink-0" />
                   <span className="truncate">{user.name || user.email}</span>
-                </span>
+                </Link>
                 <button
                   onClick={handleLogout}
                   className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-blue-200 hover:text-white border border-white/10 hover:border-white/30 text-sm transition-all"
@@ -201,10 +204,14 @@ export default function Header() {
           </Link>
           {user ? (
             <>
-              <div className="flex items-center gap-2.5 px-3 py-3 rounded-xl text-blue-100 font-semibold">
+              <Link
+                href="/dashboard"
+                className="flex items-center gap-2.5 px-3 py-3 rounded-xl text-blue-100 font-semibold hover:bg-white/10 hover:text-white transition-all"
+                onClick={() => setMenuOpen(false)}
+              >
                 <UserIcon size={17} className="text-blue-500" />
-                <span className="truncate">{user.name || user.email}</span>
-              </div>
+                <span className="truncate">My Dashboard</span>
+              </Link>
               <button
                 onClick={handleLogout}
                 className="w-full flex items-center gap-2.5 px-3 py-3 rounded-xl text-blue-200 font-semibold hover:bg-white/10 hover:text-white transition-all"

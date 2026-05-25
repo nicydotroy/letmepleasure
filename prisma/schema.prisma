@@ -27,6 +27,8 @@ model Ad {
   status      String   @default("pending") // pending, approved, rejected
   approvedAt  DateTime?
   rejectionReason String?
+  userId      String?  // owner of the ad (null for anonymous posts)
+  user        User?    @relation(fields: [userId], references: [id])
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
@@ -36,6 +38,7 @@ model Ad {
   @@index([category])
   @@index([status])
   @@index([createdAt])
+  @@index([userId])
 }
 
 model User {
@@ -43,6 +46,7 @@ model User {
   name      String?
   email     String   @unique
   password  String   // bcrypt hashed
+  ads       Ad[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

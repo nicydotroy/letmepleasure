@@ -73,6 +73,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid city or area' }, { status: 400 })
     }
 
+    // Associate the ad with the logged-in user, if any (anonymous posting still allowed)
+    let userId: string | null = null
+    const userToken = request.cookies.get('user_token')?.value
+    if (userToken) {
+      const user = await prisma.user.findUnique({ where: { id: userToken }, select: { id: true } })
+      if (user) userId = user.id
+    }
+
     // Handle image uploads
     const imageFiles = formData.getAll('images') as File[]
     const imagePaths: string[] = []
@@ -110,6 +118,7 @@ export async function POST(request: NextRequest) {
         whatsapp,
         images: JSON.stringify(imagePaths),
         status: 'pending', // New ads start as pending
+        userId,
       },
     })
 
