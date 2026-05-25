@@ -12,9 +12,9 @@ export function isOwnerEmail(email?: string | null): boolean {
   return !!email && OWNER_EMAILS.includes(email.toLowerCase())
 }
 
-// True when the current request may author blog posts:
-// either a logged-in admin (admin_token) or an owner user (user_token).
-export async function isBlogAuthor(): Promise<boolean> {
+// True when the current request has admin powers (approve ads, author blog):
+// either a logged-in admin (admin_token) or an owner/super-admin user (user_token).
+export async function isAdminOrOwner(): Promise<boolean> {
   const store = await cookies()
   if (store.get('admin_token')?.value) return true
 
@@ -27,3 +27,6 @@ export async function isBlogAuthor(): Promise<boolean> {
   })
   return isOwnerEmail(user?.email)
 }
+
+// Backwards-compatible alias used by the blog routes.
+export const isBlogAuthor = isAdminOrOwner

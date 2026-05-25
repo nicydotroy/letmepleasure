@@ -1,13 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
-import { cookies } from 'next/headers'
+import { isAdminOrOwner } from '@/lib/owner'
 
 export async function GET(req: NextRequest) {
   try {
-    const cookieStore = await cookies()
-    const adminToken = cookieStore.get('admin_token')?.value
-
-    if (!adminToken) {
+    if (!(await isAdminOrOwner())) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
