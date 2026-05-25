@@ -5,7 +5,71 @@ import CityGrid from '@/components/CityGrid'
 import AdCard from '@/components/AdCard'
 import { CATEGORIES } from '@/lib/categories'
 import { ArrowRight, MapPin, Shield, Zap } from 'lucide-react'
+import { generateFAQPageSchema } from '@/lib/schema-markup'
 import type { Metadata } from 'next'
+
+const HOME_FAQS = [
+  {
+    question: 'Is Listvoo free to use?',
+    answer:
+      'Yes, Listvoo is 100% free. You can browse listings and post your own classified ad in any Indian city without paying a single rupee — there are no hidden charges.',
+  },
+  {
+    question: 'How do I post an ad on Listvoo?',
+    answer:
+      'Click "Post Free Ad", choose a category and city, add your title, description, photos and contact number, then submit. Your ad goes live after a quick review — usually within minutes.',
+  },
+  {
+    question: 'Do I need to register to post an ad?',
+    answer:
+      'No registration is required to post a basic ad. You can optionally create a free account to manage your ads, track their status, and edit them from your dashboard.',
+  },
+  {
+    question: 'Which cities does Listvoo cover?',
+    answer:
+      'Listvoo covers all major Indian metro cities including Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, Goa, Chandigarh and 38+ cities, with hyper-local listings down to your neighbourhood.',
+  },
+  {
+    question: 'How long does it take for my ad to go live?',
+    answer:
+      'Most ads are reviewed and published within a few minutes. Once approved, your ad appears in search results and on your city and category pages instantly.',
+  },
+  {
+    question: 'How can I contact an advertiser?',
+    answer:
+      'Every approved ad shows the advertiser’s phone and WhatsApp number. You can call or message them directly — Listvoo never sits in the middle of your conversation.',
+  },
+  {
+    question: 'Is Listvoo safe and discreet?',
+    answer:
+      'Yes. Your privacy is our priority. Contact happens directly between users via phone or WhatsApp, and we do not share your details with third parties.',
+  },
+  {
+    question: 'Can I edit or delete my ad after posting?',
+    answer:
+      'Yes. Log in to your dashboard to view, edit, or remove any ad you have posted, and to check whether it is pending, approved or rejected.',
+  },
+  {
+    question: 'What types of services can I find on Listvoo?',
+    answer:
+      'Listvoo features adult classifieds across categories such as escorts, massage services, call girls and companionship listings in cities all over India.',
+  },
+  {
+    question: 'How do I activate or feature my ad?',
+    answer:
+      'After posting, open your dashboard and tap "Activate this ad" to get our WhatsApp, call and email details. Contact us to complete activation and get your ad approved and featured.',
+  },
+  {
+    question: 'Are the listings on Listvoo verified?',
+    answer:
+      'Every ad is manually reviewed by our team before it goes live to keep the platform genuine. We always recommend meeting safely and verifying details yourself before any transaction.',
+  },
+  {
+    question: 'Is there an age requirement to use Listvoo?',
+    answer:
+      'Yes. Listvoo contains adult content and is strictly for users aged 18 years or older. By using the site you confirm that you are an adult and that viewing such content is legal in your location.',
+  },
+]
 
 interface SearchParams { q?: string; city?: string; category?: string }
 
@@ -253,6 +317,40 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
                   </div>
                   <h3 className="font-black text-white text-lg mb-2">{f.title}</h3>
                   <p className="text-blue-300 text-sm leading-relaxed">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* ── FAQ ── */}
+        {!isFiltered && (
+          <section>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: generateFAQPageSchema(HOME_FAQS) }}
+            />
+            <div className="text-center mb-8">
+              <h2 className="text-2xl sm:text-3xl font-black text-[#060B27]">Frequently Asked Questions</h2>
+              <p className="text-slate-500 text-sm mt-1">Everything you need to know about posting & finding ads on Listvoo</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+              {[HOME_FAQS.slice(0, 6), HOME_FAQS.slice(6, 12)].map((column, colIdx) => (
+                <div key={colIdx} className="space-y-4">
+                  {column.map((faq) => (
+                    <details
+                      key={faq.question}
+                      className="group bg-white rounded-2xl border border-indigo-50 shadow-sm p-5 open:shadow-md transition-shadow"
+                    >
+                      <summary className="flex items-center justify-between gap-3 cursor-pointer list-none font-bold text-[#060B27] text-sm sm:text-base">
+                        {faq.question}
+                        <span className="shrink-0 w-6 h-6 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg leading-none transition-transform group-open:rotate-45">
+                          +
+                        </span>
+                      </summary>
+                      <p className="text-slate-500 text-sm leading-relaxed mt-3">{faq.answer}</p>
+                    </details>
+                  ))}
                 </div>
               ))}
             </div>
