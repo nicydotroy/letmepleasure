@@ -10,7 +10,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: ['/', '/uploads/ads/originals/'],
-        disallow: ['/api/', '/admin/'],
+        // /api & /admin are internal; /dashboard, /login, /signup are private
+        // or auth-only utility pages with no search value.
+        disallow: ['/api/', '/admin/', '/dashboard', '/login', '/signup'],
       },
       // Modern AI crawlers — explicitly allowed so the brand surfaces in
       // ChatGPT, Perplexity, Claude, Gemini, Apple Intelligence, Common Crawl.

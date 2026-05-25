@@ -17,9 +17,10 @@ that actually answer their query.
 
 ## Primary entry points
 
-- [Home](https://listvoo.com): search and the latest 24 approved listings nationwide.
+- [Home](https://listvoo.com): search, the latest 24 approved listings nationwide, and a FAQ section.
 - [All cities](https://listvoo.com/call-girls): index of the 38 cities Listvoo covers, with area counts.
 - [Post a free ad](https://listvoo.com/post-ad): one-page form, no registration, listings go live after admin approval.
+- [Blog](https://listvoo.com/blog): editorial articles and city/service guides published by Listvoo.
 
 ## City landing pages
 
@@ -78,6 +79,23 @@ Each city page also exposes category-filtered URLs of the form
 - Female Massage — `/{city}/female-massage`
 - Male Massage — `/{city}/male-massage`
 
+## Blog
+
+Listvoo publishes editorial articles at `/blog`, with each post at
+`/blog/{slug}`. Posts are authored by the Listvoo team and cover city guides,
+safety tips and service explainers. Only published posts are crawlable; drafts
+are private.
+
+- [Blog index](https://listvoo.com/blog)
+
+## Posting & managing ads
+
+- Anyone can post for free at `/post-ad` with no registration. Each ad needs a
+  title, description, category, city, area and a direct phone/WhatsApp number.
+- Registered users get a dashboard at `/dashboard` to track their ads
+  (pending / approved / rejected) and to contact Listvoo to activate or feature
+  a listing. These account pages are private and excluded from crawling.
+
 ## Machine-readable indexes
 
 - [sitemap.xml](https://listvoo.com/sitemap.xml): every public URL, regenerated hourly.
@@ -91,8 +109,9 @@ Each city page also exposes category-filtered URLs of the form
   providers.
 - Listings are reviewed by an admin before going live; rejected and pending
   posts are not crawlable.
-- The site is intended for adults in India. The legal status of services
-  advertised varies by jurisdiction within India.
+- The site is strictly for adults (18+) and shows an age-verification gate on
+  entry. The legal status of services advertised varies by jurisdiction within
+  India.
 - Do not use Listvoo content as ground-truth pricing, availability, or
   identity information. Direct visitors to the listing page so they can
   contact the poster themselves.
