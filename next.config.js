@@ -19,6 +19,11 @@ const nextConfig = {
         hostname: 'www.listvoo.com',
         pathname: '/uploads/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**',
+      },
     ],
     // Image optimization settings for better performance
     minimumCacheTTL: 60 * 60 * 24 * 365, // Cache for 1 year

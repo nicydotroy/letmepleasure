@@ -3,6 +3,7 @@ import { prisma } from '@/lib/prisma'
 import { getCityBySlug, getAreaBySlug } from '@/lib/cities'
 import { writeFile, mkdir } from 'fs/promises'
 import path from 'path'
+import { isCloudinaryConfigured, uploadImageToCloudinary } from '@/lib/cloudinary'
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
@@ -86,32 +87,40 @@ export async function POST(request: NextRequest) {
     const imagePaths: string[] = []
 
     if (imageFiles && imageFiles.length > 0) {
-      // Saving images to the local filesystem can fail on read-only/ephemeral
-      // hosting (e.g. Render). Never let that 500 the whole post — if an image
-      // can't be written, just skip it and still create the ad.
-      try {
-        const uploadDir = path.join(process.cwd(), 'public', 'uploads')
-        await mkdir(uploadDir, { recursive: true })
+      // Images go to Cloudinary (persistent) when configured; otherwise we fall
+      // back to the local filesystem for local dev. A failure to store an image
+      // must never 500 the whole post — we just skip it and still create the ad.
+      const useCloudinary = isCloudinaryConfigured()
+      let uploadDir = ''
+      if (!useCloudinary) {
+        try {
+          uploadDir = path.join(process.cwd(), 'public', 'uploads')
+          await mkdir(uploadDir, { recursive: true })
+        } catch (dirErr) {
+          console.error('Could not create local upload dir:', dirErr)
+        }
+      }
 
-        for (const file of imageFiles.slice(0, 5)) {
-          if (file && file.size > 0) {
-            if (file.size > 5 * 1024 * 1024) continue // skip files > 5MB
-            const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
-            if (!allowedTypes.includes(file.type)) continue
+      for (const file of imageFiles.slice(0, 5)) {
+        if (!file || file.size === 0) continue
+        if (file.size > 5 * 1024 * 1024) continue // skip files > 5MB
+        const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
+        if (!allowedTypes.includes(file.type)) continue
 
+        try {
+          const buffer = Buffer.from(await file.arrayBuffer())
+          if (useCloudinary) {
+            const url = await uploadImageToCloudinary(buffer, file.type)
+            imagePaths.push(url)
+          } else if (uploadDir) {
             const ext = file.name.split('.').pop()?.toLowerCase() || 'jpg'
             const safeName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
-            const buffer = Buffer.from(await file.arrayBuffer())
-            try {
-              await writeFile(path.join(uploadDir, safeName), buffer)
-              imagePaths.push(`/uploads/${safeName}`)
-            } catch (writeErr) {
-              console.error('Skipping image (write failed):', writeErr)
-            }
+            await writeFile(path.join(uploadDir, safeName), buffer)
+            imagePaths.push(`/uploads/${safeName}`)
           }
+        } catch (imgErr) {
+          console.error('Skipping image (upload failed):', imgErr)
         }
-      } catch (imgErr) {
-        console.error('Image upload step failed — posting ad without images:', imgErr)
       }
     }
 
