@@ -80,3 +80,21 @@ model Admin {
 
   @@index([username])
 }
+
+// Admin-editable content & FAQs per city/area.
+// areaSlug = "" means city-level content (shown on /call-girls/[city]).
+// otherwise the row applies to /call-girls/[city]/[area].
+model LocationContent {
+  id        String   @id @default(cuid())
+  citySlug  String
+  areaSlug  String   @default("")
+  heading   String?  // optional H2 heading rendered above body
+  intro     String?  // short paragraph below the heading
+  body      String?  // long-form content (blank-line-separated paragraphs)
+  faqs      String?  // JSON: [{"q":"...","a":"..."}, ...]
+  updatedAt DateTime @updatedAt
+  createdAt DateTime @default(now())
+
+  @@unique([citySlug, areaSlug])
+  @@index([citySlug])
+}

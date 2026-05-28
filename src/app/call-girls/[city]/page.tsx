@@ -6,6 +6,8 @@ import { CATEGORIES } from '@/lib/categories'
 import { prisma } from '@/lib/prisma'
 import AdListItem from '@/components/AdListItem'
 import LocationContent from '@/components/LocationContent'
+import CustomLocationContent from '@/components/CustomLocationContent'
+import { getLocationContent } from '@/lib/location-content'
 import {
   BreadcrumbSchema,
   LocalBusinessSchema,
@@ -62,7 +64,7 @@ export default async function CityPage({ params }: Props) {
   const city = getCityBySlug(params.city)
   if (!city) notFound()
 
-  const [ads, areaStats] = await Promise.all([
+  const [ads, areaStats, customContent] = await Promise.all([
     prisma.ad.findMany({
       where: { citySlug: params.city, isActive: true, status: 'approved' },
       orderBy: { createdAt: 'desc' },
@@ -74,6 +76,7 @@ export default async function CityPage({ params }: Props) {
       _count: { id: true },
       orderBy: { _count: { id: 'desc' } },
     }),
+    getLocationContent(params.city, ''),
   ])
 
   const totalAdCount = areaStats.reduce((sum, s) => sum + s._count.id, 0)
@@ -240,8 +243,12 @@ export default async function CityPage({ params }: Props) {
           )}
         </section>
 
-        {/* Location Content Section */}
-        <LocationContent cityName={city.name} />
+        {/* Location Content Section — admin override if present, else the default template */}
+        {customContent?.hasAny ? (
+          <CustomLocationContent content={customContent} />
+        ) : (
+          <LocationContent cityName={city.name} />
+        )}
       </div>
     </div>
   )

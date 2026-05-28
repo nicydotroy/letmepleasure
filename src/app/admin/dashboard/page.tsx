@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { LogOut, CheckCircle, XCircle, Clock, Eye, FileText } from 'lucide-react'
+import { LogOut, CheckCircle, XCircle, Clock, Eye, FileText, MapPin } from 'lucide-react'
 
 interface Ad {
   id: string
@@ -81,6 +81,13 @@ export default function AdminDashboard() {
             <h1 className="text-2xl font-black">Admin Dashboard</h1>
           </div>
           <div className="flex items-center gap-3">
+            <Link
+              href="/admin/locations"
+              className="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-[#060B27] px-4 py-2 rounded-lg font-bold transition-colors"
+            >
+              <MapPin size={18} />
+              Edit Locations
+            </Link>
             <Link
               href="/admin/blog"
               className="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-[#060B27] px-4 py-2 rounded-lg font-bold transition-colors"

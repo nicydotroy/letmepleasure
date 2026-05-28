@@ -4,6 +4,8 @@ import { MapPin, ChevronRight, SlidersHorizontal } from 'lucide-react'
 import { getCityBySlug, getAreaBySlug } from '@/lib/cities'
 import { prisma } from '@/lib/prisma'
 import AdListItem from '@/components/AdListItem'
+import CustomLocationContent from '@/components/CustomLocationContent'
+import { getLocationContent } from '@/lib/location-content'
 import { CATEGORIES } from '@/lib/categories'
 import {
   BreadcrumbSchema,
@@ -67,9 +69,10 @@ export default async function AreaPage({ params, searchParams }: Props) {
   }
   if (searchParams.category) where.category = searchParams.category
 
-  const [ads, total] = await Promise.all([
+  const [ads, total, customContent] = await Promise.all([
     prisma.ad.findMany({ where: { ...where, status: 'approved' }, orderBy: { createdAt: 'desc' }, take: 40 }),
     prisma.ad.count({ where: { citySlug: params.city, areaSlug: params.area, isActive: true } }),
+    getLocationContent(params.city, params.area),
   ])
 
   const areaUrl = `https://listvoo.com/call-girls/${params.city}/${params.area}`
@@ -190,6 +193,9 @@ export default async function AreaPage({ params, searchParams }: Props) {
             {ads.map((ad) => <AdListItem key={ad.id} ad={ad} />)}
           </div>
         )}
+
+        {/* Admin-edited content & FAQs for this area, if any */}
+        {customContent?.hasAny && <CustomLocationContent content={customContent} />}
       </div>
     </div>
   )

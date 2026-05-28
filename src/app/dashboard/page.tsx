@@ -106,6 +106,14 @@ export default function DashboardPage() {
             )}
             {isOwner && (
               <Link
+                href="/admin/locations"
+                className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2.5 rounded-xl font-black text-sm transition-all"
+              >
+                <MapPin size={16} /> Edit Locations
+              </Link>
+            )}
+            {isOwner && (
+              <Link
                 href="/admin/blog"
                 className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-5 py-2.5 rounded-xl font-black text-sm transition-all"
               >
