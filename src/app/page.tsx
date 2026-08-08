@@ -10,12 +10,12 @@ import type { Metadata } from 'next'
 
 const HOME_FAQS = [
   {
-    question: 'Is Listvoo free to use?',
+    question: 'Is letmepleasure free to use?',
     answer:
-      'Yes, Listvoo is 100% free. You can browse listings and post your own classified ad in any Indian city without paying a single rupee — there are no hidden charges.',
+      'Yes, letmepleasure is 100% free. You can browse listings and post your own classified ad in any Indian city without paying a single rupee — there are no hidden charges.',
   },
   {
-    question: 'How do I post an ad on Listvoo?',
+    question: 'How do I post an ad on letmepleasure?',
     answer:
       'Click "Post Free Ad", choose a category and city, add your title, description, photos and contact number, then submit. Your ad goes live after a quick review — usually within minutes.',
   },
@@ -25,9 +25,9 @@ const HOME_FAQS = [
       'No registration is required to post a basic ad. You can optionally create a free account to manage your ads, track their status, and edit them from your dashboard.',
   },
   {
-    question: 'Which cities does Listvoo cover?',
+    question: 'Which cities does letmepleasure cover?',
     answer:
-      'Listvoo covers all major Indian metro cities including Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, Goa, Chandigarh and 38+ cities, with hyper-local listings down to your neighbourhood.',
+      'letmepleasure covers all major Indian metro cities including Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, Goa, Chandigarh and 38+ cities, with hyper-local listings down to your neighbourhood.',
   },
   {
     question: 'How long does it take for my ad to go live?',
@@ -37,7 +37,7 @@ const HOME_FAQS = [
   {
     question: 'How can I contact an advertiser?',
     answer:
-      'Every approved ad shows the advertiser’s phone and WhatsApp number. You can call or message them directly — Listvoo never sits in the middle of your conversation.',
+      'Every approved ad shows the advertiser’s phone and WhatsApp number. You can call or message them directly — letmepleasure never sits in the middle of your conversation.',
   },
   {
     question: 'Is Listvoo safe and discreet?',
@@ -67,7 +67,7 @@ const HOME_FAQS = [
   {
     question: 'Is there an age requirement to use Listvoo?',
     answer:
-      'Yes. Listvoo contains adult content and is strictly for users aged 18 years or older. By using the site you confirm that you are an adult and that viewing such content is legal in your location.',
+      'Yes. letmepleasure contains adult content and is strictly for users aged 18 years or older. By using the site you confirm that you are an adult and that viewing such content is legal in your location.',
   },
 ]
 

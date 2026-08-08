@@ -1,6 +1,6 @@
 # Ad Images Storage
 
-This directory stores all images uploaded for ads on Listvoo.
+This directory stores all images uploaded for ads on letmepleasure.
 
 ## Folder Structure
 

@@ -35,7 +35,7 @@ export default function Footer() {
             <div className="bg-white inline-flex rounded-xl px-3 py-2.5 mb-5 shadow-md">
               <Image
                 src="/logos/logo.png"
-                alt="Listvoo logo"
+                alt="letmepleasure logo"
                 width={1280}
                 height={540}
                 className="h-10 sm:h-12 w-auto"
@@ -129,7 +129,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-blue-400/60">
-          <p>© {new Date().getFullYear()} Listvoo. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} letmepleasure. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="#" className="hover:text-blue-200 transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-blue-200 transition-colors">Terms of Service</Link>

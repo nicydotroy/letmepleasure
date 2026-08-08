@@ -5,16 +5,16 @@
 ### 1. Wrong Canonical URL
 ```
 BEFORE: canonical: `https://listnexa.in/ads/${params.id}`
-AFTER:  canonical: `https://listvoo.com/ads/${params.id}`
+AFTER:  canonical: `https://letmepleasure.com/ads/${params.id}`
 ```
 **File**: `src/app/ads/[id]/page.tsx`
 
 ### 2. Missing Image Domains
 ```javascript
 // Added to next.config.js:
-domains: ['localhost', 'listvoo.com', 'www.listvoo.com']
+domains: ['localhost', 'letmepleasure.com', 'www.letmepleasure.com']
 remotePatterns: [
-  { protocol: 'https', hostname: 'listvoo.com', pathname: '/uploads/**' }
+  { protocol: 'https', hostname: 'letmepleasure.com', pathname: '/uploads/**' }
 ]
 ```
 **File**: `next.config.js`
@@ -70,9 +70,9 @@ Create these in `/public/`:
 - [ ] `favicon.ico` (32×32px)
 
 ### Task 2: Update Verification (5 mins)
-1. Go to Google Search Console
-2. Get verification code
-3. Update `src/app/layout.tsx` line 35:
+ 1. Go to Google Search Console
+ 2. Get verification code
+ 3. Update `src/app/layout.tsx` line 35:
    ```tsx
    verification: { google: 'YOUR_ACTUAL_CODE_HERE' }
    ```
@@ -85,7 +85,7 @@ npm run build
 
 ### Task 4: Submit Sitemap (2 mins)
 1. Go to Google Search Console
-2. Add: `https://listvoo.com/sitemap.xml`
+2. Add: `https://letmepleasure.com/sitemap.xml`
 3. Submit
 
 ---

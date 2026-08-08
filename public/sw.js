@@ -2,7 +2,7 @@
 // PWA. It deliberately does NOT cache or serve page HTML, so it can never show
 // a stale/blank page. The empty fetch handler is enough to satisfy the
 // browser's installability requirement.
-const CACHE_PREFIX = 'listvoo-'
+const CACHE_PREFIX = 'letmepleasure-'
 
 self.addEventListener('install', () => {
   self.skipWaiting()

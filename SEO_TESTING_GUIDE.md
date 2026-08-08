@@ -6,7 +6,7 @@
 
 #### Using Rich Results Test
 1. Go to https://search.google.com/test/rich-results
-2. Enter your domain: https://listvoo.com
+2. Enter your domain: https://letmepleasure.com
 3. Check for:
    - ✅ Organization schema valid
    - ✅ BreadcrumbList valid (after implementation)
@@ -23,7 +23,7 @@
 
 #### Facebook Debugger
 1. Go to https://developers.facebook.com/tools/debug/
-2. Enter URL: https://listvoo.com
+2. Enter URL: https://letmepleasure.com
 3. Verify:
    - ✅ og:title displaying correctly
    - ✅ og:image loading
@@ -43,7 +43,7 @@
 
 #### Using PageSpeed Insights
 1. Go to https://pagespeed.web.dev/
-2. Enter: https://listvoo.com
+2. Enter: https://letmepleasure.com
 3. Check metrics:
    - ✅ LCP < 2.5s (Green)
    - ✅ FID < 100ms (Green)
@@ -63,7 +63,7 @@
 ### 4. Mobile Friendly Test
 
 1. Go to https://search.google.com/test/mobile-friendly
-2. Enter: https://listvoo.com
+2. Enter: https://letmepleasure.com
 3. Verify:
    - ✅ "Page is mobile friendly"
    - ✅ No errors reported
@@ -77,7 +77,7 @@
 - [ ] Category pages: 50-60 chars
 - [ ] Ad pages: 50-60 chars
 - [ ] Include primary keyword
-- [ ] Include brand name (Listvoo)
+-- [ ] Include brand name (letmepleasure)
 
 #### Meta Descriptions
 - [ ] Homepage description: 150-160 chars

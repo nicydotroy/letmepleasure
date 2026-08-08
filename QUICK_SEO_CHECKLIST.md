@@ -36,7 +36,7 @@ Create these files in /public/:
 
 1. og-image.png (1200x630px)
    - Use your logo/brand colors
-   - Include "Listvoo - Free Classifieds India"
+   - Include "letmepleasure - Free Classifieds India"
    - Save as PNG
 
 2. og-image-square.png (800x800px)
@@ -76,7 +76,7 @@ twitter: {
 ### 4. Submit to Google Search Console
 **Steps**:
 1. Go to https://search.google.com/search-console
-2. Add property: https://listvoo.com
+2. Add property: https://letmepleasure.com
 3. Verify ownership (copy verification code first)
 4. Submit sitemap: https://listvoo.com/sitemap.xml
 5. Request indexing for key pages
@@ -93,7 +93,7 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkupComponents'
 
 // Inside your component return:
 <BreadcrumbSchema items={[
-  { name: 'Home', url: 'https://listvoo.com' },
+   { name: 'Home', url: 'https://letmepleasure.com' },
   { name: 'All Locations', url: 'https://listvoo.com/call-girls' },
   { name: cityName, url: `https://listvoo.com/call-girls/${citySlug}` },
   { name: areaName, url: `https://listvoo.com/call-girls/${citySlug}/${areaSlug}` },

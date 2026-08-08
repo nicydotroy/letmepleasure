@@ -53,11 +53,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 sm:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0" aria-label="Listvoo home">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0" aria-label="letmepleasure home">
             <div className="bg-white rounded-lg sm:rounded-xl px-2 py-1.5 sm:px-2.5 sm:py-2 shadow-md group-hover:shadow-lg transition-shadow">
               <Image
                 src="/logos/logo.png"
-                alt="Listvoo logo"
+                alt="letmepleasure logo"
                 width={1280}
                 height={540}
                 priority

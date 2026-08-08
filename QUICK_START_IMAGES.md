@@ -2,7 +2,7 @@
 
 ## ✅ What Was Created
 
-I've built a complete image upload system for your ListVoo application with:
+I've built a complete image upload system for your letmepleasure application with:
 
 ### 📁 Folders Created
 - `public/logos/` - For your website logo and branding
