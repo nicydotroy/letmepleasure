@@ -6,9 +6,9 @@ import AgeGate from '@/components/AgeGate'
 import InstallPrompt from '@/components/InstallPrompt'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://listvoo.com'),
+  metadataBase: new URL('https://letmepleasure.com'),
   title: {
-    default: 'Listvoo — Free Classified Ads India | Buy Sell in Your City',
+    default: 'letmepleasure — Free Classified Ads India | Buy Sell in Your City',
     template: '%s',
   },
   description:
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     'buy and sell online',
     'free online classifieds',
   ],
-  authors: [{ name: 'Listvoo', url: 'https://listvoo.com' }],
-  creator: 'Listvoo',
-  publisher: 'Listvoo',
+  authors: [{ name: 'letmepleasure', url: 'https://letmepleasure.com' }],
+  creator: 'letmepleasure',
+  publisher: 'letmepleasure',
   formatDetection: {
     email: false,
     telephone: false,
@@ -53,46 +53,46 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://listvoo.com',
-    siteName: 'Listvoo',
-    title: 'Listvoo — Free Classified Ads India',
+    url: 'https://letmepleasure.com',
+    siteName: 'letmepleasure',
+    title: 'letmepleasure — Free Classified Ads India',
     description: 'Post free classified ads across India. Buy & Sell in your city. 100% free, no registration required.',
     images: [
       { 
-        url: 'https://listvoo.com/og-image.png', 
+        url: 'https://letmepleasure.com/og-image.png', 
         width: 1200, 
         height: 630, 
-        alt: 'Listvoo Free Classified Ads India',
+        alt: 'letmepleasure Free Classified Ads India',
         type: 'image/png',
       },
       {
-        url: 'https://listvoo.com/og-image-square.png',
+        url: 'https://letmepleasure.com/og-image-square.png',
         width: 800,
         height: 800,
-        alt: 'Listvoo Logo',
+        alt: 'letmepleasure Logo',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@listvoo',
-    creator: '@listvoo',
-    title: 'Listvoo — Free Classified Ads India',
+    site: '@letmepleasure',
+    creator: '@letmepleasure',
+    title: 'letmepleasure — Free Classified Ads India',
     description: 'Post free classified ads across India. Buy & Sell in your city.',
-    images: ['https://listvoo.com/og-image.png'],
+    images: ['https://letmepleasure.com/og-image.png'],
   },
   alternates: {
-    canonical: 'https://listvoo.com',
+    canonical: 'https://letmepleasure.com',
     languages: {
-      'en-IN': 'https://listvoo.com',
+      'en-IN': 'https://letmepleasure.com',
     },
   },
   manifest: '/site.webmanifest',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'Listvoo',
+    title: 'letmepleasure',
   },
   category: 'Classifieds',
 }
@@ -107,7 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#060B27" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Listvoo" />
+        <meta name="apple-mobile-web-app-title" content="letmepleasure" />
         
         <link rel="icon" href="/logos/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="16x16" href="/logos/favicon-16x16.png" />
@@ -129,23 +129,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              name: 'Listvoo',
-              url: 'https://listvoo.com',
+              name: 'letmepleasure',
+              url: 'https://letmepleasure.com',
               description: 'Free classified ads in India - Buy, Sell, Find services in your city',
               potentialAction: {
                 '@type': 'SearchAction',
-                target: { '@type': 'EntryPoint', urlTemplate: 'https://listvoo.com/?q={search_term_string}' },
+                target: { '@type': 'EntryPoint', urlTemplate: 'https://letmepleasure.com/?q={search_term_string}' },
                 'query-input': 'required name=search_term_string',
               },
               publisher: {
                 '@type': 'Organization',
-                name: 'Listvoo',
-                url: 'https://listvoo.com',
-                logo: 'https://listvoo.com/og-image.png',
+                name: 'letmepleasure',
+                url: 'https://letmepleasure.com',
+                logo: 'https://letmepleasure.com/og-image.png',
                 sameAs: [
-                  'https://www.facebook.com/listvoo',
-                  'https://twitter.com/listvoo',
-                  'https://www.instagram.com/listvoo',
+                  'https://www.facebook.com/letmepleasure',
+                  'https://twitter.com/letmepleasure',
+                  'https://www.instagram.com/letmepleasure',
                 ],
               },
             }),
@@ -159,9 +159,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Listvoo',
-              url: 'https://listvoo.com',
-              logo: 'https://listvoo.com/og-image.png',
+              name: 'letmepleasure',
+              url: 'https://letmepleasure.com',
+              logo: 'https://letmepleasure.com/og-image.png',
               description: 'Free Classified Ads Platform in India',
               foundingDate: '2024',
               contactPoint: {

@@ -3,7 +3,7 @@ import { CITIES } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
 import { prisma } from '@/lib/prisma'
 
-const BASE_URL = 'https://listvoo.com'
+const BASE_URL = 'https://letmepleasure.com'
 
 // Sitemap is regenerated on each request but cached for an hour by Next.
 export const revalidate = 3600

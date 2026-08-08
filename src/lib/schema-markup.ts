@@ -40,14 +40,14 @@ export function generateLocalBusinessSchema(cityName: string, citySlug: string) 
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: `${cityName} Classifieds - Listvoo`,
+    name: `${cityName} Classifieds - letmepleasure`,
     description: `Browse and post classified ads in ${cityName}`,
-    url: `https://listvoo.com/call-girls/${citySlug}`,
+    url: `https://letmepleasure.com/call-girls/${citySlug}`,
     areaServed: {
       '@type': 'City',
       name: cityName,
     },
-    image: 'https://listvoo.com/og-image.png',
+    image: 'https://letmepleasure.com/og-image.png',
     priceRange: '$$',
     telephone: '+91-XXXXXXXXXX', // Add actual phone if needed
     address: {
@@ -67,7 +67,7 @@ export function generateSearchActionSchema() {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://listvoo.com/?q={search_term_string}',
+      urlTemplate: 'https://letmepleasure.com/?q={search_term_string}',
     },
     'query-input': 'required name=search_term_string',
   })
@@ -106,18 +106,18 @@ export function generateArticleSchema(ad: {
     '@type': 'Article',
     headline: ad.title,
     description: ad.description,
-    image: ad.image || 'https://listvoo.com/og-image.png',
+    image: ad.image || 'https://letmepleasure.com/og-image.png',
     datePublished: ad.publishedDate.toISOString(),
     author: {
       '@type': 'Organization',
-      name: ad.author || 'Listvoo',
+      name: ad.author || 'letmepleasure',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Listvoo',
+      name: 'letmepleasure',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://listvoo.com/og-image.png',
+        url: 'https://letmepleasure.com/og-image.png',
       },
     },
   })
@@ -136,8 +136,8 @@ export function generateAggregateOfferSchema(adCount: number, cityName: string) 
     availability: 'https://schema.org/InStock',
     seller: {
       '@type': 'Organization',
-      name: 'Listvoo',
-      url: 'https://listvoo.com',
+      name: 'letmepleasure',
+      url: 'https://letmepleasure.com',
     },
     description: `Available listings in ${cityName}`,
   })
@@ -150,14 +150,14 @@ export function generateOrganizationSchema() {
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'Listvoo',
-    url: 'https://listvoo.com',
-    logo: 'https://listvoo.com/og-image.png',
+    name: 'letmepleasure',
+    url: 'https://letmepleasure.com',
+    logo: 'https://letmepleasure.com/og-image.png',
     description: 'Free Classifieds Platform in India',
     sameAs: [
-      'https://www.facebook.com/listvoo',
-      'https://twitter.com/listvoo',
-      'https://www.instagram.com/listvoo',
+      'https://www.facebook.com/letmepleasure',
+      'https://twitter.com/letmepleasure',
+      'https://www.instagram.com/letmepleasure',
     ],
     contactPoint: {
       '@type': 'ContactPoint',
@@ -179,11 +179,11 @@ export function generateCollectionPageSchema(categoryName: string, cityName: str
     '@type': 'CollectionPage',
     name: `${categoryName} in ${cityName}`,
     description: `Browse ${categoryName} listings in ${cityName}`,
-    url: `https://listvoo.com/${cityName}/${categoryName}`,
+    url: `https://letmepleasure.com/${cityName}/${categoryName}`,
     numberOfItems: itemCount,
     potentialAction: {
       '@type': 'SearchAction',
-      target: `https://listvoo.com/?city=${cityName}&category=${categoryName}`,
+      target: `https://letmepleasure.com/?city=${cityName}&category=${categoryName}`,
     },
   })
 }

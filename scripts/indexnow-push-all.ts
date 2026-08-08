@@ -8,7 +8,7 @@ import { CATEGORIES } from '@/lib/categories'
 import { prisma } from '@/lib/prisma'
 import { pingIndexNow } from '@/lib/indexnow'
 
-const BASE = 'https://listvoo.com'
+const BASE = 'https://letmepleasure.com'
 
 async function main() {
   const urls: string[] = [

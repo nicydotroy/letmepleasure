@@ -7,7 +7,7 @@
  * The key string also lives in public/{KEY}.txt for ownership verification.
  */
 const INDEXNOW_KEY = '542a4126a30d13d9dde31edeb84619a9'
-const HOST = 'listvoo.com'
+const HOST = 'letmepleasure.com'
 const KEY_LOCATION = `https://${HOST}/${INDEXNOW_KEY}.txt`
 const ENDPOINT = 'https://api.indexnow.org/indexnow'
 

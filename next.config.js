@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['localhost', 'listvoo.com', 'www.listvoo.com'],
+    domains: ['localhost', 'letmepleasure.com', 'www.letmepleasure.com'],
     remotePatterns: [
       {
         protocol: 'http',
@@ -11,12 +11,12 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'listvoo.com',
+        hostname: 'letmepleasure.com',
         pathname: '/uploads/**',
       },
       {
         protocol: 'https',
-        hostname: 'www.listvoo.com',
+        hostname: 'www.letmepleasure.com',
         pathname: '/uploads/**',
       },
       {
