@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Script from 'next/script'
-import { MapPin, Phone, Mail, ArrowRight } from 'lucide-react'
+import { MapPin, Mail, ArrowRight } from 'lucide-react'
 import { CITIES } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
-import { CONTACT, CONTACT_PHONE_DISPLAY } from '@/lib/contact'
+import { CONTACT } from '@/lib/contact'
 
 export default function Footer() {
   const topCities = CITIES.slice(0, 8)
@@ -110,12 +110,6 @@ export default function Footer() {
                 <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 text-sm text-pink-300 hover:text-pink-500 transition-colors">
                   <Mail size={14} className="text-pink-500 shrink-0" />
                   {CONTACT.email}
-                </a>
-              </li>
-              <li>
-                <a href={`tel:${CONTACT.phoneIntl}`} className="flex items-center gap-2.5 text-sm text-pink-300 hover:text-pink-500 transition-colors">
-                  <Phone size={14} className="text-pink-500 shrink-0" />
-                  {CONTACT_PHONE_DISPLAY}
                 </a>
               </li>
             </ul>

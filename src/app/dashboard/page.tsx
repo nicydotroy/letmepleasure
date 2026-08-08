@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { PlusCircle, Clock, CheckCircle, XCircle, FileText, Eye, MapPin, PenLine, ShieldCheck, Sparkles, Phone, MessageCircle, Mail } from 'lucide-react'
-import { CONTACT, CONTACT_PHONE_DISPLAY } from '@/lib/contact'
+import { PlusCircle, Clock, CheckCircle, XCircle, FileText, Eye, MapPin, PenLine, ShieldCheck, Sparkles, Mail } from 'lucide-react'
+import { CONTACT } from '@/lib/contact'
 
 interface Ad {
   id: string
@@ -170,9 +170,6 @@ export default function DashboardPage() {
               const s = STATUS_STYLES[ad.status] || STATUS_STYLES.pending
               const Icon = s.icon
               const isActivating = activateId === ad.id
-              const waMsg = encodeURIComponent(
-                `Hi, I want to activate my Letme Pleasure ad "${ad.title}" (ID: ${ad.id}). Please share the payment details.`
-              )
               return (
                 <div key={ad.id} className="bg-white rounded-xl p-5 shadow-sm border border-pink-50">
                   <div className="flex flex-wrap items-start justify-between gap-4">
@@ -217,23 +214,9 @@ export default function DashboardPage() {
                         <div className="mt-3 bg-[#FFF1F7] rounded-xl p-4 border border-pink-100">
                           <p className="text-sm font-bold text-[#2A0618] mb-1">Contact us to activate &amp; publish this ad</p>
                           <p className="text-xs text-slate-500 mb-3 leading-relaxed">
-                            Reach out on WhatsApp, call or email to complete payment — we&apos;ll approve and make your ad live.
+                            Email us to complete payment — we&apos;ll approve and make your ad live.
                           </p>
-                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                            <a
-                              href={`https://wa.me/${CONTACT.whatsapp}?text=${waMsg}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-center gap-2 bg-green-500 text-white py-2.5 rounded-lg font-bold text-sm hover:bg-green-600 transition-colors"
-                            >
-                              <MessageCircle size={15} /> WhatsApp
-                            </a>
-                            <a
-                              href={`tel:${CONTACT.phoneIntl}`}
-                              className="flex items-center justify-center gap-2 bg-pink-500 text-[#2A0618] py-2.5 rounded-lg font-bold text-sm hover:bg-pink-400 transition-colors"
-                            >
-                              <Phone size={15} /> Call
-                            </a>
+                          <div className="grid grid-cols-1 gap-2.5">
                             <a
                               href={`mailto:${CONTACT.email}?subject=${encodeURIComponent('Activate ad — ' + ad.id)}`}
                               className="flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 py-2.5 rounded-lg font-bold text-sm hover:border-pink-400 hover:text-pink-600 transition-colors"
@@ -242,7 +225,7 @@ export default function DashboardPage() {
                             </a>
                           </div>
                           <p className="text-xs text-slate-500 mt-3 text-center">
-                            {CONTACT_PHONE_DISPLAY} · {CONTACT.email}
+                            {CONTACT.email}
                           </p>
                         </div>
                       )}

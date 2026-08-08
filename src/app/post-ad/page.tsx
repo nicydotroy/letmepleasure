@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Upload, X, CheckCircle, AlertCircle, Phone, MessageCircle, MapPin, Tag, Mail } from 'lucide-react'
 import { CITIES } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
-import { CONTACT, CONTACT_PHONE_DISPLAY } from '@/lib/contact'
+import { CONTACT } from '@/lib/contact'
 import Image from 'next/image'
 
 interface FormData {
@@ -109,9 +109,6 @@ export default function PostAdPage() {
   }
 
   if (success) {
-    const waMsg = encodeURIComponent(
-      `Hi, I just posted an ad on Letme Pleasure (ID: ${adId || 'N/A'}). I'd like to activate/feature it — please share the payment details.`
-    )
     return (
       <div className="min-h-screen bg-[#FFF1F7] flex items-center justify-center px-4 py-12">
         <div className="text-center bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-pink-100 max-w-md mx-auto w-full">
@@ -131,20 +128,6 @@ export default function PostAdPage() {
               Contact us to complete payment and get your ad approved &amp; featured at the top.
             </p>
             <div className="space-y-2.5">
-              <a
-                href={`https://wa.me/${CONTACT.whatsapp}?text=${waMsg}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 w-full bg-green-500 text-white py-3 rounded-xl font-bold text-sm hover:bg-green-600 transition-colors"
-              >
-                <MessageCircle size={16} /> Chat on WhatsApp
-              </a>
-              <a
-                href={`tel:${CONTACT.phoneIntl}`}
-                className="flex items-center justify-center gap-2 w-full bg-pink-500 text-[#2A0618] py-3 rounded-xl font-bold text-sm hover:bg-pink-400 transition-colors"
-              >
-                <Phone size={16} /> Call {CONTACT_PHONE_DISPLAY}
-              </a>
               <a
                 href={`mailto:${CONTACT.email}?subject=${encodeURIComponent('Ad payment / activation — ' + (adId || ''))}`}
                 className="flex items-center justify-center gap-2 w-full bg-white border border-slate-200 text-slate-700 py-3 rounded-xl font-bold text-sm hover:border-pink-400 hover:text-pink-600 transition-colors"

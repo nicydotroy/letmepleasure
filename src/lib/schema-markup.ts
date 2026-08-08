@@ -165,7 +165,6 @@ export function generateOrganizationSchema() {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
       email: CONTACT.email,
-      telephone: CONTACT.phoneIntl,
       availableLanguage: ['en', 'hi'],
     },
     areaServed: 'IN',
