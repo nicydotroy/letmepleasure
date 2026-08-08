@@ -8,9 +8,9 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 300 // refresh published list every 5 min
 
 export const metadata: Metadata = {
-  title: 'Blog — Listvoo | Tips, Guides & Updates',
-  description: 'Read the latest articles, tips and guides from Listvoo on classifieds, safety and getting the most out of your ads.',
-  alternates: { canonical: 'https://listvoo.com/blog' },
+  title: 'Blog — Letme Pleasure | Tips, Guides & Updates',
+  description: 'Read the latest articles, tips and guides from Letme Pleasure on classifieds, safety and getting the most out of your ads.',
+  alternates: { canonical: 'https://letmepleasure.com/blog' },
 }
 
 export default async function BlogIndexPage() {
@@ -29,8 +29,8 @@ export default async function BlogIndexPage() {
     <div className="min-h-screen bg-[#FFF1F7]">
       <div className="hero-navy py-14 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl font-black text-white mb-2">Listvoo Blog</h1>
-          <p className="text-pink-300 text-sm">Tips, guides and updates from the Listvoo team</p>
+          <h1 className="text-3xl sm:text-4xl font-black text-white mb-2">Letme Pleasure Blog</h1>
+          <p className="text-pink-300 text-sm">Tips, guides and updates from the Letme Pleasure team</p>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 /**
- * One-shot script to push every public URL on Listvoo to IndexNow.
+ * One-shot script to push every public URL on Letme Pleasure to IndexNow.
  * Run after a big content change (e.g. seeding) or whenever Bing/Yandex
  * appear behind on indexing. Safe to run multiple times.
  */

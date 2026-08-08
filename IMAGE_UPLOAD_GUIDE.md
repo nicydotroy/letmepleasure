@@ -1,7 +1,7 @@
 # Image Upload System Documentation
 
 ## Overview
-This system provides complete functionality for handling advertisement image uploads, validation, storage, and display in the letmepleasure application.
+This system provides complete functionality for handling advertisement image uploads, validation, storage, and display in the Letme Pleasure application.
 
 ## Folder Structure
 

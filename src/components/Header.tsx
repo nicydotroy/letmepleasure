@@ -53,11 +53,11 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 sm:h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0" aria-label="letmepleasure home">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0" aria-label="Letme Pleasure home">
             <div className="rounded-lg sm:rounded-xl transition-shadow">
               <Image
                 src="/logos/logo.png"
-                alt="letmepleasure logo"
+                alt="Letme Pleasure logo"
                 width={1024}
                 height={1024}
                 priority

@@ -1,6 +1,6 @@
 {
-  "name": "letmepleasure - Free Classified Ads India",
-  "short_name": "letmepleasure",
+  "name": "Letme Pleasure - Free Classified Ads India",
+  "short_name": "Letme Pleasure",
   "description": "Post free classified ads in India. Find escorts, massage services, and more in your city. 100% Free, No Registration.",
   "start_url": "/",
   "scope": "/",
@@ -63,7 +63,7 @@
     {
       "name": "Post an Ad",
       "short_name": "Post Ad",
-      "description": "Quickly post a new ad on letmepleasure",
+      "description": "Quickly post a new ad on Letme Pleasure",
       "url": "/post-ad",
       "icons": [{ "src": "/og-image-square.png", "sizes": "192x192" }]
     },

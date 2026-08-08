@@ -171,7 +171,7 @@ export default function DashboardPage() {
               const Icon = s.icon
               const isActivating = activateId === ad.id
               const waMsg = encodeURIComponent(
-                `Hi, I want to activate my Listvoo ad "${ad.title}" (ID: ${ad.id}). Please share the payment details.`
+                `Hi, I want to activate my Letme Pleasure ad "${ad.title}" (ID: ${ad.id}). Please share the payment details.`
               )
               return (
                 <div key={ad.id} className="bg-white rounded-xl p-5 shadow-sm border border-pink-50">

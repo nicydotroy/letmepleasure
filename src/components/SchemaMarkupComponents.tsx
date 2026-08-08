@@ -4,9 +4,9 @@
  * 
  * Usage:
  * <BreadcrumbSchema items={[
- *   { name: 'Home', url: 'https://listvoo.com' },
- *   { name: 'Mumbai', url: 'https://listvoo.com/call-girls/mumbai' },
- *   { name: 'Escorts', url: 'https://listvoo.com/call-girls/mumbai/escorts' }
+ *   { name: 'Home', url: 'https://letmepleasure.com' },
+ *   { name: 'Mumbai', url: 'https://letmepleasure.com/call-girls/mumbai' },
+ *   { name: 'Escorts', url: 'https://letmepleasure.com/call-girls/mumbai/escorts' }
  * ]} />
  */
 
@@ -55,14 +55,14 @@ export function LocalBusinessSchema({
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: `Classifieds in ${cityName} - Listvoo`,
+    name: `Classifieds in ${cityName} - Letme Pleasure`,
     description: `Browse and post free classified ads in ${cityName}. ${adCount}+ active listings.`,
-    url: `https://listvoo.com/call-girls/${citySlug}`,
+    url: `https://letmepleasure.com/call-girls/${citySlug}`,
     areaServed: {
       '@type': 'City',
       name: cityName,
     },
-    image: 'https://listvoo.com/og-image.png',
+    image: 'https://letmepleasure.com/og-image.png',
     priceRange: 'Free',
     address: {
       '@type': 'PostalAddress',
@@ -245,15 +245,15 @@ export function ServiceSchema({
       name: city,
       containedInPlace: { '@type': 'AdministrativeArea', name: area },
     },
-    // Listvoo is a national platform, not a brick-and-mortar business in
+    // Letme Pleasure is a national platform, not a brick-and-mortar business in
     // each ad's city — modeling the provider as Organization avoids the
     // LocalBusiness "missing address/geo" structured-data error Site Audit
     // flagged on every ad page.
     provider: {
       '@type': 'Organization',
-      name: 'Listvoo',
-      url: 'https://listvoo.com',
-      logo: 'https://listvoo.com/og-image.png',
+      name: 'Letme Pleasure',
+      url: 'https://letmepleasure.com',
+      logo: 'https://letmepleasure.com/og-image.png',
       ...(phone ? { telephone: phone } : {}),
     },
     ...(image ? { image } : {}),

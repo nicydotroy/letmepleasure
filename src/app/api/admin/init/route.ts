@@ -19,7 +19,7 @@ export async function GET() {
     // Create default admin
     const admin = await createAdminUser(
       'admin',
-      'admin@listvoo.local',
+      'admin@letmepleasure.local',
       'admin123'
     )
 

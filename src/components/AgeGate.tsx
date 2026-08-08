@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
-const STORAGE_KEY = 'letmepleasure_age_verified'
+const STORAGE_KEY = 'Letme Pleasure_age_verified'
 
 export default function AgeGate() {
   // Block by default; hide once we confirm a prior "yes" in localStorage.
@@ -46,7 +46,7 @@ export default function AgeGate() {
         <div className="bg-[#2A0618] inline-flex rounded-2xl px-4 py-3 mb-6">
           <Image
             src="/logos/logo.png"
-            alt="letmepleasure logo"
+            alt="Letme Pleasure logo"
             width={1024}
             height={1024}
             className="h-16 w-auto"

@@ -8,7 +8,7 @@ import InstallPrompt from '@/components/InstallPrompt'
 export const metadata: Metadata = {
   metadataBase: new URL('https://letmepleasure.com'),
   title: {
-    default: 'letmepleasure — Free Classified Ads India | Buy Sell in Your City',
+    default: 'Letme Pleasure — Free Classified Ads India | Buy Sell in Your City',
     template: '%s',
   },
   description:
@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     'buy and sell online',
     'free online classifieds',
   ],
-  authors: [{ name: 'letmepleasure', url: 'https://letmepleasure.com' }],
-  creator: 'letmepleasure',
-  publisher: 'letmepleasure',
+  authors: [{ name: 'Letme Pleasure', url: 'https://letmepleasure.com' }],
+  creator: 'Letme Pleasure',
+  publisher: 'Letme Pleasure',
   formatDetection: {
     email: false,
     telephone: false,
@@ -54,31 +54,31 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_IN',
     url: 'https://letmepleasure.com',
-    siteName: 'letmepleasure',
-    title: 'letmepleasure — Free Classified Ads India',
+    siteName: 'Letme Pleasure',
+    title: 'Letme Pleasure — Free Classified Ads India',
     description: 'Post free classified ads across India. Buy & Sell in your city. 100% free, no registration required.',
     images: [
       { 
         url: 'https://letmepleasure.com/og-image.png', 
         width: 1200, 
         height: 630, 
-        alt: 'letmepleasure Free Classified Ads India',
+        alt: 'Letme Pleasure Free Classified Ads India',
         type: 'image/png',
       },
       {
         url: 'https://letmepleasure.com/og-image-square.png',
         width: 800,
         height: 800,
-        alt: 'letmepleasure Logo',
+        alt: 'Letme Pleasure Logo',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@letmepleasure',
-    creator: '@letmepleasure',
-    title: 'letmepleasure — Free Classified Ads India',
+    site: '@Letme Pleasure',
+    creator: '@Letme Pleasure',
+    title: 'Letme Pleasure — Free Classified Ads India',
     description: 'Post free classified ads across India. Buy & Sell in your city.',
     images: ['https://letmepleasure.com/og-image.png'],
   },
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'letmepleasure',
+    title: 'Letme Pleasure',
   },
   category: 'Classifieds',
 }
@@ -107,7 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#2A0618" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="letmepleasure" />
+        <meta name="apple-mobile-web-app-title" content="Letme Pleasure" />
         
         <link rel="icon" href="/logos/favicon.ico" sizes="any" />
         <link rel="icon" type="image/png" sizes="16x16" href="/logos/favicon-16x16.png" />
@@ -129,7 +129,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              name: 'letmepleasure',
+              name: 'Letme Pleasure',
               url: 'https://letmepleasure.com',
               description: 'Free classified ads in India - Buy, Sell, Find services in your city',
               potentialAction: {
@@ -139,7 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               },
               publisher: {
                 '@type': 'Organization',
-                name: 'letmepleasure',
+                name: 'Letme Pleasure',
                 url: 'https://letmepleasure.com',
                 logo: 'https://letmepleasure.com/og-image.png',
                 sameAs: [
@@ -159,7 +159,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'letmepleasure',
+              name: 'Letme Pleasure',
               url: 'https://letmepleasure.com',
               logo: 'https://letmepleasure.com/og-image.png',
               description: 'Free Classified Ads Platform in India',

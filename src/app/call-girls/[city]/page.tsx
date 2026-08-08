@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: `Call Girls in ${city.name} | ${adCount > 0 ? `${adCount}+ Verified ` : 'Verified '}Escorts in ${city.name}, ${city.state}`,
-    description: `Browse ${adCountText} of call girls and escorts across ${city.areas.length} areas of ${city.name}, ${city.state} — including ${topAreas}. Real photos, direct WhatsApp & phone, no registration. Listvoo lists ${city.name} call girl & escort services daily.`,
+    description: `Browse ${adCountText} of call girls and escorts across ${city.areas.length} areas of ${city.name}, ${city.state} — including ${topAreas}. Real photos, direct WhatsApp & phone, no registration. Letme Pleasure lists ${city.name} call girl & escort services daily.`,
     keywords: [
       `call girls in ${city.name}`,
       `escorts in ${city.name}`,
@@ -52,11 +52,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       `${city.name} ${city.state} escorts`,
       ...city.areas.slice(0, 5).map((a) => `escorts in ${a.name} ${city.name}`),
     ].join(', '),
-    alternates: { canonical: `https://listvoo.com/call-girls/${params.city}` },
+    alternates: { canonical: `https://letmepleasure.com/call-girls/${params.city}` },
     openGraph: {
       title: `Call Girls in ${city.name} | ${adCount > 0 ? `${adCount}+ ` : ''}Verified Escorts`,
       description: `Find verified call girls and escorts across ${city.areas.length} areas of ${city.name}. Real photos, direct contact, no registration.`,
-      url: `https://listvoo.com/call-girls/${params.city}`,
+      url: `https://letmepleasure.com/call-girls/${params.city}`,
       type: 'website',
     },
   }
@@ -82,14 +82,14 @@ export default async function CityPage({ params }: Props) {
   ])
 
   const totalAdCount = areaStats.reduce((sum, s) => sum + s._count.id, 0)
-  const cityUrl = `https://listvoo.com/call-girls/${params.city}`
+  const cityUrl = `https://letmepleasure.com/call-girls/${params.city}`
 
   return (
     <div className="min-h-screen bg-[#FFF1F7]">
       <BreadcrumbSchema
         items={[
-          { name: 'Home', url: 'https://listvoo.com' },
-          { name: 'Cities', url: 'https://listvoo.com/call-girls' },
+          { name: 'Home', url: 'https://letmepleasure.com' },
+          { name: 'Cities', url: 'https://letmepleasure.com/call-girls' },
           { name: city.name, url: cityUrl },
         ]}
       />
@@ -102,7 +102,7 @@ export default async function CityPage({ params }: Props) {
       />
       <AggregateOfferSchema
         itemCount={totalAdCount}
-        description={`${totalAdCount} verified escort listings in ${city.name}, ${city.state} on Listvoo.`}
+        description={`${totalAdCount} verified escort listings in ${city.name}, ${city.state} on Letme Pleasure.`}
       />
       <ItemListSchema
         listName={`Call Girls in ${city.name}`}
@@ -110,11 +110,11 @@ export default async function CityPage({ params }: Props) {
           let img: string | undefined
           try {
             const arr: string[] = JSON.parse(ad.images || '[]')
-            if (arr[0]) img = `https://listvoo.com${arr[0]}`
+            if (arr[0]) img = `https://letmepleasure.com${arr[0]}`
           } catch {/* ignore */}
           return {
             name: ad.title,
-            url: `https://listvoo.com/ads/${ad.id}`,
+            url: `https://letmepleasure.com/ads/${ad.id}`,
             image: img,
             description: ad.description.slice(0, 160),
           }

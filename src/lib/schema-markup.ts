@@ -42,7 +42,7 @@ export function generateLocalBusinessSchema(cityName: string, citySlug: string) 
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: `${cityName} Classifieds - letmepleasure`,
+    name: `${cityName} Classifieds - Letme Pleasure`,
     description: `Browse and post classified ads in ${cityName}`,
     url: `https://letmepleasure.com/call-girls/${citySlug}`,
     areaServed: {
@@ -112,11 +112,11 @@ export function generateArticleSchema(ad: {
     datePublished: ad.publishedDate.toISOString(),
     author: {
       '@type': 'Organization',
-      name: ad.author || 'letmepleasure',
+      name: ad.author || 'Letme Pleasure',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'letmepleasure',
+      name: 'Letme Pleasure',
       logo: {
         '@type': 'ImageObject',
         url: 'https://letmepleasure.com/og-image.png',
@@ -138,7 +138,7 @@ export function generateAggregateOfferSchema(adCount: number, cityName: string) 
     availability: 'https://schema.org/InStock',
     seller: {
       '@type': 'Organization',
-      name: 'letmepleasure',
+      name: 'Letme Pleasure',
       url: 'https://letmepleasure.com',
     },
     description: `Available listings in ${cityName}`,
@@ -152,7 +152,7 @@ export function generateOrganizationSchema() {
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'letmepleasure',
+    name: 'Letme Pleasure',
     url: 'https://letmepleasure.com',
     logo: 'https://letmepleasure.com/og-image.png',
     description: 'Free Classifieds Platform in India',

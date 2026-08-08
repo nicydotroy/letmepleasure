@@ -12,12 +12,12 @@ export const dynamic = 'force-dynamic'
 
 const HOME_FAQS = [
   {
-    question: 'Is letmepleasure free to use?',
+    question: 'Is Letme Pleasure free to use?',
     answer:
-      'Yes, letmepleasure is 100% free. You can browse listings and post your own classified ad in any Indian city without paying a single rupee — there are no hidden charges.',
+      'Yes, Letme Pleasure is 100% free. You can browse listings and post your own classified ad in any Indian city without paying a single rupee — there are no hidden charges.',
   },
   {
-    question: 'How do I post an ad on letmepleasure?',
+    question: 'How do I post an ad on Letme Pleasure?',
     answer:
       'Click "Post Free Ad", choose a category and city, add your title, description, photos and contact number, then submit. Your ad goes live after a quick review — usually within minutes.',
   },
@@ -27,9 +27,9 @@ const HOME_FAQS = [
       'No registration is required to post a basic ad. You can optionally create a free account to manage your ads, track their status, and edit them from your dashboard.',
   },
   {
-    question: 'Which cities does letmepleasure cover?',
+    question: 'Which cities does Letme Pleasure cover?',
     answer:
-      'letmepleasure covers all major Indian metro cities including Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, Goa, Chandigarh and 38+ cities, with hyper-local listings down to your neighbourhood.',
+      'Letme Pleasure covers all major Indian metro cities including Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, Goa, Chandigarh and 38+ cities, with hyper-local listings down to your neighbourhood.',
   },
   {
     question: 'How long does it take for my ad to go live?',
@@ -39,10 +39,10 @@ const HOME_FAQS = [
   {
     question: 'How can I contact an advertiser?',
     answer:
-      'Every approved ad shows the advertiser’s phone and WhatsApp number. You can call or message them directly — letmepleasure never sits in the middle of your conversation.',
+      'Every approved ad shows the advertiser’s phone and WhatsApp number. You can call or message them directly — Letme Pleasure never sits in the middle of your conversation.',
   },
   {
-    question: 'Is Listvoo safe and discreet?',
+    question: 'Is Letme Pleasure safe and discreet?',
     answer:
       'Yes. Your privacy is our priority. Contact happens directly between users via phone or WhatsApp, and we do not share your details with third parties.',
   },
@@ -52,9 +52,9 @@ const HOME_FAQS = [
       'Yes. Log in to your dashboard to view, edit, or remove any ad you have posted, and to check whether it is pending, approved or rejected.',
   },
   {
-    question: 'What types of services can I find on Listvoo?',
+    question: 'What types of services can I find on Letme Pleasure?',
     answer:
-      'Listvoo features adult classifieds across categories such as escorts, massage services, call girls and companionship listings in cities all over India.',
+      'Letme Pleasure features adult classifieds across categories such as escorts, massage services, call girls and companionship listings in cities all over India.',
   },
   {
     question: 'How do I activate or feature my ad?',
@@ -62,14 +62,14 @@ const HOME_FAQS = [
       'After posting, open your dashboard and tap "Activate this ad" to get our WhatsApp, call and email details. Contact us to complete activation and get your ad approved and featured.',
   },
   {
-    question: 'Are the listings on Listvoo verified?',
+    question: 'Are the listings on Letme Pleasure verified?',
     answer:
       'Every ad is manually reviewed by our team before it goes live to keep the platform genuine. We always recommend meeting safely and verifying details yourself before any transaction.',
   },
   {
-    question: 'Is there an age requirement to use Listvoo?',
+    question: 'Is there an age requirement to use Letme Pleasure?',
     answer:
-      'Yes. letmepleasure contains adult content and is strictly for users aged 18 years or older. By using the site you confirm that you are an adult and that viewing such content is legal in your location.',
+      'Yes. Letme Pleasure contains adult content and is strictly for users aged 18 years or older. By using the site you confirm that you are an adult and that viewing such content is legal in your location.',
   },
 ]
 
@@ -78,13 +78,13 @@ interface SearchParams { q?: string; city?: string; category?: string }
 export async function generateMetadata({ searchParams }: { searchParams: SearchParams }): Promise<Metadata> {
   if (searchParams.q) {
     return {
-      title: `"${searchParams.q}" — Classified Ads India | Listvoo`,
-      description: `Search results for "${searchParams.q}" on Listvoo - Free classified ads in India.`,
-      alternates: { canonical: 'https://listvoo.com' },
+      title: `"${searchParams.q}" — Classified Ads India | Letme Pleasure`,
+      description: `Search results for "${searchParams.q}" on Letme Pleasure - Free classified ads in India.`,
+      alternates: { canonical: 'https://letmepleasure.com' },
     }
   }
   return {
-    title: 'Listvoo — Free Classified Ads India | Buy Sell in Your City',
+    title: 'Letme Pleasure — Free Classified Ads India | Buy Sell in Your City',
     description: 'Post free classified ads in India. Find escorts, massage services, call girls & more in Mumbai, Delhi, Bangalore, Hyderabad, Chennai & all major cities. 100% Free, No Registration.',
     keywords: [
       'free classified ads India',
@@ -99,28 +99,28 @@ export async function generateMetadata({ searchParams }: { searchParams: SearchP
       'online marketplace India',
     ],
     alternates: { 
-      canonical: 'https://listvoo.com',
+      canonical: 'https://letmepleasure.com',
       languages: {
-        'en-IN': 'https://listvoo.com',
+        'en-IN': 'https://letmepleasure.com',
       },
     },
     openGraph: {
-      title: 'Listvoo — Free Classified Ads India | Buy Sell in Your City',
+      title: 'Letme Pleasure — Free Classified Ads India | Buy Sell in Your City',
       description: 'Post free classified ads across India. Buy & Sell in your city. Find services in 38+ metro cities.',
-      url: 'https://listvoo.com',
+      url: 'https://letmepleasure.com',
       type: 'website',
       images: [
         {
-          url: 'https://listvoo.com/og-image.png',
+          url: 'https://letmepleasure.com/og-image.png',
           width: 1200,
           height: 630,
-          alt: 'Listvoo Free Classified Ads India',
+          alt: 'Letme Pleasure Free Classified Ads India',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Listvoo — Free Classified Ads India',
+      title: 'Letme Pleasure — Free Classified Ads India',
       description: 'Post free classified ads across India. 100% Free, No Registration.',
     },
   }
@@ -307,7 +307,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-pink/20 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-cyan/15 rounded-full blur-3xl" />
             <div className="relative text-center mb-10">
-              <h2 className="text-3xl font-black text-white mb-2">Why Choose <span className="text-brand-gradient">Listvoo</span>?</h2>
+              <h2 className="text-3xl font-black text-white mb-2">Why Choose <span className="text-brand-gradient">Letme Pleasure</span>?</h2>
               <p className="text-pink-300">India&apos;s safest and most discreet platform</p>
             </div>
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -338,7 +338,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
             />
             <div className="text-center mb-8">
               <h2 className="text-2xl sm:text-3xl font-black text-[#2A0618]">Frequently Asked Questions</h2>
-              <p className="text-slate-500 text-sm mt-1">Everything you need to know about posting & finding ads on Listvoo</p>
+              <p className="text-slate-500 text-sm mt-1">Everything you need to know about posting & finding ads on Letme Pleasure</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
               {[HOME_FAQS.slice(0, 6), HOME_FAQS.slice(6, 12)].map((column, colIdx) => (
@@ -366,9 +366,9 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
         {/* ── SEO BLOCK ── */}
         {!isFiltered && (
           <section className="bg-white rounded-3xl p-8 border border-pink-50 shadow-sm">
-            <h2 className="text-xl font-black text-[#2A0618] mb-4">Free Classified Ads in India — Listvoo</h2>
+            <h2 className="text-xl font-black text-[#2A0618] mb-4">Free Classified Ads in India — Letme Pleasure</h2>
             <div className="text-slate-500 text-sm leading-relaxed columns-1 md:columns-2 gap-8 space-y-3">
-              <p>Listvoo is India's premier free adult classifieds platform. Find verified escorts, massage services, call girls, and more in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, and all major cities.</p>
+              <p>Letme Pleasure is India's premier free adult classifieds platform. Find verified escorts, massage services, call girls, and more in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, and all major cities.</p>
               <p>Browse listings in <Link href="/call-girls/mumbai" className="text-pink-600 font-semibold hover:underline">Mumbai</Link>, <Link href="/call-girls/delhi" className="text-pink-600 font-semibold hover:underline">Delhi</Link>, <Link href="/call-girls/bangalore" className="text-pink-600 font-semibold hover:underline">Bangalore</Link>, <Link href="/call-girls/hyderabad" className="text-pink-600 font-semibold hover:underline">Hyderabad</Link>, <Link href="/call-girls/chennai" className="text-pink-600 font-semibold hover:underline">Chennai</Link>, <Link href="/call-girls/pune" className="text-pink-600 font-semibold hover:underline">Pune</Link>, <Link href="/call-girls/goa" className="text-pink-600 font-semibold hover:underline">Goa</Link>, <Link href="/call-girls/chandigarh" className="text-pink-600 font-semibold hover:underline">Chandigarh</Link>, and <Link href="/call-girls" className="text-pink-600 font-semibold hover:underline">38+ metro cities</Link>. Post your ad free — no registration, no fees, live instantly.</p>
             </div>
           </section>

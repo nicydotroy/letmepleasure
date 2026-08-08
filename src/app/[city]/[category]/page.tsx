@@ -42,20 +42,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   ]
 
   return {
-    title: `${displayKeyword} in ${city.name} | Verified & Discreet | Listvoo`,
-    description: `Browse verified ${displayKeyword.toLowerCase()} in ${city.name}. Safe, discreet, and authentic listings. 100% verified profiles. Post or browse free on Listvoo.`,
+    title: `${displayKeyword} in ${city.name} | Verified & Discreet | Letme Pleasure`,
+    description: `Browse verified ${displayKeyword.toLowerCase()} in ${city.name}. Safe, discreet, and authentic listings. 100% verified profiles. Post or browse free on Letme Pleasure.`,
     keywords,
     alternates: {
-      canonical: `https://listvoo.com/${city.slug}/${category.slug}`,
+      canonical: `https://letmepleasure.com/${city.slug}/${category.slug}`,
     },
     openGraph: {
-      title: `${displayKeyword} in ${city.name} | Listvoo`,
-      description: `Find verified ${displayKeyword.toLowerCase()} in ${city.name}. Browse, verify, and book safely on Listvoo - India's trusted classifieds platform.`,
+      title: `${displayKeyword} in ${city.name} | Letme Pleasure`,
+      description: `Find verified ${displayKeyword.toLowerCase()} in ${city.name}. Browse, verify, and book safely on Letme Pleasure - India's trusted classifieds platform.`,
       type: 'website',
-      url: `https://listvoo.com/${city.slug}/${category.slug}`,
+      url: `https://letmepleasure.com/${city.slug}/${category.slug}`,
       images: [
         {
-          url: 'https://listvoo.com/og-image.png',
+          url: 'https://letmepleasure.com/og-image.png',
           width: 1200,
           height: 630,
           alt: `${displayKeyword} in ${city.name}`,
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${displayKeyword} in ${city.name} | Listvoo`,
+      title: `${displayKeyword} in ${city.name} | Letme Pleasure`,
       description: `Browse verified ${displayKeyword.toLowerCase()} in ${city.name}. Safe and discreet listings.`,
     },
   }
@@ -192,11 +192,11 @@ export default async function CityCategory({ params }: Props) {
       <div className="bg-[#4A0B2F] border-t border-white/10 mt-12 py-12">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-white mb-4">
-            Why Choose {displayKeyword} on Listvoo in {city.name}?
+            Why Choose {displayKeyword} on Letme Pleasure in {city.name}?
           </h2>
           <div className="space-y-3 text-pink-200 leading-relaxed">
             <p>
-              Listvoo provides the most trusted platform to find verified {displayKeyword.toLowerCase()} in {city.name}.
+              Letme Pleasure provides the most trusted platform to find verified {displayKeyword.toLowerCase()} in {city.name}.
               Every listing is carefully reviewed to ensure your safety and privacy.
             </p>
             <p>
@@ -212,7 +212,7 @@ export default async function CityCategory({ params }: Props) {
               ✓ <span className="font-semibold">Easy to Post</span> - List your services in 60 seconds
             </p>
             <p className="pt-4">
-              Looking to expand your reach? Post your {displayKeyword.toLowerCase()} service on Listvoo completely FREE.
+              Looking to expand your reach? Post your {displayKeyword.toLowerCase()} service on Letme Pleasure completely FREE.
               Reach thousands of customers in {city.name} and across India.
             </p>
           </div>

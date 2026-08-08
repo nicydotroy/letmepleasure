@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!ad) return { title: 'Ad not found' }
   
   const images: string[] = JSON.parse(ad.images || '[]')
-  const ogImage = images.length > 0 ? `https://listvoo.com${images[0]}` : 'https://listvoo.com/og-image.png'
+  const ogImage = images.length > 0 ? `https://letmepleasure.com${images[0]}` : 'https://letmepleasure.com/og-image.png'
   const keywords = [
     ad.title,
     `${ad.area} ${ad.category}`,
@@ -34,19 +34,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // rewrite, so re-suffixing "in Area, City" doubled the location and blew
   // titles past 70 chars (540 pages flagged by Site Audit). Just brand-suffix.
   return {
-    title: `${ad.title} | Listvoo`,
+    title: `${ad.title} | Letme Pleasure`,
     description: ad.description.slice(0, 160),
     keywords,
-    authors: [{ name: 'Listvoo User' }],
-    creator: 'Listvoo',
-    alternates: { canonical: `https://listvoo.com/ads/${params.id}` },
+    authors: [{ name: 'Letme Pleasure User' }],
+    creator: 'Letme Pleasure',
+    alternates: { canonical: `https://letmepleasure.com/ads/${params.id}` },
     openGraph: {
       title: ad.title,
       description: ad.description.slice(0, 160),
       type: 'article',
-      url: `https://listvoo.com/ads/${params.id}`,
+      url: `https://letmepleasure.com/ads/${params.id}`,
       images: images.map((img, i) => ({
-        url: `https://listvoo.com${img}`,
+        url: `https://letmepleasure.com${img}`,
         width: 1200,
         height: 900,
         alt: `${ad.title} - Photo ${i + 1}`,
@@ -60,7 +60,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: 'summary_large_image',
       title: ad.title,
       description: ad.description.slice(0, 160),
-      images: images.length > 0 ? [`https://listvoo.com${images[0]}`] : ['https://listvoo.com/og-image.png'],
+      images: images.length > 0 ? [`https://letmepleasure.com${images[0]}`] : ['https://letmepleasure.com/og-image.png'],
     },
   }
 }
@@ -94,16 +94,16 @@ export default async function AdDetailPage({ params }: Props) {
     take: 4,
   })
 
-  const adUrl = `https://listvoo.com/ads/${ad.id}`
-  const heroImage = images[0] ? `https://listvoo.com${images[0]}` : undefined
+  const adUrl = `https://letmepleasure.com/ads/${ad.id}`
+  const heroImage = images[0] ? `https://letmepleasure.com${images[0]}` : undefined
 
   return (
     <div className="min-h-screen bg-[#FFF1F7]">
       <BreadcrumbSchema
         items={[
-          { name: 'Home', url: 'https://listvoo.com' },
-          { name: ad.city, url: `https://listvoo.com/call-girls/${ad.citySlug}` },
-          { name: ad.area, url: `https://listvoo.com/call-girls/${ad.citySlug}/${ad.areaSlug}` },
+          { name: 'Home', url: 'https://letmepleasure.com' },
+          { name: ad.city, url: `https://letmepleasure.com/call-girls/${ad.citySlug}` },
+          { name: ad.area, url: `https://letmepleasure.com/call-girls/${ad.citySlug}/${ad.areaSlug}` },
           { name: ad.title, url: adUrl },
         ]}
       />
@@ -233,7 +233,7 @@ export default async function AdDetailPage({ params }: Props) {
 
                     {waDigits && (
                       <a
-                        href={`https://wa.me/91${waDigits}?text=${encodeURIComponent(`Hi, I saw your ad "${ad.title}" on Listvoo. Is it still available?`)}`}
+                        href={`https://wa.me/91${waDigits}?text=${encodeURIComponent(`Hi, I saw your ad "${ad.title}" on Letme Pleasure. Is it still available?`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-2.5 w-full bg-green-500 text-white py-4 rounded-xl font-black text-sm hover:bg-green-600 transition-all shadow-lg shadow-green-100 mb-3"
@@ -247,7 +247,7 @@ export default async function AdDetailPage({ params }: Props) {
               })()}
 
               <div className="bg-pink-50 border border-pink-100 rounded-xl p-3.5 text-center mt-4">
-                <p className="text-xs text-pink-800 leading-relaxed">⚠️ Never pay in advance. Meet in a safe place. Listvoo is not responsible for any transactions.</p>
+                <p className="text-xs text-pink-800 leading-relaxed">⚠️ Never pay in advance. Meet in a safe place. Letme Pleasure is not responsible for any transactions.</p>
               </div>
             </div>
 

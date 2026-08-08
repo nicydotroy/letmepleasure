@@ -14,7 +14,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
             Escorts Service in {cityName} | Verified Call Girls & Companions
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">
-            Welcome to Listvoo, {cityName}'s most trusted platform for verified escort services. We connect you with real, verified escorts and companions across {cityName} with complete transparency and safety. Our verified call girls and escorts service in {cityName} offer discreet companionship with real profiles and authentic photos.
+            Welcome to Letme Pleasure, {cityName}'s most trusted platform for verified escort services. We connect you with real, verified escorts and companions across {cityName} with complete transparency and safety. Our verified call girls and escorts service in {cityName} offer discreet companionship with real profiles and authentic photos.
           </p>
         </div>
 
@@ -23,11 +23,11 @@ export default function LocationContent({ cityName }: LocationContentProps) {
           {/* Intro Section */}
           <div>
             <h3 className="text-xl font-bold text-[#2A0618] mb-4 text-pink-700">
-              Why Choose Verified Escorts Service in {cityName} on Listvoo?
+              Why Choose Verified Escorts Service in {cityName} on Letme Pleasure?
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
               <p>
-                Finding genuine escorts service in {cityName} has never been easier. Listvoo offers the most comprehensive directory of verified call girls and escorts in {cityName}. Whether you're looking for companions for dinner, events, or discreet encounters, our {cityName} escorts service connects you with real, verified professionals.
+                Finding genuine escorts service in {cityName} has never been easier. Letme Pleasure offers the most comprehensive directory of verified call girls and escorts in {cityName}. Whether you're looking for companions for dinner, events, or discreet encounters, our {cityName} escorts service connects you with real, verified professionals.
               </p>
               <p>
                 Our {cityName} escort services feature verified profiles with authentic photos, ensuring you know exactly what to expect. All escorts and companions on our platform are checked and verified for your safety and satisfaction.
@@ -84,7 +84,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
                 Yes, many professional escorts in {cityName} do get to pick their clients. Our verified call girls in {cityName} pick clients based on how they feel about the person, if they think they will be safe with them, if it fits their schedule and if they like the person.
               </p>
               <p>
-                The escorts service providers in {cityName} on Listvoo make sure that both the client and the escorts are comfortable and treated with respect. We ensure that both verified escorts and clients are happy with each other.
+                The escorts service providers in {cityName} on Letme Pleasure make sure that both the client and the escorts are comfortable and treated with respect. We ensure that both verified escorts and clients are happy with each other.
               </p>
               <p>
                 Some {cityName} call girls and escorts prefer different kinds of meetings. For example, they might like going on dinner dates or to events. Many escorts in {cityName} are available for hotel meetings or traveling to specific locations.
@@ -102,7 +102,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
               <p>
-                When you look at verified escorts and call girls on Listvoo, you see authentic pictures of the escorts before you book them. This helps you figure out what the {cityName} escorts are like. You can see what they look like, their age, appearance and what kind of person they are.
+                When you look at verified escorts and call girls on Letme Pleasure, you see authentic pictures of the escorts before you book them. This helps you figure out what the {cityName} escorts are like. You can see what they look like, their age, appearance and what kind of person they are.
               </p>
               <p>
                 Our {cityName} escorts service features verified profiles with real photos. You can see pictures of the escorts, their age, where they are from, when they are available and what kind of companionship they offer in the {cityName} escort service category.

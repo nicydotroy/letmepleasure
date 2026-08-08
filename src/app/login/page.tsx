@@ -48,7 +48,7 @@ export default function LoginPage() {
             <span className="text-2xl font-black text-[#2A0618]">L</span>
           </div>
           <h1 className="text-3xl font-black text-white mb-2">Welcome back</h1>
-          <p className="text-pink-200">Sign in to your Listvoo account</p>
+          <p className="text-pink-200">Sign in to your Letme Pleasure account</p>
         </div>
 
         <form onSubmit={handleLogin} className="bg-[#4A0B2F] rounded-2xl p-8 border border-[#9D174D] shadow-2xl">

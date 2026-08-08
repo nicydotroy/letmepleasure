@@ -19,11 +19,11 @@ export async function generateMetadata({ params }: Props) {
   if (!city) return notFound()
 
   return {
-    title: `Free Classifieds in ${city.name} | Post & Browse Ads | Listvoo`,
-    description: `Browse and post free classified ads in ${city.name}. Find escorts, call girls, massage services, and more. 100% verified listings on Listvoo.`,
+    title: `Free Classifieds in ${city.name} | Post & Browse Ads | Letme Pleasure`,
+    description: `Browse and post free classified ads in ${city.name}. Find escorts, call girls, massage services, and more. 100% verified listings on Letme Pleasure.`,
     openGraph: {
-      title: `Classifieds in ${city.name} | Listvoo`,
-      description: `Browse verified classifieds in ${city.name}. Post free ads in 60 seconds on Listvoo.`,
+      title: `Classifieds in ${city.name} | Letme Pleasure`,
+      description: `Browse verified classifieds in ${city.name}. Post free ads in 60 seconds on Letme Pleasure.`,
     },
   }
 }

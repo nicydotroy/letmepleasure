@@ -1,6 +1,6 @@
 # Ad Images Storage
 
-This directory stores all images uploaded for ads on letmepleasure.
+This directory stores all images uploaded for ads on Letme Pleasure.
 
 ## Folder Structure
 

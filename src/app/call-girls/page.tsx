@@ -4,9 +4,9 @@ import { CITIES } from '@/lib/cities'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Call Girls in India - Find Escorts in Mumbai, Delhi, Bangalore & More | Listvoo',
+  title: 'Call Girls in India - Find Escorts in Mumbai, Delhi, Bangalore & More | Letme Pleasure',
   description: 'Call girls and escorts across India. Find verified escorts in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata and 38+ metro cities. Professional, discreet, verified profiles.',
-  alternates: { canonical: 'https://listvoo.com/call-girls' },
+  alternates: { canonical: 'https://letmepleasure.com/call-girls' },
 }
 
 const cityEmojis: Record<string, string> = {
@@ -98,7 +98,7 @@ export default function LocationsPage() {
         <div className="mt-16 bg-white rounded-3xl p-8 border border-pink-50 shadow-sm">
           <h2 className="text-lg font-black text-[#2A0618] mb-3">Free Classified Ads Across India</h2>
           <p className="text-sm text-slate-500 leading-relaxed">
-            Listvoo covers all major Indian metro cities with hyper-local adult classified ads. Whether you&apos;re in South Mumbai&apos;s Colaba, Delhi&apos;s Connaught Place, Bangalore&apos;s Koramangala, or Hyderabad&apos;s Banjara Hills — find local listings right in your neighbourhood. Post your ad free, browse by city, filter by area, and connect directly via phone or WhatsApp.
+            Letme Pleasure covers all major Indian metro cities with hyper-local adult classified ads. Whether you&apos;re in South Mumbai&apos;s Colaba, Delhi&apos;s Connaught Place, Bangalore&apos;s Koramangala, or Hyderabad&apos;s Banjara Hills — find local listings right in your neighbourhood. Post your ad free, browse by city, filter by area, and connect directly via phone or WhatsApp.
           </p>
         </div>
       </div>

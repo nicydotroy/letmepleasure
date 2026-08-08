@@ -69,10 +69,10 @@ export default function InstallPrompt() {
     <div className="fixed bottom-4 inset-x-3 sm:inset-x-auto sm:right-5 sm:max-w-sm z-[9990]">
       <div className="bg-white rounded-2xl shadow-2xl border border-pink-100 p-4 flex items-start gap-3">
         <div className="bg-[#2A0618] rounded-xl p-1.5 shrink-0">
-          <Image src="/og-image-square.png" alt="Listvoo" width={44} height={44} className="rounded-lg" />
+          <Image src="/og-image-square.png" alt="Letme Pleasure" width={44} height={44} className="rounded-lg" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="font-black text-[#2A0618] text-sm leading-tight">Install the Listvoo app</p>
+          <p className="font-black text-[#2A0618] text-sm leading-tight">Install the Letme Pleasure app</p>
           {isIOS ? (
             <p className="text-xs text-slate-500 mt-1 leading-relaxed">
               Tap <Share size={12} className="inline -mt-0.5" /> <strong>Share</strong> then{' '}

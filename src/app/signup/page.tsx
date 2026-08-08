@@ -49,7 +49,7 @@ export default function SignUpPage() {
             <span className="text-2xl font-black text-[#2A0618]">L</span>
           </div>
           <h1 className="text-3xl font-black text-white mb-2">Create your account</h1>
-          <p className="text-pink-200">Join Listvoo to post and manage your ads</p>
+          <p className="text-pink-200">Join Letme Pleasure to post and manage your ads</p>
         </div>
 
         <form onSubmit={handleSignup} className="bg-[#4A0B2F] rounded-2xl p-8 border border-[#9D174D] shadow-2xl">

@@ -18,13 +18,13 @@ async function getPost(slug: string) {
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const post = await getPost(params.slug)
-  if (!post) return { title: 'Article not found — Listvoo' }
+  if (!post) return { title: 'Article not found — Letme Pleasure' }
 
   const description = post.excerpt || post.content.slice(0, 155)
-  const url = `https://listvoo.com/blog/${post.slug}`
+  const url = `https://letmepleasure.com/blog/${post.slug}`
 
   return {
-    title: `${post.title} — Listvoo Blog`,
+    title: `${post.title} — Letme Pleasure Blog`,
     description,
     alternates: { canonical: url },
     openGraph: {
@@ -87,10 +87,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               datePublished: post.publishedAt?.toISOString(),
               dateModified: post.updatedAt.toISOString(),
               ...(post.excerpt ? { description: post.excerpt } : {}),
-              ...(post.coverImage ? { image: `https://listvoo.com${post.coverImage}` } : {}),
-              mainEntityOfPage: `https://listvoo.com/blog/${post.slug}`,
-              author: { '@type': 'Organization', name: 'Listvoo' },
-              publisher: { '@type': 'Organization', name: 'Listvoo', logo: { '@type': 'ImageObject', url: 'https://listvoo.com/og-image.png' } },
+              ...(post.coverImage ? { image: `https://letmepleasure.com${post.coverImage}` } : {}),
+              mainEntityOfPage: `https://letmepleasure.com/blog/${post.slug}`,
+              author: { '@type': 'Organization', name: 'Letme Pleasure' },
+              publisher: { '@type': 'Organization', name: 'Letme Pleasure', logo: { '@type': 'ImageObject', url: 'https://letmepleasure.com/og-image.png' } },
             }),
           }}
         />

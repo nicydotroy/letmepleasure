@@ -36,7 +36,7 @@ Create these files in /public/:
 
 1. og-image.png (1200x630px)
    - Use your logo/brand colors
-   - Include "letmepleasure - Free Classifieds India"
+   - Include "Letme Pleasure - Free Classifieds India"
    - Save as PNG
 
 2. og-image-square.png (800x800px)
@@ -68,8 +68,8 @@ With: Your actual verification code from Google Search Console
 ```
 In /src/app/layout.tsx:
 twitter: {
-  site: '@listvoo',  // Update this
-  creator: '@listvoo',  // Update this
+  site: '@Letme Pleasure',  // Update this
+  creator: '@Letme Pleasure',  // Update this
 }
 ```
 
@@ -78,7 +78,7 @@ twitter: {
 1. Go to https://search.google.com/search-console
 2. Add property: https://letmepleasure.com
 3. Verify ownership (copy verification code first)
-4. Submit sitemap: https://listvoo.com/sitemap.xml
+4. Submit sitemap: https://letmepleasure.com/sitemap.xml
 5. Request indexing for key pages
 
 ---
@@ -94,9 +94,9 @@ import { BreadcrumbSchema } from '@/components/SchemaMarkupComponents'
 // Inside your component return:
 <BreadcrumbSchema items={[
    { name: 'Home', url: 'https://letmepleasure.com' },
-  { name: 'All Locations', url: 'https://listvoo.com/call-girls' },
-  { name: cityName, url: `https://listvoo.com/call-girls/${citySlug}` },
-  { name: areaName, url: `https://listvoo.com/call-girls/${citySlug}/${areaSlug}` },
+  { name: 'All Locations', url: 'https://letmepleasure.com/call-girls' },
+  { name: cityName, url: `https://letmepleasure.com/call-girls/${citySlug}` },
+  { name: areaName, url: `https://letmepleasure.com/call-girls/${citySlug}/${areaSlug}` },
 ]} />
 ```
 

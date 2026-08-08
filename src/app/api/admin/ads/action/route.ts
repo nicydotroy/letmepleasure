@@ -31,9 +31,9 @@ export async function POST(req: NextRequest) {
     // next crawl. Fire-and-forget — failures must not block the admin action.
     if (action === 'approve') {
       void pingIndexNow([
-        `https://listvoo.com/ads/${ad.id}`,
-        `https://listvoo.com/call-girls/${ad.citySlug}`,
-        `https://listvoo.com/call-girls/${ad.citySlug}/${ad.areaSlug}`,
+        `https://letmepleasure.com/ads/${ad.id}`,
+        `https://letmepleasure.com/call-girls/${ad.citySlug}`,
+        `https://letmepleasure.com/call-girls/${ad.citySlug}/${ad.areaSlug}`,
       ])
     }
 

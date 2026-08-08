@@ -77,7 +77,7 @@
 - [ ] Category pages: 50-60 chars
 - [ ] Ad pages: 50-60 chars
 - [ ] Include primary keyword
--- [ ] Include brand name (letmepleasure)
+-- [ ] Include brand name (Letme Pleasure)
 
 #### Meta Descriptions
 - [ ] Homepage description: 150-160 chars
@@ -101,7 +101,7 @@
 // Find all internal links
 const links = document.querySelectorAll('a[href]');
 const internalLinks = Array.from(links).filter(a => 
-  a.href.includes('listvoo.com') && 
+  a.href.includes('letmepleasure.com') && 
   a.getAttribute('href') !== '#'
 );
 console.log(`Found ${internalLinks.length} internal links`);
@@ -116,7 +116,7 @@ internalLinks.forEach(a => console.log(a.href));
 ### 7. Sitemap Testing
 
 #### Validation Steps
-1. Visit: https://listvoo.com/sitemap.xml
+1. Visit: https://letmepleasure.com/sitemap.xml
 2. Verify:
    - ✅ XML format valid
    - ✅ All URLs included
@@ -127,19 +127,19 @@ internalLinks.forEach(a => console.log(a.href));
 #### Submission to GSC
 1. Go to Google Search Console
 2. Click "Sitemaps"
-3. Enter: https://listvoo.com/sitemap.xml
+3. Enter: https://letmepleasure.com/sitemap.xml
 4. Click "Submit"
 5. Wait for processing (usually 24-48 hours)
 
 ### 8. Robots.txt Testing
 
 #### Check Accessibility
-1. Visit: https://listvoo.com/robots.txt
+1. Visit: https://letmepleasure.com/robots.txt
 2. Verify content:
    - ✅ User-agent: *
    - ✅ Disallow: /api/
    - ✅ Disallow: /admin/
-   - ✅ Sitemap: https://listvoo.com/sitemap.xml
+   - ✅ Sitemap: https://letmepleasure.com/sitemap.xml
    - ✅ Crawl-delay: 1
 
 #### Test with GSC

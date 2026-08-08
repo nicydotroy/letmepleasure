@@ -46,7 +46,7 @@ export default function AdminLoginPage() {
           <div className="inline-flex items-center justify-center w-14 h-14 bg-[#FBBF24] rounded-xl mb-4">
             <span className="text-2xl font-black text-[#2A0618]">L</span>
           </div>
-          <h1 className="text-3xl font-black text-white mb-2">Listvoo Admin</h1>
+          <h1 className="text-3xl font-black text-white mb-2">Letme Pleasure Admin</h1>
           <p className="text-pink-200">Approve ads and manage platform</p>
         </div>
 

@@ -110,7 +110,7 @@ export default function PostAdPage() {
 
   if (success) {
     const waMsg = encodeURIComponent(
-      `Hi, I just posted an ad on Listvoo (ID: ${adId || 'N/A'}). I'd like to activate/feature it — please share the payment details.`
+      `Hi, I just posted an ad on Letme Pleasure (ID: ${adId || 'N/A'}). I'd like to activate/feature it — please share the payment details.`
     )
     return (
       <div className="min-h-screen bg-[#FFF1F7] flex items-center justify-center px-4 py-12">

@@ -159,7 +159,7 @@ export default function AdListItem({ ad }: { ad: Ad }) {
             </a>
             {ad.whatsapp && (
               <a
-                href={`https://wa.me/91${ad.whatsapp.replace(/\D/g, '').slice(-10)}?text=${encodeURIComponent(`Hi, I saw your ad "${ad.title}" on letmepleasure.`)}`}
+                href={`https://wa.me/91${ad.whatsapp.replace(/\D/g, '').slice(-10)}?text=${encodeURIComponent(`Hi, I saw your ad "${ad.title}" on Letme Pleasure.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-1.5 bg-green-500 text-white py-2.5 px-4 rounded-xl font-bold text-sm hover:bg-green-600 transition-colors"

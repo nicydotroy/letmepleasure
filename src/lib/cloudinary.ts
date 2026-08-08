@@ -21,7 +21,7 @@ export function isCloudinaryConfigured(): boolean {
 export async function uploadImageToCloudinary(buffer: Buffer, mimeType: string): Promise<string> {
   const dataUri = `data:${mimeType};base64,${buffer.toString('base64')}`
   const result = await cloudinary.uploader.upload(dataUri, {
-    folder: 'letmepleasure/ads',
+    folder: 'Letme Pleasure/ads',
     resource_type: 'image',
     // Cap very large uploads and auto-pick the best format/quality.
     transformation: [{ width: 1600, height: 1600, crop: 'limit' }, { quality: 'auto', fetch_format: 'auto' }],

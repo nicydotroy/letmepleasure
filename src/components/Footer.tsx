@@ -35,7 +35,7 @@ export default function Footer() {
             <div className="inline-flex mb-5">
               <Image
                 src="/logos/logo.png"
-                alt="letmepleasure logo"
+                alt="Letme Pleasure logo"
                 width={1024}
                 height={1024}
                 className="h-16 sm:h-20 w-auto"
@@ -129,7 +129,7 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-pink-400/60">
-          <p>© {new Date().getFullYear()} letmepleasure. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Letme Pleasure. All rights reserved.</p>
           <div className="flex items-center gap-4">
             <Link href="#" className="hover:text-pink-200 transition-colors">Privacy Policy</Link>
             <Link href="#" className="hover:text-pink-200 transition-colors">Terms of Service</Link>

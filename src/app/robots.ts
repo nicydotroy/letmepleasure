@@ -35,6 +35,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'PetalBot', disallow: '/' },
       { userAgent: 'SeekportBot', disallow: '/' },
     ],
-    sitemap: 'https://listvoo.com/sitemap.xml',
+    sitemap: 'https://letmepleasure.com/sitemap.xml',
   }
 }
