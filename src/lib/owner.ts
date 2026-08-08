@@ -3,7 +3,7 @@ import { cookies } from 'next/headers'
 
 // Email(s) allowed to author blog posts from their normal user account.
 // Configurable via the BLOG_OWNER_EMAILS env var (comma-separated).
-export const OWNER_EMAILS = (process.env.BLOG_OWNER_EMAILS || 'trusted7061@gmail.com')
+export const OWNER_EMAILS = (process.env.BLOG_OWNER_EMAILS || 'riyadotpatel@gmail.com')
   .split(',')
   .map((e) => e.trim().toLowerCase())
   .filter(Boolean)
