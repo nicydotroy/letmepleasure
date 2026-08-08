@@ -3,6 +3,8 @@
  * Generates structured data for better search engine understanding
  */
 
+import { CONTACT } from '@/lib/contact'
+
 interface BreadcrumbItem {
   name: string
   url: string
@@ -162,8 +164,8 @@ export function generateOrganizationSchema() {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      email: 'kumarisumi493@gmail.com',
-      telephone: '+917667628077',
+      email: CONTACT.email,
+      telephone: CONTACT.phoneIntl,
       availableLanguage: ['en', 'hi'],
     },
     areaServed: 'IN',
