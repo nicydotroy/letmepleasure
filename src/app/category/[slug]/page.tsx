@@ -5,6 +5,8 @@ import { CATEGORIES, getCategoryBySlug } from '@/lib/categories'
 import { CITIES } from '@/lib/cities'
 import AdCard from '@/components/AdCard'
 import SearchBar from '@/components/SearchBar'
+import CustomLocationContent from '@/components/CustomLocationContent'
+import { getPageContent } from '@/lib/page-content'
 import { MapPin } from 'lucide-react'
 import type { Metadata } from 'next'
 
@@ -56,6 +58,8 @@ export default async function CategoryPage({ params }: Props) {
   } catch {
     /* database unavailable — render the page with an empty list */
   }
+
+  const customContent = await getPageContent(`/category/${category.slug}`)
 
   return (
     <div className="min-h-screen bg-[#FFF1F7]">
@@ -126,6 +130,9 @@ export default async function CategoryPage({ params }: Props) {
             </div>
           )}
         </section>
+
+        {/* Admin-edited content & FAQs for this page, if any */}
+        {customContent?.hasAny && <CustomLocationContent content={customContent} />}
 
         {/* City links — funnels to the stronger /[city]/[category] pages */}
         <section>

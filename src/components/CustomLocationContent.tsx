@@ -5,8 +5,8 @@ interface Props {
   content: ResolvedLocationContent
 }
 
-// Renders admin-edited content + FAQs (with FAQPage JSON-LD) for a city/area
-// page. Caller should only render this when content.hasAny is true.
+// Renders admin-edited content + FAQs (with FAQPage JSON-LD) for any page.
+// Caller should only render this when content.hasAny is true.
 export default function CustomLocationContent({ content }: Props) {
   const paragraphs = content.body ? content.body.split(/\n\s*\n/).filter((p) => p.trim()) : []
 

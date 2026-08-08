@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import { MapPin, ArrowRight, Building2 } from 'lucide-react'
 import { CITIES } from '@/lib/cities'
+import CustomLocationContent from '@/components/CustomLocationContent'
+import { getPageContent } from '@/lib/page-content'
 import type { Metadata } from 'next'
+
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Call Girls in India - Find Escorts in Mumbai, Delhi, Bangalore & More | Letme Pleasure',
@@ -22,7 +26,9 @@ const cityEmojis: Record<string, string> = {
   madurai: '🛕', trivandrum: '🥥', aurangabad: '🏯', rajkot: '🦚',
 }
 
-export default function LocationsPage() {
+export default async function LocationsPage() {
+  const customContent = await getPageContent('/call-girls')
+
   return (
     <div className="min-h-screen bg-[#FFF1F7]">
       {/* Hero */}
@@ -93,6 +99,13 @@ export default function LocationsPage() {
             )
           })}
         </div>
+
+        {/* Admin-edited content & FAQs for this page, if any */}
+        {customContent?.hasAny && (
+          <div className="mt-16">
+            <CustomLocationContent content={customContent} />
+          </div>
+        )}
 
         {/* SEO block */}
         <div className="mt-16 bg-white rounded-3xl p-8 border border-pink-50 shadow-sm">

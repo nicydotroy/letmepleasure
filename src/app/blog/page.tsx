@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { prisma } from '@/lib/prisma'
+import CustomLocationContent from '@/components/CustomLocationContent'
+import { getPageContent } from '@/lib/page-content'
 import { CalendarDays } from 'lucide-react'
 
 export const dynamic = 'force-dynamic'
@@ -24,6 +26,8 @@ export default async function BlogIndexPage() {
   } catch {
     // DB unreachable — render empty state rather than crashing
   }
+
+  const customContent = await getPageContent('/blog')
 
   return (
     <div className="min-h-screen bg-[#FFF1F7]">
@@ -62,6 +66,13 @@ export default async function BlogIndexPage() {
                 </div>
               </Link>
             ))}
+          </div>
+        )}
+
+        {/* Admin-edited content & FAQs for this page, if any */}
+        {customContent?.hasAny && (
+          <div className="mt-10">
+            <CustomLocationContent content={customContent} />
           </div>
         )}
       </div>

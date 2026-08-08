@@ -4,6 +4,8 @@ import { prisma } from '@/lib/prisma'
 import { CITIES } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
 import AdCard from '@/components/AdCard'
+import CustomLocationContent from '@/components/CustomLocationContent'
+import { getPageContent } from '@/lib/page-content'
 import type { Metadata } from 'next'
 
 export const dynamic = 'force-dynamic'
@@ -105,9 +107,7 @@ export default async function CityCategory({ params }: Props) {
 
   const displayKeyword = keywordMaps[category.slug] || category.name
 
-  if (!city || !category) {
-    notFound()
-  }
+  const customContent = await getPageContent(`/${city.slug}/${category.slug}`)
 
   return (
     <main className="min-h-screen bg-[#2A0618]">
@@ -223,6 +223,13 @@ export default async function CityCategory({ params }: Props) {
             Post Free Listing Now
           </Link>
         </div>
+
+        {/* Admin-edited content & FAQs for this page, if any */}
+        {customContent?.hasAny && (
+          <div className="mt-10">
+            <CustomLocationContent content={customContent} />
+          </div>
+        )}
       </div>
     </main>
   )

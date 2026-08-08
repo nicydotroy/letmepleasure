@@ -82,11 +82,18 @@ export default function AdminDashboard() {
           </div>
           <div className="flex items-center gap-3">
             <Link
-              href="/admin/locations"
+              href="/admin/content"
               className="flex items-center gap-2 bg-pink-500 hover:bg-pink-400 text-[#2A0618] px-4 py-2 rounded-lg font-bold transition-colors"
             >
+              <FileText size={18} />
+              Edit Page Content
+            </Link>
+            <Link
+              href="/admin/locations"
+              className="flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg font-bold transition-colors"
+            >
               <MapPin size={18} />
-              Edit Locations
+              Locations
             </Link>
             <Link
               href="/admin/blog"

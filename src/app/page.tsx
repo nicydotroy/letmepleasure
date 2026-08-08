@@ -3,6 +3,8 @@ import { prisma } from '@/lib/prisma'
 import SearchBar from '@/components/SearchBar'
 import CityGrid from '@/components/CityGrid'
 import AdCard from '@/components/AdCard'
+import CustomLocationContent from '@/components/CustomLocationContent'
+import { getPageContent } from '@/lib/page-content'
 import { CATEGORIES } from '@/lib/categories'
 import { ArrowRight, MapPin, Shield, Zap } from 'lucide-react'
 import { generateFAQPageSchema } from '@/lib/schema-markup'
@@ -143,7 +145,11 @@ async function getStats() {
 }
 
 export default async function HomePage({ searchParams }: { searchParams: SearchParams }) {
-  const [ads, stats] = await Promise.all([getAds(searchParams), getStats()])
+  const [ads, stats, customContent] = await Promise.all([
+    getAds(searchParams),
+    getStats(),
+    getPageContent('/'),
+  ])
   const isFiltered = !!(searchParams.q || searchParams.city || searchParams.category)
   const activeCategory = CATEGORIES.find((c) => c.slug === searchParams.category)
 
@@ -328,6 +334,9 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
             </div>
           </section>
         )}
+
+        {/* Admin-edited content & FAQs for this page, if any */}
+        {!isFiltered && customContent?.hasAny && <CustomLocationContent content={customContent} />}
 
         {/* ── FAQ ── */}
         {!isFiltered && (
