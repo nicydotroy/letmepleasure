@@ -54,18 +54,18 @@ export default function Header() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0" aria-label="letmepleasure home">
-            <div className="bg-white rounded-lg sm:rounded-xl px-2 py-1.5 sm:px-2.5 sm:py-2 shadow-md group-hover:shadow-lg transition-shadow">
+            <div className="rounded-lg sm:rounded-xl transition-shadow">
               <Image
                 src="/logos/logo.png"
                 alt="letmepleasure logo"
-                width={1280}
-                height={540}
+                width={1024}
+                height={1024}
                 priority
-                className="h-8 sm:h-10 w-auto"
+                className="h-11 sm:h-14 w-auto"
               />
             </div>
             <div className="hidden md:block">
-              <div className="text-[10px] font-semibold text-pink-300 tracking-widest uppercase leading-none">
+              <div className="text-[10px] font-semibold text-brand-cyan tracking-widest uppercase leading-none">
                 Free Classifieds India
               </div>
             </div>

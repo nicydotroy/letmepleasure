@@ -47,9 +47,9 @@ export default function AgeGate() {
           <Image
             src="/logos/logo.png"
             alt="letmepleasure logo"
-            width={1280}
-            height={540}
-            className="h-9 w-auto"
+            width={1024}
+            height={1024}
+            className="h-16 w-auto"
             priority
           />
         </div>

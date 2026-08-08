@@ -152,8 +152,8 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
       {/* ── HERO ── */}
       <section className="relative overflow-hidden hero-navy">
         {/* Decorative blobs */}
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-pink-600/20 blur-3xl float pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-pink-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-brand-pink/20 blur-3xl float pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-brand-cyan/15 blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 md:pt-24 md:pb-32">
           <div className="text-center max-w-4xl mx-auto">
@@ -171,7 +171,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-white leading-[1.05] mb-6">
               Find &amp; Post
               <br />
-              <span className="text-gold">Premium Services</span>
+              <span className="text-brand-gradient">Premium Services</span>
             </h1>
 
             <p className="text-pink-200 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -189,9 +189,12 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
                 { value: `${stats.cityCount || 38}`, label: 'Cities Covered' },
                 { value: '100%', label: 'Free to Post' },
                 { value: '24/7', label: 'Always Live' },
-              ].map((s) => (
+              ].map((s, i) => (
                 <div key={s.label} className="text-center">
-                  <div className="text-3xl font-black text-pink-500">{s.value}</div>
+                  {/* Duotone split echoes the logo wordmark: cyan left, pink right */}
+                  <div className={`text-3xl font-black ${i < 2 ? 'text-brand-cyan-bright' : 'text-brand-pink-bright'}`}>
+                    {s.value}
+                  </div>
                   <div className="text-xs text-pink-300 font-medium mt-0.5">{s.label}</div>
                 </div>
               ))}
@@ -301,17 +304,18 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
         {/* ── WHY US ── */}
         {!isFiltered && (
           <section className="relative overflow-hidden rounded-3xl bg-[#2A0618] p-10">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-pink-600/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-pink/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-cyan/15 rounded-full blur-3xl" />
             <div className="relative text-center mb-10">
-              <h2 className="text-3xl font-black text-white mb-2">Why Choose <span className="text-gold">Listvoo</span>?</h2>
+              <h2 className="text-3xl font-black text-white mb-2">Why Choose <span className="text-brand-gradient">Listvoo</span>?</h2>
               <p className="text-pink-300">India&apos;s safest and most discreet platform</p>
             </div>
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { emoji: '⚡', title: 'Post in 60 Seconds', desc: 'Simple form, instant publish. No sign-up or email verification required.', color: 'bg-pink-500/20 text-pink-400' },
-                { emoji: '📍', title: 'Hyper-Local Reach', desc: 'Target clients in your specific area across 300+ neighbourhoods in India.', color: 'bg-pink-500/20 text-pink-300' },
-                { emoji: '🔒', title: '100% Discreet', desc: 'Your privacy is our priority. Direct WhatsApp contact, no platform middlemen.', color: 'bg-green-500/20 text-green-300' },
+                /* Icon tints run the logo's cyan → violet → pink sweep */
+                { emoji: '⚡', title: 'Post in 60 Seconds', desc: 'Simple form, instant publish. No sign-up or email verification required.', color: 'bg-brand-cyan/20 text-brand-cyan-bright' },
+                { emoji: '📍', title: 'Hyper-Local Reach', desc: 'Target clients in your specific area across 300+ neighbourhoods in India.', color: 'bg-brand-violet/25 text-violet-300' },
+                { emoji: '🔒', title: '100% Discreet', desc: 'Your privacy is our priority. Direct WhatsApp contact, no platform middlemen.', color: 'bg-brand-pink/20 text-brand-pink-bright' },
               ].map((f) => (
                 <div key={f.title} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
                   <div className={`w-12 h-12 rounded-2xl ${f.color} flex items-center justify-center text-2xl mb-4`}>

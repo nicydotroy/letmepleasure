@@ -32,13 +32,13 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="bg-white inline-flex rounded-xl px-3 py-2.5 mb-5 shadow-md">
+            <div className="inline-flex mb-5">
               <Image
                 src="/logos/logo.png"
                 alt="letmepleasure logo"
-                width={1280}
-                height={540}
-                className="h-10 sm:h-12 w-auto"
+                width={1024}
+                height={1024}
+                className="h-16 sm:h-20 w-auto"
               />
             </div>
             <p className="text-sm text-pink-300 leading-relaxed mb-5">

@@ -2,6 +2,21 @@
 
 @theme {
   --font-sans: 'Lora', Georgia, 'Times New Roman', serif;
+
+  /* ── Brand palette — sampled directly from public/logos/logo.png ──
+     The mark is a neon duotone: cyan on the left, magenta-pink on the
+     right, bridged by violet, with a gold sparkle, all on a near-black. */
+  --color-brand-cyan: #10A7D4;        /* logo wordmark "LetMe" */
+  --color-brand-cyan-bright: #22C9EC; /* neon glow edge */
+  --color-brand-cyan-deep: #0080B0;   /* heart silhouette shadow */
+  --color-brand-violet: #7145B4;      /* heart top-left bridge */
+  --color-brand-pink: #F02080;        /* logo wordmark "Pleasure" */
+  --color-brand-pink-bright: #FF50A1; /* neon glow edge */
+  --color-brand-pink-deep: #C03070;   /* heart lower shadow */
+  --color-brand-gold: #FDBA30;        /* sparkle */
+  --color-brand-ink: #2A0618;         /* dark surface */
+  --color-brand-ink-2: #4A0B2F;       /* raised dark surface */
+  --color-brand-tint: #FFF1F7;        /* page background */
 }
 
 @layer base {
@@ -44,44 +59,53 @@
     overflow: hidden;
   }
 
-  /* Deep navy hero — uses logo's brand pinks */
+  /* Hero — mirrors the logo's layout: cyan glow left, magenta right,
+     violet bridging overhead, over the near-black brand ink. */
   .hero-navy {
     background:
-      radial-gradient(ellipse 70% 50% at 15% 60%, rgba(59, 130, 246, 0.30) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 40% at 85% 20%, rgba(96, 165, 250, 0.18) 0%, transparent 60%),
-      linear-gradient(145deg, #2A0618 0%, #4A0B2F 45%, #9D174D 100%);
+      radial-gradient(ellipse 65% 55% at 12% 78%, rgba(34, 201, 236, 0.26) 0%, transparent 62%),
+      radial-gradient(ellipse 62% 52% at 88% 72%, rgba(240, 32, 128, 0.30) 0%, transparent 62%),
+      radial-gradient(ellipse 55% 45% at 50% 4%, rgba(113, 69, 180, 0.28) 0%, transparent 66%),
+      linear-gradient(150deg, #1B0418 0%, #2A0618 42%, #45092C 100%);
   }
 
   /* Kept for existing pages */
   .hero-mesh {
     background:
-      radial-gradient(ellipse 70% 50% at 15% 60%, rgba(59, 130, 246, 0.30) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 40% at 85% 20%, rgba(96, 165, 250, 0.18) 0%, transparent 60%),
-      linear-gradient(145deg, #2A0618 0%, #4A0B2F 45%, #9D174D 100%);
+      radial-gradient(ellipse 65% 55% at 12% 78%, rgba(34, 201, 236, 0.26) 0%, transparent 62%),
+      radial-gradient(ellipse 62% 52% at 88% 72%, rgba(240, 32, 128, 0.30) 0%, transparent 62%),
+      radial-gradient(ellipse 55% 45% at 50% 4%, rgba(113, 69, 180, 0.28) 0%, transparent 66%),
+      linear-gradient(150deg, #1B0418 0%, #2A0618 42%, #45092C 100%);
   }
 
-  /* Brand-pink gradient text (was gold) */
-  .text-gold {
-    background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 60%, #2563EB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .gradient-text-gold {
-    background: linear-gradient(135deg, #60A5FA 0%, #2563EB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Brand-pink gradient text */
+  /* Headline gradient — the logo's cyan → violet → magenta sweep.
+     Meant for dark surfaces, same as the mark itself. */
+  .text-brand-gradient,
+  .text-gold,
+  .gradient-text-gold,
   .gradient-text {
-    background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+    background: linear-gradient(100deg, #22C9EC 0%, #8B5CF6 46%, #FF3D93 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* Same sweep, tuned for light surfaces (deeper stops stay readable) */
+  .text-brand-gradient-dark {
+    background: linear-gradient(100deg, #0080B0 0%, #7145B4 46%, #E01F78 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Logo-gradient rule/underline */
+  .brand-rule {
+    background: linear-gradient(90deg, #22C9EC 0%, #7145B4 50%, #F02080 100%);
+  }
+
+  /* Neon glow, as on the mark */
+  .brand-glow-cyan { box-shadow: 0 0 28px rgba(34, 201, 236, 0.35); }
+  .brand-glow-pink { box-shadow: 0 0 28px rgba(240, 32, 128, 0.35); }
 
   /* Glassmorphism */
   .glass {
@@ -111,7 +135,7 @@
   }
   .card-lift:hover {
     transform: translateY(-5px);
-    box-shadow: 0 18px 44px rgba(11, 19, 84, 0.14);
+    box-shadow: 0 18px 44px rgba(42, 6, 24, 0.18);
   }
 
   /* Float animation for hero blobs */
@@ -127,7 +151,7 @@
     100% { background-position: 200% 0; }
   }
   .shimmer {
-    background: linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
+    background: linear-gradient(90deg, #FBDCE9 25%, #FFF1F7 50%, #FBDCE9 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
   }

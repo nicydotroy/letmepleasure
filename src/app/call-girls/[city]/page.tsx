@@ -121,7 +121,7 @@ export default async function CityPage({ params }: Props) {
         })}
       />
       {/* Hero banner */}
-      <div className="bg-[#2A0618] py-12 px-4 relative overflow-hidden">
+      <div className="hero-navy py-12 px-4 relative overflow-hidden">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs text-pink-400 mb-5">
@@ -138,7 +138,7 @@ export default async function CityPage({ params }: Props) {
                 <MapPin size={13} className="text-pink-500" /> {city.state}
               </p>
               <h1 className="text-3xl sm:text-4xl font-black text-white mb-3">
-                Call Girls in <span className="text-pink-500">{city.name}</span> | Escorts Service
+                Call Girls in <span className="text-brand-gradient">{city.name}</span> | Escorts Service
               </h1>
               <p className="text-pink-200 text-sm mb-4 max-w-2xl">
                 Find verified and discreet escorts in {city.name}. Professional call girls, companions & escort services available across all areas.

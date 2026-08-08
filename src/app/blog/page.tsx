@@ -27,7 +27,7 @@ export default async function BlogIndexPage() {
 
   return (
     <div className="min-h-screen bg-[#FFF1F7]">
-      <div className="bg-[#2A0618] py-14 px-4">
+      <div className="hero-navy py-14 px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl font-black text-white mb-2">Listvoo Blog</h1>
           <p className="text-pink-300 text-sm">Tips, guides and updates from the Listvoo team</p>
