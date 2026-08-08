@@ -134,7 +134,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description: 'Free classified ads in India - Buy, Sell, Find services in your city',
               potentialAction: {
                 '@type': 'SearchAction',
-                target: { '@type': 'EntryPoint', urlTemplate: 'https://letmepleasure.com/?q={search_term_string}' },
+                target: { '@type': 'EntryPoint', urlTemplate: 'https://letmepleasure.com/search/{search_term_string}' },
                 'query-input': 'required name=search_term_string',
               },
               publisher: {

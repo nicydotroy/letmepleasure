@@ -69,7 +69,7 @@ export function generateSearchActionSchema() {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://letmepleasure.com/?q={search_term_string}',
+      urlTemplate: 'https://letmepleasure.com/search/{search_term_string}',
     },
     'query-input': 'required name=search_term_string',
   })
@@ -184,7 +184,7 @@ export function generateCollectionPageSchema(categoryName: string, cityName: str
     numberOfItems: itemCount,
     potentialAction: {
       '@type': 'SearchAction',
-      target: `https://letmepleasure.com/?city=${cityName}&category=${categoryName}`,
+      target: `https://letmepleasure.com/${cityName}/${categoryName}`,
     },
   })
 }

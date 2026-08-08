@@ -171,7 +171,7 @@ export default async function AreaPage({ params, searchParams }: Props) {
             {CATEGORIES.map((cat) => (
               <Link
                 key={cat.slug}
-                href={`/call-girls/${params.city}/${params.area}?category=${cat.slug}`}
+                href={`/call-girls/${params.city}/${params.area}/${cat.slug}`}
                 className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${searchParams.category === cat.slug ? 'bg-pink-500 text-[#2A0618] shadow-lg' : 'bg-white border border-pink-100 text-slate-600 hover:border-pink-400 hover:text-pink-700'}`}
               >
                 {cat.icon} {cat.name}

@@ -5,22 +5,22 @@ import { useRouter } from 'next/navigation'
 import { Search, MapPin } from 'lucide-react'
 import { CITIES } from '@/lib/cities'
 import { CATEGORIES } from '@/lib/categories'
+import { slugify } from '@/lib/slug'
 
 export default function SearchBar({ large = false }: { large?: boolean }) {
   const [query, setQuery] = useState('')
   const [city, setCity] = useState('')
   const router = useRouter()
 
+  // Every destination is a path — the site never emits a query string.
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    if (city && !query) {
-      router.push(`/call-girls/${city}`)
-    } else {
-      const params = new URLSearchParams()
-      if (query) params.set('q', query)
-      if (city) params.set('city', city)
-      router.push(`/?${params.toString()}`)
+    const term = slugify(query)
+    if (!term) {
+      router.push(city ? `/call-girls/${city}` : '/call-girls')
+      return
     }
+    router.push(city ? `/search/${term}/${city}` : `/search/${term}`)
   }
 
   return (
@@ -73,7 +73,7 @@ export default function SearchBar({ large = false }: { large?: boolean }) {
             <button
               key={cat.slug}
               type="button"
-              onClick={() => router.push(`/?category=${cat.slug}`)}
+              onClick={() => router.push(`/category/${cat.slug}`)}
               className="text-xs px-3.5 py-1.5 bg-white/15 backdrop-blur text-white/90 rounded-full hover:bg-pink-500 hover:text-[#2A0618] transition-all font-semibold border border-white/20"
             >
               {cat.icon} {cat.name}

@@ -225,7 +225,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
               {CATEGORIES.map((cat) => (
                 <Link
                   key={cat.slug}
-                  href={`/?category=${cat.slug}`}
+                  href={`/category/${cat.slug}`}
                   className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border-2 border-transparent shadow-sm hover:border-pink-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-pink-50 group-hover:bg-pink-100 flex items-center justify-center text-3xl transition-colors">

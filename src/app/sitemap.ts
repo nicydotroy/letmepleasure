@@ -20,7 +20,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
   ]
 
-  // 2. /[city]/[category] — primary SEO pages ("escorts in mumbai", etc.)
+  // 2. /category/[slug] — nationwide category hubs
+  const categoryRoutes: MetadataRoute.Sitemap = CATEGORIES.map((category) => ({
+    url: `${BASE_URL}/category/${category.slug}`,
+    lastModified: now,
+    changeFrequency: 'daily' as const,
+    priority: 0.8,
+  }))
+
+  // 3. /[city]/[category] — primary SEO pages ("escorts in mumbai", etc.)
   const cityCategoryRoutes: MetadataRoute.Sitemap = CITIES.flatMap((city) =>
     CATEGORIES.map((category) => ({
       url: `${BASE_URL}/${city.slug}/${category.slug}`,
@@ -95,5 +103,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // ignore if DB unreachable
   }
 
-  return [...staticRoutes, ...cityCategoryRoutes, ...cityRoutes, ...adRoutes, ...blogRoutes]
+  return [
+    ...staticRoutes,
+    ...categoryRoutes,
+    ...cityCategoryRoutes,
+    ...cityRoutes,
+    ...adRoutes,
+    ...blogRoutes,
+  ]
 }
