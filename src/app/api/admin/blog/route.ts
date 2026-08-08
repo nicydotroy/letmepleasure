@@ -3,6 +3,8 @@ import { prisma } from '@/lib/prisma'
 import { slugify } from '@/lib/slug'
 import { isBlogAuthor } from '@/lib/owner'
 
+export const dynamic = 'force-dynamic'
+
 // List all posts (drafts + published) for the admin
 export async function GET() {
   if (!(await isBlogAuthor())) {

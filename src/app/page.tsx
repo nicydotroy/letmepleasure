@@ -8,6 +8,8 @@ import { ArrowRight, MapPin, Shield, Zap } from 'lucide-react'
 import { generateFAQPageSchema } from '@/lib/schema-markup'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
 const HOME_FAQS = [
   {
     question: 'Is letmepleasure free to use?',

@@ -17,6 +17,8 @@ import {
 } from '@/components/SchemaMarkupComponents'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
 interface Props { params: { city: string } }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

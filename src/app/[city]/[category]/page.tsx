@@ -6,26 +6,13 @@ import { CATEGORIES } from '@/lib/categories'
 import AdCard from '@/components/AdCard'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
 type Props = {
   params: {
     city: string
     category: string
   }
-}
-
-export async function generateStaticParams() {
-  const combinations = []
-  
-  for (const category of CATEGORIES) {
-    for (const city of CITIES) {
-      combinations.push({
-        city: city.slug,
-        category: category.slug,
-      })
-    }
-  }
-  
-  return combinations
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

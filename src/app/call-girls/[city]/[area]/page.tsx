@@ -15,6 +15,8 @@ import {
 } from '@/components/SchemaMarkupComponents'
 import type { Metadata } from 'next'
 
+export const dynamic = 'force-dynamic'
+
 interface Props {
   params: { city: string; area: string }
   searchParams: { category?: string }
@@ -200,5 +202,4 @@ export default async function AreaPage({ params, searchParams }: Props) {
     </div>
   )
 }
-
 

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { prisma } from '@/lib/prisma'
 import { CalendarDays } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
 export const revalidate = 300 // refresh published list every 5 min
 
 export const metadata: Metadata = {

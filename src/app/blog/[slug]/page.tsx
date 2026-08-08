@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { prisma } from '@/lib/prisma'
 import { CalendarDays, ArrowLeft } from 'lucide-react'
 
+export const dynamic = 'force-dynamic'
 export const revalidate = 300
 
 async function getPost(slug: string) {

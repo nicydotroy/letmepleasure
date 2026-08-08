@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { isAdminOrOwner } from '@/lib/owner'
 
+export const dynamic = 'force-dynamic'
+
 interface FaqInput {
   q?: unknown
   a?: unknown

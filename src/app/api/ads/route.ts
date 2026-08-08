@@ -5,6 +5,8 @@ import { writeFile, mkdir } from 'fs/promises'
 import path from 'path'
 import { isCloudinaryConfigured, uploadImageToCloudinary } from '@/lib/cloudinary'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url)
   const citySlug = searchParams.get('city')

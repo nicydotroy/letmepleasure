@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/lib/prisma'
 import { isBlogAuthor } from '@/lib/owner'
 
+export const dynamic = 'force-dynamic'
+
 // Update a post (edit content, publish/unpublish)
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
   if (!(await isBlogAuthor())) {

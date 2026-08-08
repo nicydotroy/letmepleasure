@@ -6,6 +6,7 @@ import { prisma } from '@/lib/prisma'
 const BASE_URL = 'https://letmepleasure.com'
 
 // Sitemap is regenerated on each request but cached for an hour by Next.
+export const dynamic = 'force-dynamic'
 export const revalidate = 3600
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

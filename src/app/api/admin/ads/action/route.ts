@@ -3,6 +3,8 @@ import { prisma } from '@/lib/prisma'
 import { pingIndexNow } from '@/lib/indexnow'
 import { isAdminOrOwner } from '@/lib/owner'
 
+export const dynamic = 'force-dynamic'
+
 export async function POST(req: NextRequest) {
   try {
     if (!(await isAdminOrOwner())) {
