@@ -67,12 +67,12 @@ export default function InstallPrompt() {
 
   return (
     <div className="fixed bottom-4 inset-x-3 sm:inset-x-auto sm:right-5 sm:max-w-sm z-[9990]">
-      <div className="bg-white rounded-2xl shadow-2xl border border-indigo-100 p-4 flex items-start gap-3">
-        <div className="bg-[#060B27] rounded-xl p-1.5 shrink-0">
+      <div className="bg-white rounded-2xl shadow-2xl border border-pink-100 p-4 flex items-start gap-3">
+        <div className="bg-[#2A0618] rounded-xl p-1.5 shrink-0">
           <Image src="/og-image-square.png" alt="Listvoo" width={44} height={44} className="rounded-lg" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="font-black text-[#060B27] text-sm leading-tight">Install the Listvoo app</p>
+          <p className="font-black text-[#2A0618] text-sm leading-tight">Install the Listvoo app</p>
           {isIOS ? (
             <p className="text-xs text-slate-500 mt-1 leading-relaxed">
               Tap <Share size={12} className="inline -mt-0.5" /> <strong>Share</strong> then{' '}
@@ -85,7 +85,7 @@ export default function InstallPrompt() {
               </p>
               <button
                 onClick={install}
-                className="mt-2.5 flex items-center gap-1.5 bg-blue-500 text-[#060B27] px-4 py-2 rounded-xl font-black text-sm hover:bg-blue-400 transition-colors"
+                className="mt-2.5 flex items-center gap-1.5 bg-pink-500 text-[#2A0618] px-4 py-2 rounded-xl font-black text-sm hover:bg-pink-400 transition-colors"
               >
                 <Download size={15} /> Install App
               </button>

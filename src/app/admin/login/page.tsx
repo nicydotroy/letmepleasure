@@ -39,19 +39,19 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#060B27] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#2A0618] flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-14 h-14 bg-[#FBBF24] rounded-xl mb-4">
-            <span className="text-2xl font-black text-[#060B27]">L</span>
+            <span className="text-2xl font-black text-[#2A0618]">L</span>
           </div>
           <h1 className="text-3xl font-black text-white mb-2">Listvoo Admin</h1>
-          <p className="text-blue-200">Approve ads and manage platform</p>
+          <p className="text-pink-200">Approve ads and manage platform</p>
         </div>
 
         {/* Login Form */}
-        <form onSubmit={handleLogin} className="bg-[#0B1354] rounded-2xl p-8 border border-[#1B2F8C] shadow-2xl">
+        <form onSubmit={handleLogin} className="bg-[#4A0B2F] rounded-2xl p-8 border border-[#9D174D] shadow-2xl">
           {error && (
             <div className="mb-4 p-3 bg-red-500/20 border border-red-500 text-red-200 rounded-lg text-sm">
               {error}
@@ -59,26 +59,26 @@ export default function AdminLoginPage() {
           )}
 
           <div className="mb-5">
-            <label className="block text-sm font-bold text-blue-200 mb-2">Username</label>
+            <label className="block text-sm font-bold text-pink-200 mb-2">Username</label>
             <input
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Enter admin username"
-              className="w-full px-4 py-3 bg-[#060B27] border border-[#1B2F8C] text-white placeholder-blue-400 rounded-lg focus:outline-none focus:border-[#FBBF24] transition-colors"
+              className="w-full px-4 py-3 bg-[#2A0618] border border-[#9D174D] text-white placeholder-pink-400 rounded-lg focus:outline-none focus:border-[#FBBF24] transition-colors"
               disabled={loading}
               required
             />
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-bold text-blue-200 mb-2">Password</label>
+            <label className="block text-sm font-bold text-pink-200 mb-2">Password</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter admin password"
-              className="w-full px-4 py-3 bg-[#060B27] border border-[#1B2F8C] text-white placeholder-blue-400 rounded-lg focus:outline-none focus:border-[#FBBF24] transition-colors"
+              className="w-full px-4 py-3 bg-[#2A0618] border border-[#9D174D] text-white placeholder-pink-400 rounded-lg focus:outline-none focus:border-[#FBBF24] transition-colors"
               disabled={loading}
               required
             />
@@ -87,19 +87,19 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-[#FBBF24] text-[#060B27] py-3 rounded-lg font-black hover:bg-blue-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[#FBBF24] text-[#2A0618] py-3 rounded-lg font-black hover:bg-pink-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Signing In...' : 'Sign In'}
           </button>
 
-          <p className="text-center text-blue-300 text-xs mt-6">
+          <p className="text-center text-pink-300 text-xs mt-6">
             Default credentials: admin / admin123
           </p>
         </form>
 
         {/* Back to Site */}
         <div className="text-center mt-6">
-          <Link href="/" className="text-blue-300 hover:text-[#FBBF24] text-sm transition-colors">
+          <Link href="/" className="text-pink-300 hover:text-[#FBBF24] text-sm transition-colors">
             ← Back to Site
           </Link>
         </div>

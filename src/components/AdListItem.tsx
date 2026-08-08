@@ -37,13 +37,13 @@ export default function AdListItem({ ad }: { ad: Ad }) {
   const category = getCategoryBySlug(ad.category)
 
   return (
-    <article className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-indigo-100 transition-all duration-200 border border-indigo-50">
+    <article className="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-pink-100 transition-all duration-200 border border-pink-50">
       <div className="flex flex-col md:flex-row">
 
         {/* LEFT: Main image */}
         <Link
           href={`/ads/${ad.id}`}
-          className="relative shrink-0 w-full md:w-64 lg:w-72 h-64 md:h-auto md:min-h-[260px] bg-gradient-to-br from-indigo-50 to-blue-100 overflow-hidden"
+          className="relative shrink-0 w-full md:w-64 lg:w-72 h-64 md:h-auto md:min-h-[260px] bg-gradient-to-br from-pink-50 to-pink-100 overflow-hidden"
         >
           {mainImage ? (
             <Image
@@ -61,7 +61,7 @@ export default function AdListItem({ ad }: { ad: Ad }) {
           {/* Category + verified badges */}
           <div className="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap">
             {category && (
-              <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full font-bold bg-blue-500 text-[#060B27] shadow">
+              <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full font-bold bg-pink-500 text-[#2A0618] shadow">
                 {category.icon} {category.name}
               </span>
             )}
@@ -78,7 +78,7 @@ export default function AdListItem({ ad }: { ad: Ad }) {
               <Link
                 key={i}
                 href={`/ads/${ad.id}`}
-                className="relative w-20 lg:w-24 h-20 lg:h-24 rounded-lg overflow-hidden ring-1 ring-indigo-100 hover:ring-2 hover:ring-blue-500 transition-all shrink-0"
+                className="relative w-20 lg:w-24 h-20 lg:h-24 rounded-lg overflow-hidden ring-1 ring-pink-100 hover:ring-2 hover:ring-pink-500 transition-all shrink-0"
               >
                 <Image
                   src={img}
@@ -95,15 +95,15 @@ export default function AdListItem({ ad }: { ad: Ad }) {
         {/* RIGHT: Content */}
         <div className="flex-1 p-5 sm:p-6 flex flex-col">
           <Link href={`/ads/${ad.id}`} className="block group/title">
-            <h3 className="text-lg sm:text-xl font-bold text-slate-800 group-hover/title:text-indigo-700 transition-colors leading-snug mb-1.5">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-800 group-hover/title:text-pink-700 transition-colors leading-snug mb-1.5">
               {ad.title}
             </h3>
           </Link>
 
           <div className="flex items-center gap-3 flex-wrap text-xs text-slate-500 mb-3">
             <span className="inline-flex items-center gap-1 font-medium">
-              <MapPin size={12} className="text-indigo-400" />
-              <Link href={`/call-girls`} className="hover:text-indigo-600 transition-colors">
+              <MapPin size={12} className="text-pink-400" />
+              <Link href={`/call-girls`} className="hover:text-pink-600 transition-colors">
                 {ad.area}, {ad.city}
               </Link>
             </span>
@@ -112,7 +112,7 @@ export default function AdListItem({ ad }: { ad: Ad }) {
               {timeAgo(ad.createdAt)}
             </span>
             {ad.price && (
-              <span className="inline-flex items-center font-bold text-blue-600">
+              <span className="inline-flex items-center font-bold text-pink-600">
                 {formatPrice(ad.price)}
               </span>
             )}
@@ -129,7 +129,7 @@ export default function AdListItem({ ad }: { ad: Ad }) {
                 <Link
                   key={i}
                   href={`/ads/${ad.id}`}
-                  className="relative w-16 h-16 rounded-lg overflow-hidden ring-1 ring-indigo-100 shrink-0"
+                  className="relative w-16 h-16 rounded-lg overflow-hidden ring-1 ring-pink-100 shrink-0"
                 >
                   <Image
                     src={img}
@@ -147,13 +147,13 @@ export default function AdListItem({ ad }: { ad: Ad }) {
           <div className="flex flex-col sm:flex-row gap-2 mt-auto pt-3 border-t border-slate-100">
             <Link
               href={`/ads/${ad.id}`}
-              className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#060B27] text-white py-2.5 px-4 rounded-xl font-bold text-sm hover:bg-[#0B1354] transition-colors"
+              className="flex-1 inline-flex items-center justify-center gap-1.5 bg-[#2A0618] text-white py-2.5 px-4 rounded-xl font-bold text-sm hover:bg-[#4A0B2F] transition-colors"
             >
               See more & contact <ChevronRight size={14} />
             </Link>
             <a
               href={`tel:+91${ad.phone.replace(/\D/g, '').slice(-10)}`}
-              className="inline-flex items-center justify-center gap-1.5 bg-blue-500 text-[#060B27] py-2.5 px-4 rounded-xl font-bold text-sm hover:bg-blue-400 transition-colors"
+              className="inline-flex items-center justify-center gap-1.5 bg-pink-500 text-[#2A0618] py-2.5 px-4 rounded-xl font-bold text-sm hover:bg-pink-400 transition-colors"
             >
               <Phone size={13} /> Call
             </a>

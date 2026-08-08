@@ -144,7 +144,7 @@ export default function AdFormWithImages({
           type="button"
           onClick={handleUploadImage}
           disabled={!selectedImage || uploading}
-          className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition flex items-center justify-center gap-2"
+          className="w-full px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition flex items-center justify-center gap-2"
         >
           {uploading ? (
             <>
@@ -184,7 +184,7 @@ export default function AdFormWithImages({
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter ad title"
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
             required
           />
         </div>
@@ -198,7 +198,7 @@ export default function AdFormWithImages({
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Enter ad description"
             rows={4}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
           />
         </div>
 
@@ -210,7 +210,7 @@ export default function AdFormWithImages({
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
             >
               <option value="">Select category</option>
               <option value="electronics">Electronics</option>
@@ -228,7 +228,7 @@ export default function AdFormWithImages({
               value={price}
               onChange={(e) => setPrice(e.target.value)}
               placeholder="Enter price"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
             />
           </div>
         </div>
@@ -243,7 +243,7 @@ export default function AdFormWithImages({
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
               placeholder="Enter phone number"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
               required
             />
           </div>
@@ -257,7 +257,7 @@ export default function AdFormWithImages({
               value={whatsapp}
               onChange={(e) => setWhatsapp(e.target.value)}
               placeholder="Enter WhatsApp number"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
             />
           </div>
         </div>
@@ -272,7 +272,7 @@ export default function AdFormWithImages({
               value={city}
               onChange={(e) => setCity(e.target.value)}
               placeholder="Enter city"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
             />
           </div>
 
@@ -285,7 +285,7 @@ export default function AdFormWithImages({
               value={area}
               onChange={(e) => setArea(e.target.value)}
               placeholder="Enter area"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent"
             />
           </div>
         </div>

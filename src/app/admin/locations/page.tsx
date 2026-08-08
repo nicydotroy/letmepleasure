@@ -90,13 +90,13 @@ export default function AdminLocationsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#EEF2FF]">
-      <header className="bg-[#060B27] text-white py-6 shadow-lg">
+    <div className="min-h-screen bg-[#FFF1F7]">
+      <header className="bg-[#2A0618] text-white py-6 shadow-lg">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-3 flex-wrap">
           <h1 className="text-2xl font-black flex items-center gap-2">
-            <MapPin size={22} className="text-blue-400" /> Location Content Editor
+            <MapPin size={22} className="text-pink-400" /> Location Content Editor
           </h1>
-          <Link href="/admin/dashboard" className="flex items-center gap-2 text-blue-200 hover:text-white text-sm font-semibold">
+          <Link href="/admin/dashboard" className="flex items-center gap-2 text-pink-200 hover:text-white text-sm font-semibold">
             <ArrowLeft size={16} /> Dashboard
           </Link>
         </div>
@@ -105,14 +105,14 @@ export default function AdminLocationsPage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-6">
 
         {/* City / Area selectors */}
-        <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-indigo-50">
+        <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-pink-50">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">City</label>
               <select
                 value={citySlug}
                 onChange={(e) => { setCitySlug(e.target.value); setAreaSlug('') }}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm font-semibold"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm font-semibold"
               >
                 {CITIES.map((c) => (
                   <option key={c.slug} value={c.slug}>{c.name} — {c.state}</option>
@@ -124,7 +124,7 @@ export default function AdminLocationsPage() {
               <select
                 value={areaSlug}
                 onChange={(e) => setAreaSlug(e.target.value)}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm font-semibold"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm font-semibold"
               >
                 <option value="">— City-level (all areas) —</option>
                 {city?.areas.map((a) => (
@@ -135,15 +135,15 @@ export default function AdminLocationsPage() {
           </div>
           <p className="text-xs text-slate-500 mt-4 flex items-center gap-1.5 flex-wrap">
             Editing: <strong>{areaSlug ? `${area?.name}, ${city?.name}` : `${city?.name} (city-level)`}</strong>
-            <Link href={publicUrl} target="_blank" className="text-indigo-600 hover:text-indigo-800 font-semibold inline-flex items-center gap-1">
+            <Link href={publicUrl} target="_blank" className="text-pink-600 hover:text-pink-800 font-semibold inline-flex items-center gap-1">
               View public page <ExternalLink size={11} />
             </Link>
           </p>
         </div>
 
         {/* Content editor */}
-        <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-indigo-50 space-y-4">
-          <h2 className="text-base font-black text-[#060B27]">Page content</h2>
+        <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-pink-50 space-y-4">
+          <h2 className="text-base font-black text-[#2A0618]">Page content</h2>
 
           {loading ? (
             <p className="text-sm text-slate-500">Loading…</p>
@@ -155,7 +155,7 @@ export default function AdminLocationsPage() {
                   value={form.heading}
                   onChange={(e) => setForm({ ...form, heading: e.target.value })}
                   placeholder="e.g. Verified Call Girls & Companions in Mumbai"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm"
                 />
               </div>
               <div>
@@ -165,7 +165,7 @@ export default function AdminLocationsPage() {
                   onChange={(e) => setForm({ ...form, intro: e.target.value })}
                   rows={2}
                   placeholder="Short opening paragraph rendered below the heading."
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm resize-y"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm resize-y"
                 />
               </div>
               <div>
@@ -175,7 +175,7 @@ export default function AdminLocationsPage() {
                   onChange={(e) => setForm({ ...form, body: e.target.value })}
                   rows={10}
                   placeholder="Long-form content. Separate paragraphs with a blank line."
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm resize-y leading-relaxed"
+                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm resize-y leading-relaxed"
                 />
                 <p className="text-[11px] text-slate-400 mt-1">Tip: leave a blank line between paragraphs.</p>
               </div>
@@ -184,14 +184,14 @@ export default function AdminLocationsPage() {
         </div>
 
         {/* FAQs editor */}
-        <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-indigo-50">
+        <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-pink-50">
           <div className="flex items-center justify-between mb-4">
-            <h2 className="text-base font-black text-[#060B27] flex items-center gap-2">
-              <HelpCircle size={16} className="text-indigo-500" /> FAQs ({form.faqs.length})
+            <h2 className="text-base font-black text-[#2A0618] flex items-center gap-2">
+              <HelpCircle size={16} className="text-pink-500" /> FAQs ({form.faqs.length})
             </h2>
             <button
               onClick={addFaq}
-              className="flex items-center gap-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 px-3 py-1.5 rounded-lg font-bold text-xs transition-colors"
+              className="flex items-center gap-1.5 bg-pink-50 hover:bg-pink-100 text-pink-700 px-3 py-1.5 rounded-lg font-bold text-xs transition-colors"
             >
               <Plus size={13} /> Add FAQ
             </button>
@@ -201,9 +201,9 @@ export default function AdminLocationsPage() {
           ) : (
             <div className="space-y-3">
               {form.faqs.map((f, i) => (
-                <div key={i} className="rounded-xl border border-indigo-100 bg-indigo-50/40 p-3 space-y-2">
+                <div key={i} className="rounded-xl border border-pink-100 bg-pink-50/40 p-3 space-y-2">
                   <div className="flex items-center justify-between gap-3">
-                    <span className="text-[10px] font-bold text-indigo-700 uppercase tracking-wider">Question {i + 1}</span>
+                    <span className="text-[10px] font-bold text-pink-700 uppercase tracking-wider">Question {i + 1}</span>
                     <button onClick={() => removeFaq(i)} className="text-red-500 hover:text-red-700" aria-label="Remove FAQ">
                       <Trash2 size={14} />
                     </button>
@@ -212,14 +212,14 @@ export default function AdminLocationsPage() {
                     value={f.q}
                     onChange={(e) => updateFaq(i, 'q', e.target.value)}
                     placeholder="Question…"
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm font-semibold"
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm font-semibold"
                   />
                   <textarea
                     value={f.a}
                     onChange={(e) => updateFaq(i, 'a', e.target.value)}
                     rows={3}
                     placeholder="Answer…"
-                    className="w-full px-3 py-2 rounded-lg border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm resize-y"
+                    className="w-full px-3 py-2 rounded-lg border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm resize-y"
                   />
                 </div>
               ))}

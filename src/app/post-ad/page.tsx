@@ -113,18 +113,18 @@ export default function PostAdPage() {
       `Hi, I just posted an ad on Listvoo (ID: ${adId || 'N/A'}). I'd like to activate/feature it — please share the payment details.`
     )
     return (
-      <div className="min-h-screen bg-[#EEF2FF] flex items-center justify-center px-4 py-12">
-        <div className="text-center bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-blue-100 max-w-md mx-auto w-full">
+      <div className="min-h-screen bg-[#FFF1F7] flex items-center justify-center px-4 py-12">
+        <div className="text-center bg-white rounded-3xl p-8 sm:p-10 shadow-xl border border-pink-100 max-w-md mx-auto w-full">
           <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-5">
             <CheckCircle className="text-green-600" size={40} />
           </div>
-          <h2 className="text-2xl font-black text-[#060B27] mb-2">Ad Submitted!</h2>
+          <h2 className="text-2xl font-black text-[#2A0618] mb-2">Ad Submitted!</h2>
           <p className="text-slate-600 font-semibold mb-1">✓ Your ad has been submitted successfully</p>
           <p className="text-slate-500 text-sm">⏳ Awaiting admin approval before going live</p>
 
           {/* Payment / contact options */}
-          <div className="mt-7 bg-[#EEF2FF] rounded-2xl p-5 border border-indigo-100 text-left">
-            <p className="text-sm font-black text-[#060B27] text-center mb-1">
+          <div className="mt-7 bg-[#FFF1F7] rounded-2xl p-5 border border-pink-100 text-left">
+            <p className="text-sm font-black text-[#2A0618] text-center mb-1">
               💳 Activate / Feature your ad faster
             </p>
             <p className="text-xs text-slate-500 text-center mb-4 leading-relaxed">
@@ -141,13 +141,13 @@ export default function PostAdPage() {
               </a>
               <a
                 href={`tel:${CONTACT.phoneIntl}`}
-                className="flex items-center justify-center gap-2 w-full bg-blue-500 text-[#060B27] py-3 rounded-xl font-bold text-sm hover:bg-blue-400 transition-colors"
+                className="flex items-center justify-center gap-2 w-full bg-pink-500 text-[#2A0618] py-3 rounded-xl font-bold text-sm hover:bg-pink-400 transition-colors"
               >
                 <Phone size={16} /> Call {CONTACT_PHONE_DISPLAY}
               </a>
               <a
                 href={`mailto:${CONTACT.email}?subject=${encodeURIComponent('Ad payment / activation — ' + (adId || ''))}`}
-                className="flex items-center justify-center gap-2 w-full bg-white border border-slate-200 text-slate-700 py-3 rounded-xl font-bold text-sm hover:border-blue-400 hover:text-blue-600 transition-colors"
+                className="flex items-center justify-center gap-2 w-full bg-white border border-slate-200 text-slate-700 py-3 rounded-xl font-bold text-sm hover:border-pink-400 hover:text-pink-600 transition-colors"
               >
                 <Mail size={16} /> {CONTACT.email}
               </a>
@@ -157,7 +157,7 @@ export default function PostAdPage() {
           <button
             type="button"
             onClick={() => router.push(adId ? `/ads/${adId}` : '/')}
-            className="mt-5 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+            className="mt-5 text-sm font-semibold text-pink-600 hover:text-pink-700 transition-colors"
           >
             View my ad →
           </button>
@@ -167,15 +167,15 @@ export default function PostAdPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#EEF2FF]">
+    <div className="min-h-screen bg-[#FFF1F7]">
       {/* Hero bar */}
-      <div className="bg-[#060B27] py-12 px-4">
+      <div className="bg-[#2A0618] py-12 px-4">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 px-4 py-1.5 rounded-full text-xs font-bold mb-4">
+          <div className="inline-flex items-center gap-2 bg-pink-500/10 text-pink-400 border border-pink-500/20 px-4 py-1.5 rounded-full text-xs font-bold mb-4">
             ✨ 100% Free · No Registration Required
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-white mb-2">Post Your Free Ad</h1>
-          <p className="text-blue-300 text-sm">Reach thousands in your city — live in 60 seconds</p>
+          <p className="text-pink-300 text-sm">Reach thousands in your city — live in 60 seconds</p>
         </div>
       </div>
 
@@ -183,23 +183,23 @@ export default function PostAdPage() {
         {/* Trust pills */}
         <div className="flex flex-wrap gap-2 justify-center mb-8">
           {['🆓 Zero Fees', '📸 5 Photos', '📍 12 Cities', '⚡ Live Instantly', '🔒 Secure'].map((t) => (
-            <span key={t} className="text-xs bg-white border border-indigo-100 text-slate-600 px-3 py-1.5 rounded-full font-semibold shadow-sm">{t}</span>
+            <span key={t} className="text-xs bg-white border border-pink-100 text-slate-600 px-3 py-1.5 rounded-full font-semibold shadow-sm">{t}</span>
           ))}
         </div>
 
-        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-sm border border-indigo-50 p-6 sm:p-8 space-y-6">
+        <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-sm border border-pink-50 p-6 sm:p-8 space-y-6">
 
           {/* Category */}
           <div>
             <label className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-              <Tag size={15} className="text-blue-600" /> Category *
+              <Tag size={15} className="text-pink-600" /> Category *
             </label>
             <select
               name="category"
               value={form.category}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm"
             >
               <option value="">Select a category</option>
               {CATEGORIES.map((cat) => (
@@ -220,7 +220,7 @@ export default function PostAdPage() {
               required
               maxLength={100}
               placeholder="Write a clear, descriptive title..."
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm"
             />
             <p className="text-xs text-slate-400 mt-1">{form.title.length}/100</p>
           </div>
@@ -236,7 +236,7 @@ export default function PostAdPage() {
               maxLength={1000}
               rows={4}
               placeholder="Describe your services in detail..."
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm resize-none"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm resize-none"
             />
             <p className="text-xs text-slate-400 mt-1">{form.description.length}/1000</p>
           </div>
@@ -253,14 +253,14 @@ export default function PostAdPage() {
               type="number"
               min="0"
               placeholder="Leave blank if negotiable"
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm"
             />
           </div>
 
           {/* Location */}
           <div>
             <label className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-2">
-              <MapPin size={15} className="text-blue-600" /> Location *
+              <MapPin size={15} className="text-pink-600" /> Location *
             </label>
             <div className="grid grid-cols-2 gap-3">
               <select
@@ -268,7 +268,7 @@ export default function PostAdPage() {
                 value={form.citySlug}
                 onChange={handleChange}
                 required
-                className="px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm"
+                className="px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm"
               >
                 <option value="">Select City</option>
                 {CITIES.map((c) => (
@@ -281,7 +281,7 @@ export default function PostAdPage() {
                 onChange={handleChange}
                 required
                 disabled={!selectedCity}
-                className="px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm disabled:bg-slate-50 disabled:text-slate-400"
+                className="px-4 py-3 rounded-xl border border-slate-200 text-slate-700 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm disabled:bg-slate-50 disabled:text-slate-400"
               >
                 <option value="">Select Area</option>
                 {selectedCity?.areas.map((a) => (
@@ -296,7 +296,7 @@ export default function PostAdPage() {
             <label className="block text-sm font-semibold text-slate-700 mb-2">Photos (up to 5)</label>
             <div className="flex flex-wrap gap-3">
               {imagePreviews.map((src, i) => (
-                <div key={i} className="relative w-20 h-20 rounded-xl overflow-hidden border border-indigo-100">
+                <div key={i} className="relative w-20 h-20 rounded-xl overflow-hidden border border-pink-100">
                   <Image src={src} alt="" fill className="object-cover" />
                   <button type="button" onClick={() => removeImage(i)} className="absolute top-0.5 right-0.5 bg-red-500 text-white rounded-full p-0.5">
                     <X size={10} />
@@ -304,7 +304,7 @@ export default function PostAdPage() {
                 </div>
               ))}
               {images.length < 5 && (
-                <label className="w-20 h-20 rounded-xl border-2 border-dashed border-indigo-200 flex flex-col items-center justify-center cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition-colors text-slate-400 hover:text-blue-600">
+                <label className="w-20 h-20 rounded-xl border-2 border-dashed border-pink-200 flex flex-col items-center justify-center cursor-pointer hover:border-pink-500 hover:bg-pink-50 transition-colors text-slate-400 hover:text-pink-600">
                   <Upload size={18} />
                   <span className="text-xs mt-1">Add</span>
                   <input type="file" accept="image/*" multiple onChange={handleImages} className="hidden" />
@@ -317,7 +317,7 @@ export default function PostAdPage() {
           {/* Contact */}
           <div>
             <label className="flex items-center gap-2 text-sm font-semibold text-slate-700 mb-3">
-              <Phone size={15} className="text-blue-600" /> Contact Details *
+              <Phone size={15} className="text-pink-600" /> Contact Details *
             </label>
             <div className="space-y-3">
               <div className="relative">
@@ -331,7 +331,7 @@ export default function PostAdPage() {
                   maxLength={10}
                   placeholder="Mobile Number *"
                   pattern="[6-9][0-9]{9}"
-                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm"
+                  className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm"
                 />
               </div>
               <div className="relative">
@@ -362,7 +362,7 @@ export default function PostAdPage() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full bg-blue-500 text-[#060B27] py-4 rounded-xl font-black text-base hover:bg-blue-400 transition-all shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+            className="w-full bg-pink-500 text-[#2A0618] py-4 rounded-xl font-black text-base hover:bg-pink-400 transition-all shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {submitting ? 'Posting your ad...' : '🚀 Post Ad for FREE'}
           </button>

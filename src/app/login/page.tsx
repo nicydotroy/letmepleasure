@@ -41,17 +41,17 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#060B27] flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-[#2A0618] flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-14 h-14 bg-blue-500 rounded-xl mb-4">
-            <span className="text-2xl font-black text-[#060B27]">L</span>
+          <div className="inline-flex items-center justify-center w-14 h-14 bg-pink-500 rounded-xl mb-4">
+            <span className="text-2xl font-black text-[#2A0618]">L</span>
           </div>
           <h1 className="text-3xl font-black text-white mb-2">Welcome back</h1>
-          <p className="text-blue-200">Sign in to your Listvoo account</p>
+          <p className="text-pink-200">Sign in to your Listvoo account</p>
         </div>
 
-        <form onSubmit={handleLogin} className="bg-[#0B1354] rounded-2xl p-8 border border-[#1B2F8C] shadow-2xl">
+        <form onSubmit={handleLogin} className="bg-[#4A0B2F] rounded-2xl p-8 border border-[#9D174D] shadow-2xl">
           {error && (
             <div className="mb-4 p-3 bg-red-500/20 border border-red-500 text-red-200 rounded-lg text-sm">
               {error}
@@ -59,26 +59,26 @@ export default function LoginPage() {
           )}
 
           <div className="mb-5">
-            <label className="block text-sm font-bold text-blue-200 mb-2">Email</label>
+            <label className="block text-sm font-bold text-pink-200 mb-2">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
-              className="w-full px-4 py-3 bg-[#060B27] border border-[#1B2F8C] text-white placeholder-blue-400 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#2A0618] border border-[#9D174D] text-white placeholder-pink-400 rounded-lg focus:outline-none focus:border-pink-500 transition-colors"
               disabled={loading}
               required
             />
           </div>
 
           <div className="mb-6">
-            <label className="block text-sm font-bold text-blue-200 mb-2">Password</label>
+            <label className="block text-sm font-bold text-pink-200 mb-2">Password</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
-              className="w-full px-4 py-3 bg-[#060B27] border border-[#1B2F8C] text-white placeholder-blue-400 rounded-lg focus:outline-none focus:border-blue-500 transition-colors"
+              className="w-full px-4 py-3 bg-[#2A0618] border border-[#9D174D] text-white placeholder-pink-400 rounded-lg focus:outline-none focus:border-pink-500 transition-colors"
               disabled={loading}
               required
             />
@@ -87,21 +87,21 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-blue-500 text-[#060B27] py-3 rounded-lg font-black hover:bg-blue-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-pink-500 text-[#2A0618] py-3 rounded-lg font-black hover:bg-pink-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Signing In...' : 'Sign In'}
           </button>
 
-          <p className="text-center text-blue-300 text-sm mt-6">
+          <p className="text-center text-pink-300 text-sm mt-6">
             Don&apos;t have an account?{' '}
-            <Link href="/signup" className="text-blue-400 hover:text-blue-300 font-bold">
+            <Link href="/signup" className="text-pink-400 hover:text-pink-300 font-bold">
               Sign Up
             </Link>
           </p>
         </form>
 
         <div className="text-center mt-6">
-          <Link href="/" className="text-blue-300 hover:text-blue-400 text-sm transition-colors">
+          <Link href="/" className="text-pink-300 hover:text-pink-400 text-sm transition-colors">
             ← Back to Home
           </Link>
         </div>

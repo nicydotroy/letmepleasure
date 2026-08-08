@@ -41,9 +41,9 @@ export default function AgeGate() {
   if (!visible) return null
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#060B27]/95 backdrop-blur-sm px-4">
-      <div className="bg-white rounded-3xl max-w-md w-full p-8 sm:p-10 text-center shadow-2xl border border-blue-100">
-        <div className="bg-[#060B27] inline-flex rounded-2xl px-4 py-3 mb-6">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#2A0618]/95 backdrop-blur-sm px-4">
+      <div className="bg-white rounded-3xl max-w-md w-full p-8 sm:p-10 text-center shadow-2xl border border-pink-100">
+        <div className="bg-[#2A0618] inline-flex rounded-2xl px-4 py-3 mb-6">
           <Image
             src="/logos/logo.png"
             alt="letmepleasure logo"
@@ -58,7 +58,7 @@ export default function AgeGate() {
           🔞 ADULTS ONLY
         </div>
 
-        <h2 className="text-2xl font-black text-[#060B27] mb-3">Are you 18 or older?</h2>
+        <h2 className="text-2xl font-black text-[#2A0618] mb-3">Are you 18 or older?</h2>
         <p className="text-slate-500 text-sm leading-relaxed mb-7">
           This website contains age-restricted material intended for adults only. By entering you
           confirm that you are at least <strong>18 years of age</strong> and agree to view such
@@ -68,7 +68,7 @@ export default function AgeGate() {
         <div className="space-y-3">
           <button
             onClick={enter}
-            className="w-full bg-blue-500 text-[#060B27] py-3.5 rounded-xl font-black text-base hover:bg-blue-400 transition-colors shadow-md"
+            className="w-full bg-pink-500 text-[#2A0618] py-3.5 rounded-xl font-black text-base hover:bg-pink-400 transition-colors shadow-md"
           >
             Yes, I am 18 or older — Enter
           </button>

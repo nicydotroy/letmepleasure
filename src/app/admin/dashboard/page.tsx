@@ -70,27 +70,27 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-[#EEF2FF]">
+    <div className="min-h-screen bg-[#FFF1F7]">
       {/* Header */}
-      <header className="bg-[#060B27] text-white py-6 shadow-lg">
+      <header className="bg-[#2A0618] text-white py-6 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-[#FBBF24] rounded-lg flex items-center justify-center">
-              <span className="font-black text-[#060B27]">L</span>
+              <span className="font-black text-[#2A0618]">L</span>
             </div>
             <h1 className="text-2xl font-black">Admin Dashboard</h1>
           </div>
           <div className="flex items-center gap-3">
             <Link
               href="/admin/locations"
-              className="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-[#060B27] px-4 py-2 rounded-lg font-bold transition-colors"
+              className="flex items-center gap-2 bg-pink-500 hover:bg-pink-400 text-[#2A0618] px-4 py-2 rounded-lg font-bold transition-colors"
             >
               <MapPin size={18} />
               Edit Locations
             </Link>
             <Link
               href="/admin/blog"
-              className="flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-[#060B27] px-4 py-2 rounded-lg font-bold transition-colors"
+              className="flex items-center gap-2 bg-pink-500 hover:bg-pink-400 text-[#2A0618] px-4 py-2 rounded-lg font-bold transition-colors"
             >
               <FileText size={18} />
               Manage Blog
@@ -110,20 +110,20 @@ export default function AdminDashboard() {
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
           <div className="bg-white rounded-xl p-6 border-l-4 border-yellow-500 shadow-sm">
-            <p className="text-blue-500 font-bold text-sm">Pending Review</p>
-            <p className="text-3xl font-black text-[#060B27]">
+            <p className="text-pink-500 font-bold text-sm">Pending Review</p>
+            <p className="text-3xl font-black text-[#2A0618]">
               {filter === 'pending' ? ads.length : '-'}
             </p>
           </div>
           <div className="bg-white rounded-xl p-6 border-l-4 border-green-500 shadow-sm">
             <p className="text-green-600 font-bold text-sm">Approved</p>
-            <p className="text-3xl font-black text-[#060B27]">
+            <p className="text-3xl font-black text-[#2A0618]">
               {filter === 'approved' ? ads.length : '-'}
             </p>
           </div>
           <div className="bg-white rounded-xl p-6 border-l-4 border-red-500 shadow-sm">
             <p className="text-red-600 font-bold text-sm">Rejected</p>
-            <p className="text-3xl font-black text-[#060B27]">
+            <p className="text-3xl font-black text-[#2A0618]">
               {filter === 'rejected' ? ads.length : '-'}
             </p>
           </div>
@@ -157,7 +157,7 @@ export default function AdminDashboard() {
         <div className="space-y-4">
           {loading ? (
             <div className="text-center py-12">
-              <div className="inline-block w-8 h-8 border-4 border-blue-200 border-t-[#060B27] rounded-full animate-spin"></div>
+              <div className="inline-block w-8 h-8 border-4 border-pink-200 border-t-[#2A0618] rounded-full animate-spin"></div>
               <p className="text-gray-600 mt-4">Loading ads...</p>
             </div>
           ) : ads.length === 0 ? (
@@ -176,17 +176,17 @@ export default function AdminDashboard() {
                   <div className="md:col-span-2">
                     <div className="flex items-start gap-4">
                       <div className="flex-1">
-                        <h3 className="text-xl font-black text-[#060B27] mb-2">{ad.title}</h3>
+                        <h3 className="text-xl font-black text-[#2A0618] mb-2">{ad.title}</h3>
                         <p className="text-gray-600 text-sm mb-3 line-clamp-2">{ad.description}</p>
                         <div className="flex flex-wrap gap-3 text-sm">
-                          <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full font-semibold">
+                          <span className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full font-semibold">
                             {ad.category}
                           </span>
                           <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">
                             📍 {ad.area}, {ad.city}
                           </span>
                           {ad.price && (
-                            <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full font-semibold">
+                            <span className="px-3 py-1 bg-pink-100 text-pink-800 rounded-full font-semibold">
                               ₹ {ad.price}
                             </span>
                           )}
@@ -254,7 +254,7 @@ export default function AdminDashboard() {
         <div className="text-center mt-12">
           <Link
             href="/"
-            className="text-blue-600 hover:text-blue-700 font-bold"
+            className="text-pink-600 hover:text-pink-700 font-bold"
           >
             ← Back to Website
           </Link>

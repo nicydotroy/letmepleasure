@@ -106,7 +106,7 @@ export default function ImageUploader({
         <div
           onDrop={handleDrop}
           onDragOver={(e) => e.preventDefault()}
-          className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-blue-400 transition cursor-pointer"
+          className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-pink-400 transition cursor-pointer"
           onClick={() => inputRef.current?.click()}
         >
           <Upload className="w-8 h-8 text-gray-400 mx-auto mb-3" />

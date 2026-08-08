@@ -35,10 +35,10 @@ export default function AdCard({ ad }: { ad: Ad }) {
 
   return (
     <Link href={`/ads/${ad.id}`} className="group block">
-      <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-indigo-100 hover:-translate-y-1.5 transition-all duration-200 border border-indigo-50">
+      <article className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-pink-100 hover:-translate-y-1.5 transition-all duration-200 border border-pink-50">
 
         {/* Image */}
-        <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-indigo-50 to-blue-100">
+        <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-pink-50 to-pink-100">
           {mainImage ? (
             <Image
               src={mainImage}
@@ -54,12 +54,12 @@ export default function AdCard({ ad }: { ad: Ad }) {
           )}
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#060B27]/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#2A0618]/60 via-transparent to-transparent" />
 
           {/* Category badge */}
           {category && (
             <div className="absolute top-3 left-3">
-              <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full font-bold bg-blue-500 text-[#060B27] shadow-sm">
+              <span className="inline-flex items-center gap-1 text-[11px] px-2.5 py-1 rounded-full font-bold bg-pink-500 text-[#2A0618] shadow-sm">
                 {category.icon} {category.name}
               </span>
             </div>
@@ -91,7 +91,7 @@ export default function AdCard({ ad }: { ad: Ad }) {
 
         {/* Body */}
         <div className="p-4">
-          <h3 className="font-bold text-slate-800 text-sm leading-snug line-clamp-2 group-hover:text-indigo-700 transition-colors mb-1.5">
+          <h3 className="font-bold text-slate-800 text-sm leading-snug line-clamp-2 group-hover:text-pink-700 transition-colors mb-1.5">
             {ad.title}
           </h3>
 
@@ -102,7 +102,7 @@ export default function AdCard({ ad }: { ad: Ad }) {
           {/* Footer row */}
           <div className="flex items-center justify-between pt-3 border-t border-slate-100">
             <span className="flex items-center gap-1 text-xs text-slate-500 font-medium">
-              <MapPin size={11} className="text-indigo-400" />
+              <MapPin size={11} className="text-pink-400" />
               {ad.area}, {ad.city}
             </span>
             <span className="flex items-center gap-1 text-xs text-slate-400">

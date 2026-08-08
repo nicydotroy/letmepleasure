@@ -117,13 +117,13 @@ export default function AdminBlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#EEF2FF]">
-      <header className="bg-[#060B27] text-white py-6 shadow-lg">
+    <div className="min-h-screen bg-[#FFF1F7]">
+      <header className="bg-[#2A0618] text-white py-6 shadow-lg">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           <h1 className="text-2xl font-black flex items-center gap-2">
-            <FileText size={22} className="text-blue-400" /> Blog Editor
+            <FileText size={22} className="text-pink-400" /> Blog Editor
           </h1>
-          <Link href="/admin/dashboard" className="flex items-center gap-2 text-blue-200 hover:text-white text-sm font-semibold">
+          <Link href="/admin/dashboard" className="flex items-center gap-2 text-pink-200 hover:text-white text-sm font-semibold">
             <ArrowLeft size={16} /> Dashboard
           </Link>
         </div>
@@ -131,9 +131,9 @@ export default function AdminBlogPage() {
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 space-y-8">
         {/* Editor */}
-        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-indigo-50">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-pink-50">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="text-lg font-black text-[#060B27]">
+            <h2 className="text-lg font-black text-[#2A0618]">
               {editingId ? 'Edit Article' : 'Write New Article'}
             </h2>
             {editingId && (
@@ -152,26 +152,26 @@ export default function AdminBlogPage() {
               value={form.title}
               onChange={(e) => setForm({ ...form, title: e.target.value })}
               placeholder="Article title *"
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-lg font-bold"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-lg font-bold"
             />
             <input
               value={form.excerpt}
               onChange={(e) => setForm({ ...form, excerpt: e.target.value })}
               placeholder="Short summary / excerpt (optional)"
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm"
             />
             <input
               value={form.coverImage}
               onChange={(e) => setForm({ ...form, coverImage: e.target.value })}
               placeholder="Cover image URL (optional, e.g. /uploads/cover.jpg)"
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm"
             />
             <textarea
               value={form.content}
               onChange={(e) => setForm({ ...form, content: e.target.value })}
               placeholder="Write your article here... Separate paragraphs with a blank line."
               rows={12}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-400 text-sm resize-y"
+              className="w-full px-4 py-3 rounded-xl border border-slate-200 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-pink-400 text-sm resize-y"
             />
 
             <div className="flex flex-wrap gap-3">
@@ -195,20 +195,20 @@ export default function AdminBlogPage() {
 
         {/* Existing posts */}
         <div>
-          <h2 className="text-lg font-black text-[#060B27] mb-4">All Articles ({posts.length})</h2>
+          <h2 className="text-lg font-black text-[#2A0618] mb-4">All Articles ({posts.length})</h2>
           {loading ? (
             <p className="text-slate-500 text-sm">Loading...</p>
           ) : posts.length === 0 ? (
-            <div className="bg-white rounded-2xl p-10 text-center shadow-sm border-2 border-dashed border-indigo-200">
+            <div className="bg-white rounded-2xl p-10 text-center shadow-sm border-2 border-dashed border-pink-200">
               <p className="text-slate-500 font-semibold">No articles yet. Write your first one above.</p>
             </div>
           ) : (
             <div className="space-y-3">
               {posts.map((p) => (
-                <div key={p.id} className="bg-white rounded-xl p-5 shadow-sm border border-indigo-50 flex flex-wrap items-start justify-between gap-3">
+                <div key={p.id} className="bg-white rounded-xl p-5 shadow-sm border border-pink-50 flex flex-wrap items-start justify-between gap-3">
                   <div className="flex-1 min-w-[200px]">
                     <div className="flex items-center gap-2 mb-1">
-                      <h3 className="font-black text-[#060B27]">{p.title}</h3>
+                      <h3 className="font-black text-[#2A0618]">{p.title}</h3>
                       <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold uppercase ${p.status === 'published' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'}`}>
                         {p.status}
                       </span>
@@ -217,7 +217,7 @@ export default function AdminBlogPage() {
                   </div>
                   <div className="flex items-center gap-2">
                     {p.status === 'published' && (
-                      <Link href={`/blog/${p.slug}`} target="_blank" className="p-2 rounded-lg text-blue-600 hover:bg-blue-50" title="View live">
+                      <Link href={`/blog/${p.slug}`} target="_blank" className="p-2 rounded-lg text-pink-600 hover:bg-pink-50" title="View live">
                         <Eye size={16} />
                       </Link>
                     )}

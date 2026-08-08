@@ -12,7 +12,7 @@
   }
 
   body {
-    background-color: #EEF2FF;
+    background-color: #FFF1F7;
     color: #0f172a;
     -webkit-font-smoothing: antialiased;
   }
@@ -44,12 +44,12 @@
     overflow: hidden;
   }
 
-  /* Deep navy hero — uses logo's brand blues */
+  /* Deep navy hero — uses logo's brand pinks */
   .hero-navy {
     background:
       radial-gradient(ellipse 70% 50% at 15% 60%, rgba(59, 130, 246, 0.30) 0%, transparent 60%),
       radial-gradient(ellipse 50% 40% at 85% 20%, rgba(96, 165, 250, 0.18) 0%, transparent 60%),
-      linear-gradient(145deg, #060B27 0%, #0B1354 45%, #1B2F8C 100%);
+      linear-gradient(145deg, #2A0618 0%, #4A0B2F 45%, #9D174D 100%);
   }
 
   /* Kept for existing pages */
@@ -57,10 +57,10 @@
     background:
       radial-gradient(ellipse 70% 50% at 15% 60%, rgba(59, 130, 246, 0.30) 0%, transparent 60%),
       radial-gradient(ellipse 50% 40% at 85% 20%, rgba(96, 165, 250, 0.18) 0%, transparent 60%),
-      linear-gradient(145deg, #060B27 0%, #0B1354 45%, #1B2F8C 100%);
+      linear-gradient(145deg, #2A0618 0%, #4A0B2F 45%, #9D174D 100%);
   }
 
-  /* Brand-blue gradient text (was gold) */
+  /* Brand-pink gradient text (was gold) */
   .text-gold {
     background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 60%, #2563EB 100%);
     -webkit-background-clip: text;
@@ -75,7 +75,7 @@
     background-clip: text;
   }
 
-  /* Brand-blue gradient text */
+  /* Brand-pink gradient text */
   .gradient-text {
     background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
     -webkit-background-clip: text;

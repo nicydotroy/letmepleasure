@@ -87,7 +87,7 @@ export default function AdImageGallery({
               onClick={() => setSelectedIndex(index)}
               className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition ${
                 index === selectedIndex
-                  ? 'border-blue-500'
+                  ? 'border-pink-500'
                   : 'border-gray-200 hover:border-gray-300'
               }`}
             >

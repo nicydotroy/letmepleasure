@@ -10,7 +10,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-3xl font-black text-[#060B27] mb-4">
+          <h2 className="text-3xl font-black text-[#2A0618] mb-4">
             Escorts Service in {cityName} | Verified Call Girls & Companions
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">
@@ -22,7 +22,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
         <div className="space-y-10">
           {/* Intro Section */}
           <div>
-            <h3 className="text-xl font-bold text-[#060B27] mb-4 text-blue-700">
+            <h3 className="text-xl font-bold text-[#2A0618] mb-4 text-pink-700">
               Why Choose Verified Escorts Service in {cityName} on Listvoo?
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
@@ -37,7 +37,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
 
           {/* Section 1 */}
           <div>
-            <h3 className="text-xl font-bold text-[#060B27] mb-4 text-blue-700">
+            <h3 className="text-xl font-bold text-[#2A0618] mb-4 text-pink-700">
               Are the profiles on this website real and verified?
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
@@ -55,7 +55,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
 
           {/* Section 2 */}
           <div>
-            <h3 className="text-xl font-bold text-[#060B27] mb-4 text-blue-700">
+            <h3 className="text-xl font-bold text-[#2A0618] mb-4 text-pink-700">
               {cityName} Escort Service Rates & Booking Costs
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
@@ -76,7 +76,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
 
           {/* Section 3 */}
           <div>
-            <h3 className="text-xl font-bold text-[#060B27] mb-4 text-blue-700">
+            <h3 className="text-xl font-bold text-[#2A0618] mb-4 text-pink-700">
               Professional {cityName} Escorts: Choosing Their Clients
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
@@ -97,7 +97,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
 
           {/* Section 4 */}
           <div>
-            <h3 className="text-xl font-bold text-[#060B27] mb-4 text-blue-700">
+            <h3 className="text-xl font-bold text-[#2A0618] mb-4 text-pink-700">
               Real Escort Photos in {cityName} - Verified & Authentic
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
@@ -118,7 +118,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
 
           {/* Section 5 */}
           <div>
-            <h3 className="text-xl font-bold text-[#060B27] mb-4 text-blue-700">
+            <h3 className="text-xl font-bold text-[#2A0618] mb-4 text-pink-700">
               What is the process for booking escorts in {cityName}?
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
@@ -136,7 +136,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
 
           {/* Section 6 */}
           <div>
-            <h3 className="text-xl font-bold text-[#060B27] mb-4 text-blue-700">
+            <h3 className="text-xl font-bold text-[#2A0618] mb-4 text-pink-700">
               Can I contact {cityName} call girls through WhatsApp or phone call?
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
@@ -151,7 +151,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
 
           {/* Section 7 */}
           <div>
-            <h3 className="text-xl font-bold text-[#060B27] mb-4 text-blue-700">
+            <h3 className="text-xl font-bold text-[#2A0618] mb-4 text-pink-700">
               Is the price that is shown inclusive of all charges?
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
@@ -169,7 +169,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
 
           {/* Section 8 */}
           <div>
-            <h3 className="text-xl font-bold text-[#060B27] mb-4 text-blue-700">
+            <h3 className="text-xl font-bold text-[#2A0618] mb-4 text-pink-700">
               Can escorts go to hotels, homes, or places outside the city?
             </h3>
             <div className="text-gray-600 leading-relaxed space-y-3">
@@ -184,7 +184,7 @@ export default function LocationContent({ cityName }: LocationContentProps) {
         </div>
 
         {/* Footer CTA */}
-        <div className="mt-12 p-6 bg-indigo-50 rounded-xl border border-indigo-200">
+        <div className="mt-12 p-6 bg-pink-50 rounded-xl border border-pink-200">
           <p className="text-gray-700 text-center">
             Ready to find your perfect companion in {cityName}? Browse our verified profiles or contact our support team on WhatsApp for personalized assistance.
           </p>

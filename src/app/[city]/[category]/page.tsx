@@ -110,11 +110,11 @@ export default async function CityCategory({ params }: Props) {
   }
 
   return (
-    <main className="min-h-screen bg-[#060B27]">
+    <main className="min-h-screen bg-[#2A0618]">
       {/* Breadcrumb */}
-      <div className="bg-[#0B1354] border-b border-white/10 sticky top-16 z-40">
+      <div className="bg-[#4A0B2F] border-b border-white/10 sticky top-16 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex items-center gap-2 text-sm text-blue-300">
+          <div className="flex items-center gap-2 text-sm text-pink-300">
             <Link href="/" className="hover:text-white transition-colors">
               Home
             </Link>
@@ -129,14 +129,14 @@ export default async function CityCategory({ params }: Props) {
       </div>
 
       {/* Header Section */}
-      <div className="bg-gradient-to-b from-[#0B1354] to-[#060B27] pt-8 pb-6 border-b border-white/5">
+      <div className="bg-gradient-to-b from-[#4A0B2F] to-[#2A0618] pt-8 pb-6 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-4xl font-black text-white mb-2">
                 {displayKeyword} in {city.name}
               </h1>
-              <p className="text-blue-200 text-lg">
+              <p className="text-pink-200 text-lg">
                 Verified & Discreet • Updated Daily • Safe Listings
               </p>
             </div>
@@ -144,17 +144,17 @@ export default async function CityCategory({ params }: Props) {
 
           {/* Stats badges */}
           <div className="flex flex-wrap gap-3 mt-6">
-            <div className="bg-white/10 backdrop-blur-sm border border-blue-500/30 rounded-xl px-4 py-2 flex items-center gap-2">
-              <span className="text-blue-500 font-bold">{ads.length}+</span>
-              <span className="text-blue-200 text-sm">{displayKeyword}</span>
+            <div className="bg-white/10 backdrop-blur-sm border border-pink-500/30 rounded-xl px-4 py-2 flex items-center gap-2">
+              <span className="text-pink-500 font-bold">{ads.length}+</span>
+              <span className="text-pink-200 text-sm">{displayKeyword}</span>
             </div>
             <div className="bg-white/10 backdrop-blur-sm border border-green-400/30 rounded-xl px-4 py-2 flex items-center gap-2">
               <span className="text-green-400 font-bold">✓</span>
-              <span className="text-blue-200 text-sm">Verified & Safe</span>
+              <span className="text-pink-200 text-sm">Verified & Safe</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm border border-blue-400/30 rounded-xl px-4 py-2 flex items-center gap-2">
-              <span className="text-blue-400 font-bold">24/7</span>
-              <span className="text-blue-200 text-sm">Available</span>
+            <div className="bg-white/10 backdrop-blur-sm border border-pink-400/30 rounded-xl px-4 py-2 flex items-center gap-2">
+              <span className="text-pink-400 font-bold">24/7</span>
+              <span className="text-pink-200 text-sm">Available</span>
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@ export default async function CityCategory({ params }: Props) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {ads.length > 0 ? (
           <div>
-            <p className="text-blue-200 mb-8 text-center">
+            <p className="text-pink-200 mb-8 text-center">
               Found {ads.length} verified {displayKeyword.toLowerCase()} listings in {city.name}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -175,12 +175,12 @@ export default async function CityCategory({ params }: Props) {
           </div>
         ) : (
           <div className="text-center py-16">
-            <p className="text-blue-300 text-lg mb-4">
+            <p className="text-pink-300 text-lg mb-4">
               No listings found for {displayKeyword.toLowerCase()} in {city.name}
             </p>
             <Link
               href="/post-ad"
-              className="inline-block bg-blue-500 hover:bg-blue-400 text-[#060B27] px-8 py-3 rounded-xl font-bold transition-all"
+              className="inline-block bg-pink-500 hover:bg-pink-400 text-[#2A0618] px-8 py-3 rounded-xl font-bold transition-all"
             >
               Be the First to Post
             </Link>
@@ -189,12 +189,12 @@ export default async function CityCategory({ params }: Props) {
       </div>
 
       {/* SEO Content Section */}
-      <div className="bg-[#0B1354] border-t border-white/10 mt-12 py-12">
+      <div className="bg-[#4A0B2F] border-t border-white/10 mt-12 py-12">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-2xl font-bold text-white mb-4">
             Why Choose {displayKeyword} on Listvoo in {city.name}?
           </h2>
-          <div className="space-y-3 text-blue-200 leading-relaxed">
+          <div className="space-y-3 text-pink-200 leading-relaxed">
             <p>
               Listvoo provides the most trusted platform to find verified {displayKeyword.toLowerCase()} in {city.name}.
               Every listing is carefully reviewed to ensure your safety and privacy.
@@ -218,7 +218,7 @@ export default async function CityCategory({ params }: Props) {
           </div>
           <Link
             href="/post-ad"
-            className="inline-block mt-6 bg-blue-500 hover:bg-blue-400 text-[#060B27] px-8 py-3 rounded-xl font-bold transition-all"
+            className="inline-block mt-6 bg-pink-500 hover:bg-pink-400 text-[#2A0618] px-8 py-3 rounded-xl font-bold transition-all"
           >
             Post Free Listing Now
           </Link>

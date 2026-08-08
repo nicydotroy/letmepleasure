@@ -10,17 +10,17 @@ export default function Footer() {
   const topCities = CITIES.slice(0, 8)
 
   return (
-    <footer className="bg-[#060B27] text-blue-200 mt-16">
+    <footer className="bg-[#2A0618] text-pink-200 mt-16">
       {/* CTA Banner */}
-      <div className="bg-blue-500">
+      <div className="bg-pink-500">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-5">
           <div>
-            <h3 className="text-[#060B27] font-black text-2xl mb-1">Ready to post your ad?</h3>
-            <p className="text-[#060B27]/70 text-sm">Go live in 60 seconds — no registration, 100% free.</p>
+            <h3 className="text-[#2A0618] font-black text-2xl mb-1">Ready to post your ad?</h3>
+            <p className="text-[#2A0618]/70 text-sm">Go live in 60 seconds — no registration, 100% free.</p>
           </div>
           <Link
             href="/post-ad"
-            className="shrink-0 flex items-center gap-2 bg-[#060B27] text-blue-500 px-6 py-3 rounded-2xl font-black text-sm hover:bg-[#0B1354] transition-colors shadow-xl"
+            className="shrink-0 flex items-center gap-2 bg-[#2A0618] text-pink-500 px-6 py-3 rounded-2xl font-black text-sm hover:bg-[#4A0B2F] transition-colors shadow-xl"
           >
             Post Free Ad <ArrowRight size={16} />
           </Link>
@@ -41,12 +41,12 @@ export default function Footer() {
                 className="h-10 sm:h-12 w-auto"
               />
             </div>
-            <p className="text-sm text-blue-300 leading-relaxed mb-5">
+            <p className="text-sm text-pink-300 leading-relaxed mb-5">
               India&apos;s premier free classifieds platform. Post ads in every Indian metro city — completely free, forever.
             </p>
             <div className="flex gap-3">
               {['📘', '📸', '🐦', '▶️'].map((icon, i) => (
-                <a key={i} href="#" className="w-9 h-9 rounded-xl bg-white/10 hover:bg-blue-500 hover:text-[#060B27] flex items-center justify-center text-base transition-colors">
+                <a key={i} href="#" className="w-9 h-9 rounded-xl bg-white/10 hover:bg-pink-500 hover:text-[#2A0618] flex items-center justify-center text-base transition-colors">
                   {icon}
                 </a>
               ))}
@@ -73,15 +73,15 @@ export default function Footer() {
             <ul className="space-y-2">
               {topCities.map((city) => (
                 <li key={city.slug}>
-                  <Link href={`/call-girls/${city.slug}`} className="flex items-center gap-2 text-sm text-blue-300 hover:text-blue-500 transition-colors group">
-                    <MapPin size={11} className="text-blue-400/50 group-hover:text-blue-500 transition-colors" />
+                  <Link href={`/call-girls/${city.slug}`} className="flex items-center gap-2 text-sm text-pink-300 hover:text-pink-500 transition-colors group">
+                    <MapPin size={11} className="text-pink-400/50 group-hover:text-pink-500 transition-colors" />
                     {city.name}
-                    <span className="text-blue-400/30 text-xs ml-auto">{city.state}</span>
+                    <span className="text-pink-400/30 text-xs ml-auto">{city.state}</span>
                   </Link>
                 </li>
               ))}
               <li>
-                <Link href="/call-girls" className="text-sm text-blue-500 hover:text-blue-400 font-semibold flex items-center gap-1">
+                <Link href="/call-girls" className="text-sm text-pink-500 hover:text-pink-400 font-semibold flex items-center gap-1">
                   View all cities <ArrowRight size={12} />
                 </Link>
               </li>
@@ -94,7 +94,7 @@ export default function Footer() {
             <ul className="space-y-2">
               {CATEGORIES.map((cat) => (
                 <li key={cat.slug}>
-                  <Link href={`/?category=${cat.slug}`} className="text-sm text-blue-300 hover:text-blue-500 transition-colors flex items-center gap-2">
+                  <Link href={`/?category=${cat.slug}`} className="text-sm text-pink-300 hover:text-pink-500 transition-colors flex items-center gap-2">
                     <span>{cat.icon}</span> {cat.name}
                   </Link>
                 </li>
@@ -107,20 +107,20 @@ export default function Footer() {
             <h3 className="text-white font-bold mb-4 text-sm uppercase tracking-widest">Contact Us</h3>
             <ul className="space-y-3 mb-6">
               <li>
-                <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 text-sm text-blue-300 hover:text-blue-500 transition-colors">
-                  <Mail size={14} className="text-blue-500 shrink-0" />
+                <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-2.5 text-sm text-pink-300 hover:text-pink-500 transition-colors">
+                  <Mail size={14} className="text-pink-500 shrink-0" />
                   {CONTACT.email}
                 </a>
               </li>
               <li>
-                <a href={`tel:${CONTACT.phoneIntl}`} className="flex items-center gap-2.5 text-sm text-blue-300 hover:text-blue-500 transition-colors">
-                  <Phone size={14} className="text-blue-500 shrink-0" />
+                <a href={`tel:${CONTACT.phoneIntl}`} className="flex items-center gap-2.5 text-sm text-pink-300 hover:text-pink-500 transition-colors">
+                  <Phone size={14} className="text-pink-500 shrink-0" />
                   {CONTACT_PHONE_DISPLAY}
                 </a>
               </li>
             </ul>
             <div className="bg-white/5 rounded-2xl p-4 border border-white/10">
-              <p className="text-xs text-blue-300 leading-relaxed">
+              <p className="text-xs text-pink-300 leading-relaxed">
                 🇮🇳 Proudly serving classified ads across all Indian metro cities.
               </p>
             </div>
@@ -128,12 +128,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-blue-400/60">
+        <div className="border-t border-white/10 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-pink-400/60">
           <p>© {new Date().getFullYear()} letmepleasure. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="hover:text-blue-200 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-blue-200 transition-colors">Terms of Service</Link>
-            <Link href="#" className="hover:text-blue-200 transition-colors">Sitemap</Link>
+            <Link href="#" className="hover:text-pink-200 transition-colors">Privacy Policy</Link>
+            <Link href="#" className="hover:text-pink-200 transition-colors">Terms of Service</Link>
+            <Link href="#" className="hover:text-pink-200 transition-colors">Sitemap</Link>
           </div>
         </div>
       </div>

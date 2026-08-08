@@ -152,8 +152,8 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
       {/* ── HERO ── */}
       <section className="relative overflow-hidden hero-navy">
         {/* Decorative blobs */}
-        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-indigo-600/20 blur-3xl float pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-pink-600/20 blur-3xl float pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-pink-500/10 blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 md:pt-24 md:pb-32">
           <div className="text-center max-w-4xl mx-auto">
@@ -174,9 +174,9 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
               <span className="text-gold">Premium Services</span>
             </h1>
 
-            <p className="text-blue-200 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-pink-200 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
               Browse verified escorts, massage services &amp; more across all major Indian cities.
-              <span className="text-blue-400 font-bold"> 100% Free · No Registration.</span>
+              <span className="text-pink-400 font-bold"> 100% Free · No Registration.</span>
             </p>
 
             {/* Search bar */}
@@ -191,8 +191,8 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
                 { value: '24/7', label: 'Always Live' },
               ].map((s) => (
                 <div key={s.label} className="text-center">
-                  <div className="text-3xl font-black text-blue-500">{s.value}</div>
-                  <div className="text-xs text-blue-300 font-medium mt-0.5">{s.label}</div>
+                  <div className="text-3xl font-black text-pink-500">{s.value}</div>
+                  <div className="text-xs text-pink-300 font-medium mt-0.5">{s.label}</div>
                 </div>
               ))}
             </div>
@@ -202,7 +202,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
         {/* Wave */}
         <div className="absolute bottom-0 left-0 right-0">
           <svg viewBox="0 0 1440 50" fill="none" className="w-full" preserveAspectRatio="none">
-            <path d="M0 50L360 30C720 10 1080 10 1440 30V50H0Z" fill="#EEF2FF"/>
+            <path d="M0 50L360 30C720 10 1080 10 1440 30V50H0Z" fill="#FFF1F7"/>
           </svg>
         </div>
       </section>
@@ -214,7 +214,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
           <section>
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-2xl font-black text-[#060B27]">Browse by Category</h2>
+                <h2 className="text-2xl font-black text-[#2A0618]">Browse by Category</h2>
                 <p className="text-slate-500 text-sm mt-1">Choose from our curated services</p>
               </div>
             </div>
@@ -223,12 +223,12 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
                 <Link
                   key={cat.slug}
                   href={`/?category=${cat.slug}`}
-                  className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border-2 border-transparent shadow-sm hover:border-indigo-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
+                  className="group flex flex-col items-center gap-3 p-5 rounded-2xl bg-white border-2 border-transparent shadow-sm hover:border-pink-200 hover:shadow-lg hover:-translate-y-1 transition-all duration-200"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-indigo-50 group-hover:bg-indigo-100 flex items-center justify-center text-3xl transition-colors">
+                  <div className="w-14 h-14 rounded-2xl bg-pink-50 group-hover:bg-pink-100 flex items-center justify-center text-3xl transition-colors">
                     {cat.icon}
                   </div>
-                  <span className="text-xs font-bold text-slate-700 group-hover:text-indigo-700 transition-colors text-center leading-tight">
+                  <span className="text-xs font-bold text-slate-700 group-hover:text-pink-700 transition-colors text-center leading-tight">
                     {cat.name}
                   </span>
                 </Link>
@@ -242,12 +242,12 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
           <section>
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h2 className="text-2xl font-black text-[#060B27]">Top Metro Cities</h2>
+                <h2 className="text-2xl font-black text-[#2A0618]">Top Metro Cities</h2>
                 <p className="text-slate-500 text-sm mt-1">Hyper-local listings near you</p>
               </div>
               <Link
                 href="/call-girls"
-                className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-indigo-600 hover:text-indigo-800 bg-indigo-50 hover:bg-indigo-100 px-4 py-2 rounded-xl transition-colors"
+                className="hidden sm:flex items-center gap-1.5 text-sm font-bold text-pink-600 hover:text-pink-800 bg-pink-50 hover:bg-pink-100 px-4 py-2 rounded-xl transition-colors"
               >
                 All Cities <ArrowRight size={14} />
               </Link>
@@ -260,7 +260,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
         <section>
           <div className="flex items-center justify-between mb-6">
             <div>
-              <h2 className="text-2xl font-black text-[#060B27]">
+              <h2 className="text-2xl font-black text-[#2A0618]">
                 {isFiltered
                   ? searchParams.q
                     ? `Results for "${searchParams.q}"`
@@ -273,20 +273,20 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
             </div>
             <Link
               href="/post-ad"
-              className="flex items-center gap-2 bg-[#060B27] hover:bg-[#0B1354] text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md hover:shadow-lg transition-all"
+              className="flex items-center gap-2 bg-[#2A0618] hover:bg-[#4A0B2F] text-white px-4 py-2.5 rounded-xl font-bold text-sm shadow-md hover:shadow-lg transition-all"
             >
               + Post Free Ad
             </Link>
           </div>
 
           {ads.length === 0 ? (
-            <div className="text-center py-24 bg-white rounded-3xl border-2 border-dashed border-indigo-100">
+            <div className="text-center py-24 bg-white rounded-3xl border-2 border-dashed border-pink-100">
               <div className="text-6xl mb-4">📭</div>
               <h3 className="text-xl font-black text-slate-700 mb-2">No ads found</h3>
               <p className="text-slate-400 text-sm mb-8 max-w-sm mx-auto">Be the first to post here. It&apos;s 100% free!</p>
               <Link
                 href="/post-ad"
-                className="inline-flex items-center gap-2 bg-blue-500 text-[#060B27] px-6 py-3 rounded-xl font-black shadow-lg hover:bg-blue-400 transition-colors"
+                className="inline-flex items-center gap-2 bg-pink-500 text-[#2A0618] px-6 py-3 rounded-xl font-black shadow-lg hover:bg-pink-400 transition-colors"
               >
                 Post Free Ad
               </Link>
@@ -300,17 +300,17 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
 
         {/* ── WHY US ── */}
         {!isFiltered && (
-          <section className="relative overflow-hidden rounded-3xl bg-[#060B27] p-10">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+          <section className="relative overflow-hidden rounded-3xl bg-[#2A0618] p-10">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-pink-600/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-pink-500/10 rounded-full blur-3xl" />
             <div className="relative text-center mb-10">
               <h2 className="text-3xl font-black text-white mb-2">Why Choose <span className="text-gold">Listvoo</span>?</h2>
-              <p className="text-blue-300">India&apos;s safest and most discreet platform</p>
+              <p className="text-pink-300">India&apos;s safest and most discreet platform</p>
             </div>
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                { emoji: '⚡', title: 'Post in 60 Seconds', desc: 'Simple form, instant publish. No sign-up or email verification required.', color: 'bg-blue-500/20 text-blue-400' },
-                { emoji: '📍', title: 'Hyper-Local Reach', desc: 'Target clients in your specific area across 300+ neighbourhoods in India.', color: 'bg-indigo-500/20 text-indigo-300' },
+                { emoji: '⚡', title: 'Post in 60 Seconds', desc: 'Simple form, instant publish. No sign-up or email verification required.', color: 'bg-pink-500/20 text-pink-400' },
+                { emoji: '📍', title: 'Hyper-Local Reach', desc: 'Target clients in your specific area across 300+ neighbourhoods in India.', color: 'bg-pink-500/20 text-pink-300' },
                 { emoji: '🔒', title: '100% Discreet', desc: 'Your privacy is our priority. Direct WhatsApp contact, no platform middlemen.', color: 'bg-green-500/20 text-green-300' },
               ].map((f) => (
                 <div key={f.title} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 transition-colors">
@@ -318,7 +318,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
                     {f.emoji}
                   </div>
                   <h3 className="font-black text-white text-lg mb-2">{f.title}</h3>
-                  <p className="text-blue-300 text-sm leading-relaxed">{f.desc}</p>
+                  <p className="text-pink-300 text-sm leading-relaxed">{f.desc}</p>
                 </div>
               ))}
             </div>
@@ -333,7 +333,7 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
               dangerouslySetInnerHTML={{ __html: generateFAQPageSchema(HOME_FAQS) }}
             />
             <div className="text-center mb-8">
-              <h2 className="text-2xl sm:text-3xl font-black text-[#060B27]">Frequently Asked Questions</h2>
+              <h2 className="text-2xl sm:text-3xl font-black text-[#2A0618]">Frequently Asked Questions</h2>
               <p className="text-slate-500 text-sm mt-1">Everything you need to know about posting & finding ads on Listvoo</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
@@ -342,11 +342,11 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
                   {column.map((faq) => (
                     <details
                       key={faq.question}
-                      className="group bg-white rounded-2xl border border-indigo-50 shadow-sm p-5 open:shadow-md transition-shadow"
+                      className="group bg-white rounded-2xl border border-pink-50 shadow-sm p-5 open:shadow-md transition-shadow"
                     >
-                      <summary className="flex items-center justify-between gap-3 cursor-pointer list-none font-bold text-[#060B27] text-sm sm:text-base">
+                      <summary className="flex items-center justify-between gap-3 cursor-pointer list-none font-bold text-[#2A0618] text-sm sm:text-base">
                         {faq.question}
-                        <span className="shrink-0 w-6 h-6 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center text-lg leading-none transition-transform group-open:rotate-45">
+                        <span className="shrink-0 w-6 h-6 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center text-lg leading-none transition-transform group-open:rotate-45">
                           +
                         </span>
                       </summary>
@@ -361,11 +361,11 @@ export default async function HomePage({ searchParams }: { searchParams: SearchP
 
         {/* ── SEO BLOCK ── */}
         {!isFiltered && (
-          <section className="bg-white rounded-3xl p-8 border border-indigo-50 shadow-sm">
-            <h2 className="text-xl font-black text-[#060B27] mb-4">Free Classified Ads in India — Listvoo</h2>
+          <section className="bg-white rounded-3xl p-8 border border-pink-50 shadow-sm">
+            <h2 className="text-xl font-black text-[#2A0618] mb-4">Free Classified Ads in India — Listvoo</h2>
             <div className="text-slate-500 text-sm leading-relaxed columns-1 md:columns-2 gap-8 space-y-3">
               <p>Listvoo is India's premier free adult classifieds platform. Find verified escorts, massage services, call girls, and more in Mumbai, Delhi, Bangalore, Hyderabad, Chennai, Kolkata, Pune, and all major cities.</p>
-              <p>Browse listings in <Link href="/call-girls/mumbai" className="text-indigo-600 font-semibold hover:underline">Mumbai</Link>, <Link href="/call-girls/delhi" className="text-indigo-600 font-semibold hover:underline">Delhi</Link>, <Link href="/call-girls/bangalore" className="text-indigo-600 font-semibold hover:underline">Bangalore</Link>, <Link href="/call-girls/hyderabad" className="text-indigo-600 font-semibold hover:underline">Hyderabad</Link>, <Link href="/call-girls/chennai" className="text-indigo-600 font-semibold hover:underline">Chennai</Link>, <Link href="/call-girls/pune" className="text-indigo-600 font-semibold hover:underline">Pune</Link>, <Link href="/call-girls/goa" className="text-indigo-600 font-semibold hover:underline">Goa</Link>, <Link href="/call-girls/chandigarh" className="text-indigo-600 font-semibold hover:underline">Chandigarh</Link>, and <Link href="/call-girls" className="text-indigo-600 font-semibold hover:underline">38+ metro cities</Link>. Post your ad free — no registration, no fees, live instantly.</p>
+              <p>Browse listings in <Link href="/call-girls/mumbai" className="text-pink-600 font-semibold hover:underline">Mumbai</Link>, <Link href="/call-girls/delhi" className="text-pink-600 font-semibold hover:underline">Delhi</Link>, <Link href="/call-girls/bangalore" className="text-pink-600 font-semibold hover:underline">Bangalore</Link>, <Link href="/call-girls/hyderabad" className="text-pink-600 font-semibold hover:underline">Hyderabad</Link>, <Link href="/call-girls/chennai" className="text-pink-600 font-semibold hover:underline">Chennai</Link>, <Link href="/call-girls/pune" className="text-pink-600 font-semibold hover:underline">Pune</Link>, <Link href="/call-girls/goa" className="text-pink-600 font-semibold hover:underline">Goa</Link>, <Link href="/call-girls/chandigarh" className="text-pink-600 font-semibold hover:underline">Chandigarh</Link>, and <Link href="/call-girls" className="text-pink-600 font-semibold hover:underline">38+ metro cities</Link>. Post your ad free — no registration, no fees, live instantly.</p>
             </div>
           </section>
         )}

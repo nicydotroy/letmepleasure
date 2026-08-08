@@ -98,7 +98,7 @@ export default async function AdDetailPage({ params }: Props) {
   const heroImage = images[0] ? `https://listvoo.com${images[0]}` : undefined
 
   return (
-    <div className="min-h-screen bg-[#EEF2FF]">
+    <div className="min-h-screen bg-[#FFF1F7]">
       <BreadcrumbSchema
         items={[
           { name: 'Home', url: 'https://listvoo.com' },
@@ -120,11 +120,11 @@ export default async function AdDetailPage({ params }: Props) {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-xs text-slate-500 mb-6 flex-wrap">
-          <Link href="/" className="hover:text-indigo-600 transition-colors">Home</Link>
+          <Link href="/" className="hover:text-pink-600 transition-colors">Home</Link>
           <ChevronRight size={11} />
-          <Link href={`/call-girls/${ad.citySlug}`} className="hover:text-indigo-600 transition-colors">{ad.city}</Link>
+          <Link href={`/call-girls/${ad.citySlug}`} className="hover:text-pink-600 transition-colors">{ad.city}</Link>
           <ChevronRight size={11} />
-          <Link href={`/call-girls/${ad.citySlug}/${ad.areaSlug}`} className="hover:text-indigo-600 transition-colors">{ad.area}</Link>
+          <Link href={`/call-girls/${ad.citySlug}/${ad.areaSlug}`} className="hover:text-pink-600 transition-colors">{ad.area}</Link>
           <ChevronRight size={11} />
           <span className="text-slate-700 font-semibold truncate max-w-[160px]">{ad.title}</span>
         </nav>
@@ -135,7 +135,7 @@ export default async function AdDetailPage({ params }: Props) {
           <div className="lg:col-span-2 space-y-5">
 
             {/* Image gallery */}
-            <div className="bg-white rounded-2xl shadow-sm border border-indigo-50 overflow-hidden">
+            <div className="bg-white rounded-2xl shadow-sm border border-pink-50 overflow-hidden">
               {images.length > 0 ? (
                 <div className="p-3 space-y-2.5">
                   <div className="relative w-full h-72 sm:h-[420px] rounded-xl overflow-hidden bg-slate-100">
@@ -152,7 +152,7 @@ export default async function AdDetailPage({ params }: Props) {
                   {images.length > 1 && (
                     <div className="flex gap-2 overflow-x-auto pb-1">
                       {images.map((img, i) => (
-                        <div key={i} className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 ring-2 ring-indigo-100 hover:ring-blue-500 transition-all">
+                        <div key={i} className="relative w-20 h-20 rounded-xl overflow-hidden shrink-0 ring-2 ring-pink-100 hover:ring-pink-500 transition-all">
                           <Image src={img} alt={`Photo ${i + 1}`} fill className="object-cover" sizes="80px" />
                         </div>
                       ))}
@@ -160,14 +160,14 @@ export default async function AdDetailPage({ params }: Props) {
                   )}
                 </div>
               ) : (
-                <div className="w-full h-52 bg-gradient-to-br from-indigo-50 to-slate-100 flex items-center justify-center text-7xl">
+                <div className="w-full h-52 bg-gradient-to-br from-pink-50 to-slate-100 flex items-center justify-center text-7xl">
                   {category?.icon || '📦'}
                 </div>
               )}
             </div>
 
             {/* Ad Info card */}
-            <div className="bg-white rounded-2xl shadow-sm border border-indigo-50 p-6">
+            <div className="bg-white rounded-2xl shadow-sm border border-pink-50 p-6">
               <div className="flex items-center justify-between mb-4">
                 <span className="flex items-center gap-1.5 text-xs text-slate-400 bg-slate-50 px-3 py-1 rounded-full">
                   <Clock size={11} /> Posted {timeAgo(ad.createdAt)}
@@ -177,17 +177,17 @@ export default async function AdDetailPage({ params }: Props) {
                 </span>
               </div>
 
-              <h1 className="text-2xl sm:text-3xl font-black text-[#060B27] mb-4 leading-tight">{ad.title}</h1>
+              <h1 className="text-2xl sm:text-3xl font-black text-[#2A0618] mb-4 leading-tight">{ad.title}</h1>
 
               {ad.price ? (
-                <div className="text-3xl font-black text-blue-600 mb-5">
+                <div className="text-3xl font-black text-pink-600 mb-5">
                   {formatPrice(ad.price)}
                 </div>
               ) : (
                 <div className="text-sm font-semibold text-slate-400 mb-5 uppercase tracking-wide">Price on Request</div>
               )}
 
-              <div className="flex items-center gap-2 bg-indigo-50 text-indigo-700 text-sm px-4 py-2.5 rounded-xl mb-6 w-fit">
+              <div className="flex items-center gap-2 bg-pink-50 text-pink-700 text-sm px-4 py-2.5 rounded-xl mb-6 w-fit">
                 <MapPin size={14} />
                 <Link href={`/call-girls/${ad.citySlug}/${ad.areaSlug}`} className="font-semibold hover:underline">
                   {ad.area}, {ad.city}
@@ -195,9 +195,9 @@ export default async function AdDetailPage({ params }: Props) {
               </div>
 
               {/* Description */}
-              <div className="border-t border-indigo-50 pt-5">
+              <div className="border-t border-pink-50 pt-5">
                 <h2 className="font-bold text-slate-700 mb-3 flex items-center gap-2 text-sm">
-                  <Tag size={14} className="text-blue-500" /> Description
+                  <Tag size={14} className="text-pink-500" /> Description
                 </h2>
                 <p className="text-slate-600 text-sm leading-relaxed whitespace-pre-wrap">{ad.description}</p>
               </div>
@@ -206,8 +206,8 @@ export default async function AdDetailPage({ params }: Props) {
 
           {/* RIGHT — sticky contact */}
           <div className="space-y-4">
-            <div className="bg-white rounded-2xl shadow-sm border border-indigo-50 p-6 lg:sticky lg:top-24">
-              <h3 className="font-black text-[#060B27] text-lg mb-5">Contact Now</h3>
+            <div className="bg-white rounded-2xl shadow-sm border border-pink-50 p-6 lg:sticky lg:top-24">
+              <h3 className="font-black text-[#2A0618] text-lg mb-5">Contact Now</h3>
 
               {/*
                 Normalize phone numbers stored as "+91-9229604907" or
@@ -225,7 +225,7 @@ export default async function AdDetailPage({ params }: Props) {
                   <>
                     <a
                       href={`tel:+91${phoneDigits}`}
-                      className="flex items-center justify-center gap-2.5 w-full bg-[#060B27] text-white py-4 rounded-xl font-black text-sm hover:bg-[#0B1354] transition-all shadow-lg mb-3"
+                      className="flex items-center justify-center gap-2.5 w-full bg-[#2A0618] text-white py-4 rounded-xl font-black text-sm hover:bg-[#4A0B2F] transition-all shadow-lg mb-3"
                     >
                       <Phone size={17} />
                       Call: +91 {phoneDisplay}
@@ -246,13 +246,13 @@ export default async function AdDetailPage({ params }: Props) {
                 )
               })()}
 
-              <div className="bg-blue-50 border border-blue-100 rounded-xl p-3.5 text-center mt-4">
-                <p className="text-xs text-blue-800 leading-relaxed">⚠️ Never pay in advance. Meet in a safe place. Listvoo is not responsible for any transactions.</p>
+              <div className="bg-pink-50 border border-pink-100 rounded-xl p-3.5 text-center mt-4">
+                <p className="text-xs text-pink-800 leading-relaxed">⚠️ Never pay in advance. Meet in a safe place. Listvoo is not responsible for any transactions.</p>
               </div>
             </div>
 
             {/* Share */}
-            <div className="bg-white rounded-2xl border border-indigo-50 shadow-sm p-5">
+            <div className="bg-white rounded-2xl border border-pink-50 shadow-sm p-5">
               <div className="flex items-center gap-2 text-slate-600 text-sm font-bold mb-3">
                 <Share2 size={14} /> Share this Ad
               </div>
@@ -267,7 +267,7 @@ export default async function AdDetailPage({ params }: Props) {
                 <a
                   href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(adUrl)}`}
                   target="_blank" rel="noopener noreferrer"
-                  className="flex-1 text-center text-xs bg-blue-100 text-blue-700 py-2.5 rounded-xl font-bold hover:bg-blue-200 transition-colors"
+                  className="flex-1 text-center text-xs bg-pink-100 text-pink-700 py-2.5 rounded-xl font-bold hover:bg-pink-200 transition-colors"
                 >
                   📘 Facebook
                 </a>
@@ -279,7 +279,7 @@ export default async function AdDetailPage({ params }: Props) {
         {/* Related ads */}
         {relatedAds.length > 0 && (
           <section className="mt-12">
-            <h2 className="text-xl font-black text-[#060B27] mb-5">More Ads in {ad.city}</h2>
+            <h2 className="text-xl font-black text-[#2A0618] mb-5">More Ads in {ad.city}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
               {relatedAds.map((rel) => <AdCard key={rel.id} ad={rel} />)}
             </div>

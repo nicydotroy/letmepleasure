@@ -48,13 +48,13 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     : ''
 
   return (
-    <div className="min-h-screen bg-[#EEF2FF]">
+    <div className="min-h-screen bg-[#FFF1F7]">
       <article className="max-w-3xl mx-auto px-4 sm:px-6 py-10">
-        <Link href="/blog" className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-700 font-semibold text-sm mb-6">
+        <Link href="/blog" className="inline-flex items-center gap-1.5 text-pink-600 hover:text-pink-700 font-semibold text-sm mb-6">
           <ArrowLeft size={15} /> All articles
         </Link>
 
-        <h1 className="text-3xl sm:text-4xl font-black text-[#060B27] mb-3 leading-tight">{post.title}</h1>
+        <h1 className="text-3xl sm:text-4xl font-black text-[#2A0618] mb-3 leading-tight">{post.title}</h1>
         <p className="flex items-center gap-1.5 text-xs text-slate-400 mb-6">
           <CalendarDays size={13} /> {publishedLabel}
         </p>
@@ -65,9 +65,9 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           </div>
         )}
 
-        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-indigo-50">
+        <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-pink-50">
           {post.excerpt && (
-            <p className="text-lg text-slate-700 font-semibold mb-6 border-l-4 border-blue-500 pl-4">{post.excerpt}</p>
+            <p className="text-lg text-slate-700 font-semibold mb-6 border-l-4 border-pink-500 pl-4">{post.excerpt}</p>
           )}
           <div className="space-y-4 text-slate-700 leading-relaxed">
             {paragraphs.map((p, i) => (
